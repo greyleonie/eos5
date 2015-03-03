@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryClassNotify" displayName="QueryClassNotify" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+c.*,&#13;
+e.operatorname as CreatorName&#13;
+ from ClassNotify  c left join  eosoperator e on c.CreatorID=e.operatorid</createSQL>
+            <field name="ClassNotifyID" displayName="ClassNotifyID" defineType="int" columnName="ClassNotifyID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Content" displayName="Content" defineType="String" columnName="Content" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1000</length>
+                <precision>0</precision>
+            </field>
+            <field name="PublishTime" displayName="PublishTime" defineType="Date" columnName="PublishTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Enable" displayName="Enable" defineType="smallint" columnName="Enable" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="lx" displayName="lx" defineType="int" columnName="lx" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="roomid" displayName="roomid" defineType="int" columnName="roomid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="endTime" displayName="endTime" defineType="Date" columnName="endTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ChangeTime" displayName="ChangeTime" defineType="Date" columnName="ChangeTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="CreatorID" displayName="CreatorID" defineType="int" columnName="CreatorID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CreatorName" displayName="CreatorName" defineType="String" columnName="CreatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

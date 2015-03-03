@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="SearchTeaching" displayName="SearchTeaching" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+c.ClassDate,&#13;
+convert (varchar(10),c.ClassTime,108) as ClassTime,&#13;
+c.ClassNoon,&#13;
+r.RoomName,&#13;
+l.ClassName,&#13;
+c.CourseTitle,&#13;
+c.OutSider,&#13;
+c.OutSideOrg,&#13;
+c.OutSidePost,&#13;
+c.Teachers as TeacherID,&#13;
+e.OperatorName as TeacherName,&#13;
+c.TeachingGroupId&#13;
+ from course c &#13;
+	left join room r on c.classroomid=r.roomid &#13;
+	left join class l on c.classid = l.classid&#13;
+	left join EOSOperator e on c.Teachers = e.OperatorID     &#13;
+where isAdopted=1</createSQL>
+            <field name="ClassDate" displayName="ClassDate" defineType="Date" columnName="ClassDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ClassTime" displayName="ClassTime" defineType="String" columnName="ClassTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="ClassNoon" displayName="ClassNoon" defineType="String" columnName="ClassNoon" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomName" displayName="RoomName" defineType="String" columnName="RoomName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="CourseTitle" displayName="CourseTitle" defineType="String" columnName="CourseTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="OutSider" displayName="OutSider" defineType="String" columnName="OutSider" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="OutSideOrg" displayName="OutSideOrg" defineType="String" columnName="OutSideOrg" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="OutSidePost" displayName="OutSidePost" defineType="String" columnName="OutSidePost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeacherID" displayName="TeacherID" defineType="String" columnName="TeacherID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeacherName" displayName="TeacherName" defineType="String" columnName="TeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeachingGroupId" displayName="TeachingGroupId" defineType="int" columnName="TeachingGroupId" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

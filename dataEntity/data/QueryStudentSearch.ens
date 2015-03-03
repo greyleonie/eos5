@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryStudentSearch" displayName="QueryStudentSearch" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description>学员资料检索查询实体</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorname,&#13;
+c.ClassName,&#13;
+c.BeginTime,&#13;
+c.EndTime,&#13;
+c.Commission,c.isHistoryClass,&#13;
+s.*&#13;
+ from eosoperator e,&#13;
+student s left join Class c on s.ClassID=c.ClassID&#13;
+ where e.operatorid=s.studentid and e.status=1</createSQL>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="BeginTime" displayName="BeginTime" defineType="Date" columnName="BeginTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="EndTime" displayName="EndTime" defineType="Date" columnName="EndTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Commission" displayName="Commission" defineType="String" columnName="Commission" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="isHistoryClass" displayName="isHistoryClass" defineType="int" columnName="isHistoryClass" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeamID" displayName="TeamID" defineType="int" columnName="TeamID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="SeatNo" displayName="SeatNo" defineType="String" columnName="SeatNo" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="FolkID" displayName="FolkID" defineType="int" columnName="FolkID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DegreeID" displayName="DegreeID" defineType="int" columnName="DegreeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StartWorkingTime" displayName="StartWorkingTime" defineType="Date" columnName="StartWorkingTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="JoinPartyTime" displayName="JoinPartyTime" defineType="Date" columnName="JoinPartyTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="WorkingOrgan" displayName="WorkingOrgan" defineType="String" columnName="WorkingOrgan" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Duty" displayName="Duty" defineType="String" columnName="Duty" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="OrganTel" displayName="OrganTel" defineType="String" columnName="OrganTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="HomeTel" displayName="HomeTel" defineType="String" columnName="HomeTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="MobileTel" displayName="MobileTel" defineType="String" columnName="MobileTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="DiplomaNO" displayName="DiplomaNO" defineType="String" columnName="DiplomaNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="AbsenceTimes" displayName="AbsenceTimes" defineType="int" columnName="AbsenceTimes" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="AbsenceHowLong" displayName="AbsenceHowLong" defineType="int" columnName="AbsenceHowLong" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TruantTimes" displayName="TruantTimes" defineType="int" columnName="TruantTimes" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Photoid" displayName="Photoid" defineType="String" columnName="Photoid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Email" displayName="Email" defineType="String" columnName="Email" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Remark" displayName="Remark" defineType="String" columnName="Remark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="isCheck" displayName="isCheck" defineType="smallint" columnName="isCheck" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="dutylevel" displayName="dutylevel" defineType="int" columnName="dutylevel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Major" displayName="Major" defineType="String" columnName="Major" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="isleader" displayName="isleader" defineType="int" columnName="isleader" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="orderno" displayName="orderno" defineType="int" columnName="orderno" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentNO" displayName="StudentNO" defineType="String" columnName="StudentNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Sex" displayName="Sex" defineType="String" columnName="Sex" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="Birthdate" displayName="Birthdate" defineType="Date" columnName="Birthdate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Firstchar" displayName="Firstchar" defineType="String" columnName="Firstchar" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="Barcode" displayName="Barcode" defineType="String" columnName="Barcode" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsQuit" displayName="IsQuit" defineType="int" columnName="IsQuit" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="QuitTime" displayName="QuitTime" defineType="Date" columnName="QuitTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="QuitReason" displayName="QuitReason" defineType="String" columnName="QuitReason" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="NativePlace" displayName="NativePlace" defineType="String" columnName="NativePlace" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="EduLevel" displayName="EduLevel" defineType="String" columnName="EduLevel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="JobTitle" displayName="JobTitle" defineType="String" columnName="JobTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="PartyPost" displayName="PartyPost" defineType="String" columnName="PartyPost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="SocietyPost" displayName="SocietyPost" defineType="String" columnName="SocietyPost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="OrgAddr" displayName="OrgAddr" defineType="String" columnName="OrgAddr" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="OrgPostcode" displayName="OrgPostcode" defineType="String" columnName="OrgPostcode" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

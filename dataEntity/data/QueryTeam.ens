@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryTeam" displayName="QueryTeam" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select t.*,r.RoomName,c.ClassName from  Class c,Team t left join  Room r on t.RoomID=r.RoomID where c.ClassID=t.ClassID</createSQL>
+            <field name="TeamID" displayName="TeamID" defineType="int" columnName="TeamID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeamName" displayName="TeamName" defineType="String" columnName="TeamName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomName" displayName="RoomName" defineType="String" columnName="RoomName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

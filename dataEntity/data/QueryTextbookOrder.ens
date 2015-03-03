@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryTextbookOrder" displayName="QueryTextbookOrder" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+Yearth,&#13;
+Season,&#13;
+OrderTitle,&#13;
+OrderTime,&#13;
+Handler,&#13;
+Verify&#13;
+ FROM dbo.TextbookOrder&#13;
+GROUP BY Yearth,&#13;
+ Season,&#13;
+ OrderTitle,&#13;
+ OrderTime,&#13;
+ Handler,&#13;
+ Verify</createSQL>
+            <field name="Yearth" displayName="Yearth" defineType="int" columnName="Yearth" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Season" displayName="Season" defineType="String" columnName="Season" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="OrderTitle" displayName="OrderTitle" defineType="String" columnName="OrderTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="OrderTime" displayName="OrderTime" defineType="Date" columnName="OrderTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Handler" displayName="Handler" defineType="String" columnName="Handler" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Verify" displayName="Verify" defineType="String" columnName="Verify" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

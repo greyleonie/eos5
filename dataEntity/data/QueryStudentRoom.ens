@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryStudentRoom" displayName="QueryStudentRoom" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorname,&#13;
+t.TeamName,&#13;
+s.StudentID,&#13;
+s.StudentNO,&#13;
+s.ClassID,&#13;
+s.RoomID,&#13;
+s.TeamID,&#13;
+s.Sex,&#13;
+r.RoomName,&#13;
+r.SeatNum,&#13;
+r.Tel as RoomTel,&#13;
+b.BuildingName&#13;
+ from eosoperator e,&#13;
+student s left join Team t on s.TeamID=t.TeamID left join&#13;
+ (Room r left join Building b on r.BuildingID=b.BuildingID)  on r.RoomID = s.RoomID &#13;
+where e.operatorid=s.studentid and e.status=1</createSQL>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeamName" displayName="TeamName" defineType="String" columnName="TeamName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentNO" displayName="StudentNO" defineType="String" columnName="StudentNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeamID" displayName="TeamID" defineType="int" columnName="TeamID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Sex" displayName="Sex" defineType="String" columnName="Sex" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomName" displayName="RoomName" defineType="String" columnName="RoomName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="SeatNum" displayName="SeatNum" defineType="int" columnName="SeatNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomTel" displayName="RoomTel" defineType="String" columnName="RoomTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="BuildingName" displayName="BuildingName" defineType="String" columnName="BuildingName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

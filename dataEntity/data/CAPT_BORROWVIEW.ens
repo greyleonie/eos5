@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CAPT_BORROWVIEW" displayName="CAPT_BORROWVIEW" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+b.*,&#13;
+e.operatorname as BORROWERNAME,&#13;
+o.orgName as DepNAME,&#13;
+v.CAPTID&#13;
+from CAPT_BORROWDETAIL v,CAPT_BORROW b&#13;
+	left join EOSOperator e on e.operatorid = b.borrowerid&#13;
+	left join EOSORG_T_Organization o on o.orgid = b.depid&#13;
+where b.BORROWID=v.BORROWID</createSQL>
+            <field name="BORROWID" displayName="BORROWID" defineType="int" columnName="BORROWID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BORROWCODE" displayName="BORROWCODE" defineType="String" columnName="BORROWCODE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="BORROWERID" displayName="BORROWERID" defineType="int" columnName="BORROWERID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DepID" displayName="DepID" defineType="int" columnName="DepID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BORROWDATE" displayName="BORROWDATE" defineType="Date" columnName="BORROWDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="RETURNDATE" displayName="RETURNDATE" defineType="Date" columnName="RETURNDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="BORROWRECORD" displayName="BORROWRECORD" defineType="String" columnName="BORROWRECORD" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="REMARK" displayName="REMARK" defineType="String" columnName="REMARK" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="STATE" displayName="STATE" defineType="char" columnName="STATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="BORROWERNAME" displayName="BORROWERNAME" defineType="String" columnName="BORROWERNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="DepNAME" displayName="DepNAME" defineType="String" columnName="DepNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTID" displayName="CAPTID" defineType="int" columnName="CAPTID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

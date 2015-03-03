@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryDestroyCard" displayName="QueryDestroyCard" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description>销卡记录查询实体</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select e.operatorName as UserName,e.UserTypeID,c.CardCoverNO,d.* &#13;
+from DestroyCard d , Eosoperator e ,Card c &#13;
+where d.CardID=c.CardID and d.UserID=e.operatorID and e.status=1</createSQL>
+            <field name="UserName" displayName="UserName" defineType="String" columnName="UserName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="UserTypeID" displayName="UserTypeID" defineType="int" columnName="UserTypeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardCoverNO" displayName="CardCoverNO" defineType="String" columnName="CardCoverNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="DestroyCardID" displayName="DestroyCardID" defineType="int" columnName="DestroyCardID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="UserID" displayName="UserID" defineType="int" columnName="UserID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DestroyTime" displayName="DestroyTime" defineType="TimeStamp" columnName="DestroyTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="ReasonID" displayName="ReasonID" defineType="int" columnName="ReasonID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardLastSumCache" displayName="CardLastSumCache" defineType="BigDecimal" columnName="CardLastSumCache" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="CardUsingTimesCache" displayName="CardUsingTimesCache" defineType="int" columnName="CardUsingTimesCache" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsReIssue" displayName="IsReIssue" defineType="smallint" columnName="IsReIssue" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="OperatorIP" displayName="OperatorIP" defineType="String" columnName="OperatorIP" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="OperatorName" displayName="OperatorName" defineType="String" columnName="OperatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

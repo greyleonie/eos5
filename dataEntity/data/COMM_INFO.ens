@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="COMM_INFO" displayName="COMM_INFO" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+comm.COMMID,comm.TYPEID,comm.COMMNAME,comm.SPECIA,comm.UNITID,comm.PRICE,comm.REMARK,&#13;
+dic.businName as UNITNAME,&#13;
+type.TYPENAME&#13;
+ from COMM_COMMODITYINFO comm&#13;
+	left join BNDICT_T_Dictionary dic on dic.businTypeID ='dx_unit' and dic.businID = comm.COMMID&#13;
+	left join COMM_TYPE type on type.TYPEID = comm.TYPEID&#13;
+where comm.enable=1</createSQL>
+            <field name="COMMID" displayName="COMMID" defineType="int" columnName="COMMID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPEID" displayName="TYPEID" defineType="int" columnName="TYPEID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="COMMNAME" displayName="COMMNAME" defineType="String" columnName="COMMNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="SPECIA" displayName="SPECIA" defineType="String" columnName="SPECIA" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="UNITID" displayName="UNITID" defineType="int" columnName="UNITID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PRICE" displayName="PRICE" defineType="BigDecimal" columnName="PRICE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="REMARK" displayName="REMARK" defineType="String" columnName="REMARK" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="UNITNAME" displayName="UNITNAME" defineType="String" columnName="UNITNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPENAME" displayName="TYPENAME" defineType="String" columnName="TYPENAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryCarInfo" displayName="QueryCarInfo" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+c.*,&#13;
+e.CardID&#13;
+ from Car_CarInfo  c ,&#13;
+ EOSOperator e where c.CarID = e.operatorID</createSQL>
+            <field name="CarID" displayName="CarID" defineType="int" columnName="CarID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CARNO" displayName="CARNO" defineType="String" columnName="CARNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="MANUNO" displayName="MANUNO" defineType="String" columnName="MANUNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="FRAMENO" displayName="FRAMENO" defineType="String" columnName="FRAMENO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="CARTYPE" displayName="CARTYPE" defineType="String" columnName="CARTYPE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="DRIVER" displayName="DRIVER" defineType="String" columnName="DRIVER" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="PRICE" displayName="PRICE" defineType="BigDecimal" columnName="PRICE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="BUYDATE" displayName="BUYDATE" defineType="Date" columnName="BUYDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ENGINENO" displayName="ENGINENO" defineType="String" columnName="ENGINENO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="STATE" displayName="STATE" defineType="char" columnName="STATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

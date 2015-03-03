@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryCard" displayName="QueryCard" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorName,e.operatorID,e.userTypeID,e.operatorType,e.password,&#13;
+c.*&#13;
+ from Card c left join eosoperator e on (c.CardID=e.CardID  and e.status=1)</createSQL>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorID" displayName="operatorID" defineType="BigDecimal" columnName="operatorID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="userTypeID" displayName="userTypeID" defineType="int" columnName="userTypeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorType" displayName="operatorType" defineType="int" columnName="operatorType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="password" displayName="password" defineType="String" columnName="password" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardTypeID" displayName="CardTypeID" defineType="int" columnName="CardTypeID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="InnerCardID" displayName="InnerCardID" defineType="int" columnName="InnerCardID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardCoverNO" displayName="CardCoverNO" defineType="String" columnName="CardCoverNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="StateID" displayName="StateID" defineType="int" columnName="StateID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RegisterTime" displayName="RegisterTime" defineType="Date" columnName="RegisterTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="CancelTime" displayName="CancelTime" defineType="Date" columnName="CancelTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="Cost" displayName="Cost" defineType="BigDecimal" columnName="Cost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="TimeOfIssueCard" displayName="TimeOfIssueCard" defineType="Date" columnName="TimeOfIssueCard" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="CardUsingTimes" displayName="CardUsingTimes" defineType="int" columnName="CardUsingTimes" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardLastSum" displayName="CardLastSum" defineType="BigDecimal" columnName="CardLastSum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="Remark" displayName="Remark" defineType="String" columnName="Remark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

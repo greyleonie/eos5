@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="OMM" displayName="OMM">
+        <EOSEntity name="KnowledgeInfo" displayName="KnowledgeInfo" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+o.KnowledgeBaseID,&#13;
+o.KnowledgeSN,&#13;
+o.KnowledgeTypeID,&#13;
+o.AuthorID,&#13;
+o.Title,&#13;
+o.Evaluate,&#13;
+o.KeyWords,&#13;
+o.Description,&#13;
+o.ProcessMethod,&#13;
+e.operatorName&#13;
+ from OMM_KnowledgeBase o,&#13;
+EOSOperator e where o.AuthorID=e.operatorID</createSQL>
+            <field name="KnowledgeBaseID" displayName="KnowledgeBaseID" defineType="int" columnName="KnowledgeBaseID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="KnowledgeSN" displayName="KnowledgeSN" defineType="String" columnName="KnowledgeSN" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="KnowledgeTypeID" displayName="KnowledgeTypeID" defineType="int" columnName="KnowledgeTypeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="AuthorID" displayName="AuthorID" defineType="BigDecimal" columnName="AuthorID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="Title" displayName="Title" defineType="String" columnName="Title" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="Evaluate" displayName="Evaluate" defineType="int" columnName="Evaluate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="KeyWords" displayName="KeyWords" defineType="String" columnName="KeyWords" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="Description" displayName="Description" defineType="String" columnName="Description" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1000</length>
+                <precision>0</precision>
+            </field>
+            <field name="ProcessMethod" displayName="ProcessMethod" defineType="String" columnName="ProcessMethod" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>2000</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

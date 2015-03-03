@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="ThesisSummary" displayName="ThesisSummary" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+t.StudentID,&#13;
+t.ThesisTitle,&#13;
+e.operatorName as TeacherName,&#13;
+t.Summary&#13;
+ from Thesis  t&#13;
+left join eosoperator e on e.operatorid = t.teacherid</createSQL>
+            <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ThesisTitle" displayName="ThesisTitle" defineType="String" columnName="ThesisTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeacherName" displayName="TeacherName" defineType="String" columnName="TeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="Summary" displayName="Summary" defineType="String" columnName="Summary" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

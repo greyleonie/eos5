@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="OMM" displayName="OMM">
+        <EOSEntity name="DevLogsInfo" displayName="DevLogsInfo" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+a.UserID,&#13;
+a.RoomID,&#13;
+a.EndTime,&#13;
+a.DeviceID,&#13;
+c.TypeName,&#13;
+d.operatorName,&#13;
+e.CAPTNAME&#13;
+ from (((OMM_DevUsingLogs as a left join OMM_ITDevice as b on a.DeviceID=b.DeviceID) left join OMM_DevType as c on b.TypeID=c.TypeID) left join EOSOperator as d on a.UserID=d.operatorID) left join CAPT_CAPITALINFO as e on b.CAPTID=e.CAPTID</createSQL>
+            <field name="UserID" displayName="UserID" defineType="BigDecimal" columnName="UserID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="EndTime" displayName="EndTime" defineType="Date" columnName="EndTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="DeviceID" displayName="DeviceID" defineType="int" columnName="DeviceID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TypeName" displayName="TypeName" defineType="String" columnName="TypeName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTNAME" displayName="CAPTNAME" defineType="String" columnName="CAPTNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CAPT_WRITEOFFDETAILVIEW" displayName="CAPT_WRITEOFFDETAILVIEW" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+d.WRITEOFFID,&#13;
+d.CAPTID,&#13;
+capt.TYPECODE,&#13;
+capt.CAPTNAME,&#13;
+capt.SPECIA,&#13;
+capt.CAPTCODE,&#13;
+capt.BRANDNAME,&#13;
+type.TYPENAME,&#13;
+e.operatorName as RequestName,&#13;
+o.orgName as DepName,&#13;
+w.WRITEOFFDATE,&#13;
+capt.state&#13;
+from CAPT_WRITEOFFDETAIL d&#13;
+	left join CAPT_CAPITALINFO capt on  capt.CAPTID = d.CAPTID&#13;
+	left join BNDICT_T_Dictionary dic on (dic.businTypeID ='dx_unit' and dic.businID = capt.TYPECODE)&#13;
+	left join CAPT_TYPE type on type.TYPECODE = capt.TYPECODE&#13;
+	left join CAPT_WRITEOFF w on w.WRITEOFFID = d.WRITEOFFID &#13;
+	left join EOSOperator e on e.operatorID = w.RequestID &#13;
+	left join EOSORG_T_Organization o on o.orgID = w.DepID and  capt.STATE=1&#13;
+union&#13;
+&#13;
+select &#13;
+a.rejectid as WRITEOFFID,&#13;
+a.CAPTID,&#13;
+capt.TYPECODE,&#13;
+capt.CAPTNAME,&#13;
+capt.SPECIA,&#13;
+capt.CAPTCODE,&#13;
+capt.BRANDNAME,&#13;
+type.TYPENAME,&#13;
+e.operatorName as RequestName,&#13;
+o.orgName as DepName,&#13;
+a.WRITEOFFDATE,&#13;
+capt.state&#13;
+from CAPT_REJECT a&#13;
+left join CAPT_CAPITALINFO capt on capt.CAPTID=a.CAPTID &#13;
+left join CAPT_TYPE type on type.TYPECODE = capt.TYPECODE&#13;
+left join EOSOperator e on e.operatorID = a.operatorID &#13;
+left join EOSORG_T_Organization o on o.orgID = a.DepID&#13;
+where capt.state=4</createSQL>
+            <field name="WRITEOFFID" displayName="WRITEOFFID" defineType="int" columnName="WRITEOFFID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTID" displayName="CAPTID" defineType="int" columnName="CAPTID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPECODE" displayName="TYPECODE" defineType="String" columnName="TYPECODE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTNAME" displayName="CAPTNAME" defineType="String" columnName="CAPTNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="SPECIA" displayName="SPECIA" defineType="String" columnName="SPECIA" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTCODE" displayName="CAPTCODE" defineType="String" columnName="CAPTCODE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="BRANDNAME" displayName="BRANDNAME" defineType="String" columnName="BRANDNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPENAME" displayName="TYPENAME" defineType="String" columnName="TYPENAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="RequestName" displayName="RequestName" defineType="String" columnName="RequestName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="DepName" displayName="DepName" defineType="String" columnName="DepName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="WRITEOFFDATE" displayName="WRITEOFFDATE" defineType="TimeStamp" columnName="WRITEOFFDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="state" displayName="state" defineType="char" columnName="state" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2005-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

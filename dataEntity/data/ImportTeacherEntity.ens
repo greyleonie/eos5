@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="ImportTeacherEntity" displayName="ImportTeacherEntity" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorid,&#13;
+e.operatorname,&#13;
+e.userid,&#13;
+d.department&#13;
+ from teacher as t,&#13;
+department as d,&#13;
+eosoperator as e where e.operatorid=t.teacherid and t.departmentid=d.departmentid</createSQL>
+            <field name="operatorid" displayName="operatorid" defineType="BigDecimal" columnName="operatorid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="userid" displayName="userid" defineType="String" columnName="userid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="department" displayName="department" defineType="String" columnName="department" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

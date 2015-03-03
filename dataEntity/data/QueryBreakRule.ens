@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryBreakRule" displayName="QueryBreakRule" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+b.*,&#13;
+d.DriverName&#13;
+ FROM BreakRule b INNER JOIN&#13;
+      DriverInfo d ON b.DriverID = d.DriverID</createSQL>
+            <field name="BreakID" displayName="BreakID" defineType="int" columnName="BreakID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DriverID" displayName="DriverID" defineType="int" columnName="DriverID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BreakTime" displayName="BreakTime" defineType="Date" columnName="BreakTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd</displayFormat>-->
+            </field>
+            <field name="BreakPlace" displayName="BreakPlace" defineType="String" columnName="BreakPlace" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="Detail" displayName="Detail" defineType="String" columnName="Detail" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Punishment" displayName="Punishment" defineType="String" columnName="Punishment" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="DriverName" displayName="DriverName" defineType="String" columnName="DriverName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

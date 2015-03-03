@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QuerySocialSurvey" displayName="QuerySocialSurvey" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+b.ClassName,org.orgName,operator.operatorName as LeadTeacherName,&#13;
+s.*&#13;
+ from socialsurvey s left join class b&#13;
+		on s.classid=b.classid&#13;
+left join EOSORG_T_Organization org&#13;
+	on org.orgID = s.TeachingGroup&#13;
+left join eosoperator operator&#13;
+	on operator.operatorid = s.leadteacher</createSQL>
+            <field name="classname" displayName="classname" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="orgName" displayName="orgName" defineType="String" columnName="orgName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="LeadTeacherName" displayName="LeadTeacherName" defineType="String" columnName="LeadTeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="SurveyID" displayName="SurveyID" defineType="int" columnName="SurveyID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Theme" displayName="Theme" defineType="String" columnName="Theme" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Detail" displayName="Detail" defineType="String" columnName="Detail" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeachingGroup" displayName="TeachingGroup" defineType="String" columnName="TeachingGroup" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="Captain" displayName="Captain" defineType="String" columnName="Captain" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="LeadTeacher" displayName="LeadTeacher" defineType="String" columnName="LeadTeacher" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="Attendants" displayName="Attendants" defineType="String" columnName="Attendants" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="SurveyTime" displayName="SurveyTime" defineType="Date" columnName="SurveyTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="SurveySpot" displayName="SurveySpot" defineType="String" columnName="SurveySpot" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="SchemeType" displayName="SchemeType" defineType="String" columnName="SchemeType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ExamLeader" displayName="ExamLeader" defineType="String" columnName="ExamLeader" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="RouteAttachType" displayName="RouteAttachType" defineType="String" columnName="RouteAttachType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ReportAttachType" displayName="ReportAttachType" defineType="String" columnName="ReportAttachType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Publish" displayName="Publish" defineType="String" columnName="Publish" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Remarks" displayName="Remarks" defineType="String" columnName="Remarks" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>400</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

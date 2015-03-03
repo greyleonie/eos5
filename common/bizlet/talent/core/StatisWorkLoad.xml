@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<package>
+    <elements displayName="StatisWorkLoad" canExport="true">
+        <element name="BL_StatisWorkLoad" type="bizlet" paramFixed="false" canExport="true" displayName="BL_StatisWorkLoad">
+            <description/>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.StatisWorkLoad.BL_StatisWorkLoad</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">WorkLoadCollect</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">此Entity 包括TeacherID ,BeginDate,EndDate,这三个Field</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_StatisWorkLoadByTeacher" type="bizlet" paramFixed="false" canExport="true" displayName="BL_StatisWorkLoadByTeacher">
+            <description/>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.StatisWorkLoad.BL_StatisWorkLoadByTeacher</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">WorkLoadCollect</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">年度</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">WorkLoadCollect</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">时期</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">WorkLoadCollect</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">教师List</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+    </elements>
+</package>

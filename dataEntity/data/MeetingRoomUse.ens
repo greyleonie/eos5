@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="MeetingRoomUse" displayName="MeetingRoomUse" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description>查询会议室的使用情况</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+b.mrname,&#13;
+statecode,&#13;
+MeetingName,&#13;
+APPLYDATE,&#13;
+STARTDATE,&#13;
+ENDDATE,&#13;
+operatorName&#13;
+ from MR_APPLY a,&#13;
+MR_REGISTER b,&#13;
+EOSOperator c where a.MRCODE=b.MRCODE and a.UserID=c.operatorID and activityDefID='EndActivity'</createSQL>
+            <field name="mrname" displayName="mrname" defineType="String" columnName="mrname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="statecode" displayName="statecode" defineType="int" columnName="statecode" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="MeetingName" displayName="MeetingName" defineType="String" columnName="MeetingName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="APPLYDATE" displayName="APPLYDATE" defineType="TimeStamp" columnName="APPLYDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="STARTDATE" displayName="STARTDATE" defineType="TimeStamp" columnName="STARTDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="ENDDATE" displayName="ENDDATE" defineType="TimeStamp" columnName="ENDDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

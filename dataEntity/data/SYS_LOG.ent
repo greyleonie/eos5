@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="SYS_LOG" displayName="SYS_LOG" type="entity" tableName="SYS_LOG" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>系统登录日志 </description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="LOGID" displayName="LOGID" defineType="int" columnName="LOGID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="USERID" displayName="USERID" defineType="String" columnName="USERID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="LOGINDATE" displayName="LOGINDATE" defineType="Date" columnName="LOGINDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="LOGOUTDATE" displayName="LOGOUTDATE" defineType="Date" columnName="LOGOUTDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="IP" displayName="IP" defineType="String" columnName="IP" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="MAC" displayName="MAC" defineType="String" columnName="MAC" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="REMARK" displayName="REMARK" defineType="String" columnName="REMARK" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:dbo-->
+</EOS-Data-Mapping>

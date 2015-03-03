@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="StudentByUnit" displayName="StudentByUnit" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorName as StudentName,&#13;
+c.Commission,&#13;
+Duty,&#13;
+s.DegreeID,&#13;
+s.EduLevel,&#13;
+c.ClassName,&#13;
+f.operatorName as HeadTeacherName,&#13;
+s.Birthdate,&#13;
+Sex,&#13;
+c.BeginTime as CommissTime&#13;
+ from student s &#13;
+left join class c on s.classid = c.classid&#13;
+left join eosoperator e on s.studentid = e.operatorid&#13;
+left join eosoperator f on c.HeadTeacherID = f.operatorid</createSQL>
+            <field name="StudentName" displayName="StudentName" defineType="String" columnName="StudentName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="Commission" displayName="Commission" defineType="String" columnName="Commission" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Duty" displayName="Duty" defineType="String" columnName="Duty" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="DegreeID" displayName="DegreeID" defineType="int" columnName="DegreeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="EduLevel" displayName="EduLevel" defineType="String" columnName="EduLevel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="HeadTeacherName" displayName="HeadTeacherName" defineType="String" columnName="HeadTeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="Birthdate" displayName="Birthdate" defineType="Date" columnName="Birthdate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Sex" displayName="Sex" defineType="String" columnName="Sex" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="CommissTime" displayName="CommissTime" defineType="Date" columnName="CommissTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

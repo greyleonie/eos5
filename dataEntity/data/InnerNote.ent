@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="InnerNote" displayName="InnerNote" type="entity" tableName="InnerNote" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>内部短信息表&#13;
+信息类型 MSGTYPE取值:&#13;
+1---为内部消息发送;&#13;
+2---为内部消息接收;&#13;
+&#13;
+&#13;
+是否已读 ISREAD取值:&#13;
+0--未读;&#13;
+1--已读.</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="MSGID" displayName="MSGID" defineType="int" columnName="MSGID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="MSGTITLE" displayName="MSGTITLE" defineType="String" columnName="MSGTITLE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="CONTENT" displayName="CONTENT" defineType="String" columnName="CONTENT" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>256</length>
+                <precision>0</precision>
+            </field>
+            <field name="MSGTYPE" displayName="MSGTYPE" defineType="char" columnName="MSGTYPE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="SENDACCOUNT" displayName="SENDACCOUNT" defineType="int" columnName="SENDACCOUNT" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="SENDDATE" displayName="SENDDATE" defineType="TimeStamp" columnName="SENDDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="RECACCOUNT" displayName="RECACCOUNT" defineType="String" columnName="RECACCOUNT" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>1024</length>
+                <precision>0</precision>
+            </field>
+            <field name="ISREAD" displayName="ISREAD" defineType="char" columnName="ISREAD" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="MSGURL" displayName="MSGURL" defineType="String" columnName="MSGURL" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>256</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:dbo-->
+</EOS-Data-Mapping>

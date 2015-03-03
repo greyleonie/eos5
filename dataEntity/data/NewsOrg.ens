@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="NewsOrg" displayName="NewsOrg" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+n.*,&#13;
+e.orgName as departmentName&#13;
+ from News n,&#13;
+EOSORG_T_Organization e where n.Department=e.orgID</createSQL>
+            <field name="NewsID" displayName="NewsID" defineType="int" columnName="NewsID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Title" displayName="Title" defineType="String" columnName="Title" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="Content" displayName="Content" defineType="LongVarchar" columnName="Content" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1073741823</length>
+                <precision>0</precision>
+            </field>
+            <field name="Columns" displayName="Columns" defineType="String" columnName="Columns" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Publisher" displayName="Publisher" defineType="int" columnName="Publisher" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PublisherName" displayName="PublisherName" defineType="String" columnName="PublisherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="Department" displayName="Department" defineType="BigDecimal" columnName="Department" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="PublishDate" displayName="PublishDate" defineType="Date" columnName="PublishDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Subhead" displayName="Subhead" defineType="String" columnName="Subhead" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="isNews" displayName="isNews" defineType="smallint" columnName="isNews" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="departmentName" displayName="departmentName" defineType="String" columnName="departmentName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

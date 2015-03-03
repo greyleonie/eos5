@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CAR_CARINFO" displayName="CAR_CARINFO" type="entity" tableName="CAR_CARINFO" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>车辆信息表，记录车辆信息。&#13;
+车辆状态：&#13;
+  1 -- 可用；&#13;
+  2 -- 损坏；&#13;
+  3 -- 维修；&#13;
+  4 -- 报废；</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="CarID" displayName="CarID" defineType="int" columnName="CarID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="CARNO" displayName="CARNO" defineType="String" columnName="CARNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="MANUNO" displayName="MANUNO" defineType="String" columnName="MANUNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="FRAMENO" displayName="FRAMENO" defineType="String" columnName="FRAMENO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="CARTYPE" displayName="CARTYPE" defineType="String" columnName="CARTYPE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="DRIVER" displayName="DRIVER" defineType="String" columnName="DRIVER" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="PRICE" displayName="PRICE" defineType="BigDecimal" columnName="PRICE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <length>19</length>
+                <precision>4</precision>
+            </field>
+            <field name="BUYDATE" displayName="BUYDATE" defineType="Date" columnName="BUYDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ENGINENO" displayName="ENGINENO" defineType="String" columnName="ENGINENO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="STATE" displayName="STATE" defineType="char" columnName="STATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:dbo-->
+</EOS-Data-Mapping>

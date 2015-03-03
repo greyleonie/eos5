@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<package>
+    <elements displayName="ReportManage" canExport="true">
+        <element name="BL_studentStatData" type="bizlet" paramFixed="false" canExport="true" displayName="BL_studentStatData">
+            <description>班级学员统计数据处理</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.report.ReportManage.BL_studentStatData</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出节点</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入学员list</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_studentStatDegree" type="bizlet" paramFixed="false" canExport="true" displayName="BL_studentStatDegree">
+            <description>处理班级学员统计学历构成数据</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.report.ReportManage.BL_studentStatDegree</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出学历数据list</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入班级总人数</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_dealCourseTeacherID" type="bizlet" paramFixed="false" canExport="true" displayName="BL_dealCourseTeacherID">
+            <description>处理班级课程任课教师的ID，并将其连接成查询字符串</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.report.ReportManage.BL_dealCourseTeacherID</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入TeacherID的list</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出结果路径</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入连接字符串的字段名</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_uniteTeacherCourse" type="bizlet" paramFixed="false" canExport="true" displayName="BL_uniteTeacherCourse">
+            <description>合并班级老师和课程</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.report.ReportManage.BL_uniteTeacherCourse</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出教师列表</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入课程列表</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_uniteTeamStudent" type="bizlet" paramFixed="false" canExport="true" displayName="BL_uniteTeamStudent">
+            <description>将Student分组加到Team List 中</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.report.ReportManage.BL_uniteTeamStudent</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出TeamList</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Student List</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+    </elements>
+</package>

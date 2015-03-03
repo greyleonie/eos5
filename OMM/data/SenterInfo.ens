@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="OMM" displayName="OMM">
+        <EOSEntity name="SenterInfo" displayName="SenterInfo" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorID,&#13;
+e.operatorName,&#13;
+t.MobileTel,&#13;
+t.Email&#13;
+ from EOSOperator e inner join Teacher t on t.TeacherID=e.operatorID</createSQL>
+            <field name="operatorID" displayName="operatorID" defineType="BigDecimal" columnName="operatorID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="MobileTel" displayName="MobileTel" defineType="String" columnName="MobileTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="Email" displayName="Email" defineType="String" columnName="Email" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

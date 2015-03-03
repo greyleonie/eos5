@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CAPT_MAINTAINDETAILVIEW" displayName="CAPT_MAINTAINDETAILVIEW" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+d.*,&#13;
+capt.TYPECODE,&#13;
+capt.CAPTNAME,&#13;
+capt.SPECIA,&#13;
+capt.CAPTCODE,&#13;
+capt.BRANDNAME,&#13;
+dic.businName as UNITNAME,&#13;
+type.TYPENAME,&#13;
+m.MAINTAINER,&#13;
+v.VINDNAME as VINDNAME,&#13;
+m.MAINTAINDATE,&#13;
+m.RETURNDATE&#13;
+ from CAPT_MAINTAINDETAIL d&#13;
+	left join CAPT_CAPITALINFO capt on capt.CAPTID = d.CAPTID  &#13;
+	left join BNDICT_T_Dictionary dic on (dic.businTypeID ='dx_unit' and dic.businID = capt.TYPECODE)&#13;
+	left join CAPT_TYPE type on type.TYPECODE = capt.TYPECODE&#13;
+	left join CAPT_MAINTAIN m on m.MAINTAINID = d.MAINTAINID&#13;
+	left join CAPT_VINDICATOR v on v.VINDCODE = m.VINDCODE and capt.STATE=1</createSQL>
+            <field name="DETAILID" displayName="DETAILID" defineType="int" columnName="DETAILID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="MAINTAINID" displayName="MAINTAINID" defineType="int" columnName="MAINTAINID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CaptID" displayName="CaptID" defineType="int" columnName="CAPTID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PRICE" displayName="PRICE" defineType="BigDecimal" columnName="PRICE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="REMARK" displayName="REMARK" defineType="String" columnName="REMARK" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPECODE" displayName="TYPECODE" defineType="String" columnName="TYPECODE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTNAME" displayName="CAPTNAME" defineType="String" columnName="CAPTNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="SPECIA" displayName="SPECIA" defineType="String" columnName="SPECIA" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTCODE" displayName="CAPTCODE" defineType="String" columnName="CAPTCODE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="BRANDNAME" displayName="BRANDNAME" defineType="String" columnName="BRANDNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>30</length>
+                <precision>0</precision>
+            </field>
+            <field name="UNITNAME" displayName="UNITNAME" defineType="String" columnName="UNITNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPENAME" displayName="TYPENAME" defineType="String" columnName="TYPENAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="MAINTAINER" displayName="MAINTAINER" defineType="String" columnName="MAINTAINER" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="VINDNAME" displayName="VINDNAME" defineType="String" columnName="VINDNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="MAINTAINDATE" displayName="MAINTAINDATE" defineType="Date" columnName="MAINTAINDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="RETURNDATE" displayName="RETURNDATE" defineType="Date" columnName="RETURNDATE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="VideoUnReg" displayName="VideoUnReg" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select 1 as PlanType ,CourseID as PlanID, ClassDate as RecordTime,convert(varchar(10),ClassTime,108) as ClassTime,ClassRoomID as ClassRoom,CourseTitle as Title,OutSider as Speaker,OutSideOrg as Org,OutSidePost as Post from course &#13;
+	left join teacher on (teachers=teacherid)&#13;
+	left join eosoperator on (teachers=operatorid)&#13;
+	left join EOSORG_T_Organization on (DepartmentID=orgID)&#13;
+	where   isadopted=1 and isusevideo=1  and rtrim(ltrim(CourseTitle)) not in &#13;
+        (select rtrim(ltrim(Title)) from VideoRegister where PlanType=1 and Title is not null) &#13;
+        and rtrim(ltrim(OutSider)) not in (select rtrim(ltrim(Speaker)) from VideoRegister where PlanType=1 and Speaker is not null) &#13;
+union all&#13;
+&#13;
+select 2 as PlanType ,RecordID as PlanID, RecordDate as RecordTime,convert(varchar(10),RecordTime,108) as ClassTime,'' as ClassRoom,CourseTitle as Title,Teacher as Speaker,TeacherOrg as Org,TeacherPost as Post &#13;
+from distanceteaching where RecordID not in (select PlanID from VideoRegister where PlanType=2)</createSQL>
+            <field name="PlanType" displayName="PlanType" defineType="int" columnName="PlanType" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PlanID" displayName="PlanID" defineType="int" columnName="PlanID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RecordTime" displayName="RecordTime" defineType="Date" columnName="RecordTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ClassTime" displayName="ClassTime" defineType="String" columnName="ClassTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ClassRoom" displayName="ClassRoom" defineType="int" columnName="ClassRoom" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Title" displayName="Title" defineType="String" columnName="Title" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Speaker" displayName="Speaker" defineType="String" columnName="Speaker" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Org" displayName="Org" defineType="String" columnName="Org" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Post" displayName="Post" defineType="String" columnName="Post" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

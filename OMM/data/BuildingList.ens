@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="OMM" displayName="OMM">
+        <EOSEntity name="BuildingList" displayName="BuildingList" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+distinct r.RoomTypeID,&#13;
+r.BuildingID,&#13;
+b.BuildingName&#13;
+ from Room r left join Building b on r.BuildingID=b.BuildingID</createSQL>
+            <field name="RoomTypeID" displayName="RoomTypeID" defineType="int" columnName="RoomTypeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BuildingID" displayName="BuildingID" defineType="int" columnName="BuildingID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BuildingName" displayName="BuildingName" defineType="String" columnName="BuildingName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

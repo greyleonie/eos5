@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryMonthCard" displayName="QueryMonthCard" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description>月保卡充值记录查询实体</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+m.*,&#13;
+e.operatorName,&#13;
+b.BusinessMoney&#13;
+ from MonthCard m left join EOSOperator e&#13;
+on m.UserID = e.operatorID left join BusinessLogs b on m.BusinessLogsID = b.BUsinessLogsID</createSQL>
+            <field name="MonthCardID" displayName="MonthCardID" defineType="int" columnName="MonthCardID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BusinessLogsID" displayName="BusinessLogsID" defineType="int" columnName="BusinessLogsID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="UserID" displayName="UserID" defineType="int" columnName="UserID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CarNO" displayName="CarNO" defineType="String" columnName="CarNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="MonthCount" displayName="MonthCount" defineType="int" columnName="MonthCount" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StartTime" displayName="StartTime" defineType="Date" columnName="StartTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd</displayFormat>-->
+            </field>
+            <field name="EndTime" displayName="EndTime" defineType="Date" columnName="EndTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd</displayFormat>-->
+            </field>
+            <field name="CarRemark" displayName="CarRemark" defineType="String" columnName="CarRemark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="CreatTime" displayName="CreatTime" defineType="Date" columnName="CreatTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Enable" displayName="Enable" defineType="smallint" columnName="Enable" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="BusinessMoney" displayName="BusinessMoney" defineType="double" columnName="BusinessMoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryCostClaim" displayName="QueryCostClaim" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+c.*,&#13;
+e.orgName&#13;
+ from CostClaim  c left join EOSORG_T_Organization e on c.DepID = e.orgID</createSQL>
+            <field name="RequestID" displayName="RequestID" defineType="int" columnName="RequestID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="processInstID" displayName="processInstID" defineType="int" columnName="processInstID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="activityDefID" displayName="activityDefID" defineType="String" columnName="activityDefID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="participant" displayName="participant" defineType="String" columnName="participant" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>2000</length>
+                <precision>0</precision>
+            </field>
+            <field name="passParticipant" displayName="passParticipant" defineType="String" columnName="passParticipant" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>2000</length>
+                <precision>0</precision>
+            </field>
+            <field name="UserID" displayName="UserID" defineType="int" columnName="UserID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DepID" displayName="DepID" defineType="int" columnName="DepID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClaimDate" displayName="ClaimDate" defineType="Date" columnName="ClaimDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Witnesses" displayName="Witnesses" defineType="String" columnName="Witnesses" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="fundChannel" displayName="fundChannel" defineType="String" columnName="fundChannel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Borrowing" displayName="Borrowing" defineType="BigDecimal" columnName="Borrowing" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="Refund" displayName="Refund" defineType="BigDecimal" columnName="Refund" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="orgName" displayName="orgName" defineType="String" columnName="orgName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

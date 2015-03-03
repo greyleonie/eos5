@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="WorkArrangeReplay" displayName="WorkArrangeReplay" type="entity" tableName="WorkArrangeReplay" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>工作安排回复，针对工作安排进行回复，由于可以安排多个人，所以一个任务可能有多个回复，与工作安排表WorkArrange是一对多关系。</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="ReplayID" displayName="ReplayID" defineType="int" columnName="ReplayID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="ArrangeID" displayName="ArrangeID" defineType="int" columnName="ArrangeID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="USERID" displayName="USERID" defineType="int" columnName="USERID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="Reply" displayName="Reply" defineType="String" columnName="Reply" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="ReplyTime" displayName="ReplyTime" defineType="Date" columnName="ReplyTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

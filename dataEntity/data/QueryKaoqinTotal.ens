@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryKaoqinTotal" displayName="QueryKaoqinTotal" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description>查询实体__班级考勤总表</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+e.operatorname,&#13;
+s.StudentID,&#13;
+s.WorkingOrgan,&#13;
+s.Duty,&#13;
+s.ClassID,&#13;
+la0.Count0,&#13;
+la1.Count1,&#13;
+la2.Count2,&#13;
+la3.Count3,&#13;
+la4.Count4&#13;
+ FROM  student s &#13;
+left join (select count(StudentlaterLogsID) as Count0 ,&#13;
+StudentID from StudentlaterLogs where state=0 or state=1 group by StudentID  ) as la0 on s.StudentID=la0.StudentID&#13;
+left join (select count(StudentlaterLogsID) as Count1 ,&#13;
+StudentID from StudentlaterLogs where state=1 group by StudentID  ) as la1 on s.StudentID=la1.StudentID&#13;
+left join (select count(StudentlaterLogsID) as Count2 ,&#13;
+StudentID from StudentlaterLogs where state=2 group by StudentID  ) as la2 on s.StudentID=la2.StudentID&#13;
+left join (select count(StudentlaterLogsID) as Count3 ,&#13;
+StudentID from StudentlaterLogs where state=3 group by StudentID  ) as la3 on s.StudentID=la3.StudentID&#13;
+left join (select count(StudentlaterLogsID) as Count4 ,&#13;
+StudentID from StudentlaterLogs where state=4 group by StudentID  ) as la4 on s.StudentID=la4.StudentID&#13;
+,&#13;
+eosoperator e&#13;
+where  e.operatorid=s.studentid and e.status=1</createSQL>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="WorkingOrgan" displayName="WorkingOrgan" defineType="String" columnName="WorkingOrgan" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Duty" displayName="Duty" defineType="String" columnName="Duty" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Count0" displayName="Count0" defineType="int" columnName="Count0" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Count1" displayName="Count1" defineType="int" columnName="Count1" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Count2" displayName="Count2" defineType="int" columnName="Count2" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Count3" displayName="Count3" defineType="int" columnName="Count3" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Count4" displayName="Count4" defineType="int" columnName="Count4" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

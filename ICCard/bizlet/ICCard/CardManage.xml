@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<package>
+    <elements displayName="CardManage" canExport="true">
+        <element name="BL_AddCard" type="bizlet" paramFixed="false" canExport="true" displayName="BL_AddCard">
+            <description>IC卡注册</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_AddCard</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Card实体</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出注册失败个数</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_issueCard" type="bizlet" paramFixed="false" canExport="true" displayName="BL_issueCard">
+            <description>发卡</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_issueCard</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">fid/用户id</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Card</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入SessionEntity</column>
+                    </row>
+                    <row num="3">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出list[@type='CARDDATALIST']</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_getCurrentELockData" type="bizlet" paramFixed="false" canExport="true" displayName="BL_getCurrentELockData">
+            <description>获取当前要下传权限的电子门锁记录</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_getCurrentELockData</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入参数CardID</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入参数RoomID</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入参数EndTime</column>
+                    </row>
+                    <row num="3">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出记录ElockData</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_savedeposit" type="bizlet" paramFixed="false" canExport="true" displayName="BL_savedeposit">
+            <description>保存充值信息</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_savedeposit</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">Card</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Card</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">list[@type='CARDDATALIST']</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出写入卡中的数据CARDDATALIST</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">SessionEntity</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入SessionEntity</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_cancelDeposit" type="bizlet" paramFixed="false" canExport="true" displayName="BL_cancelDeposit">
+            <description>撤消充值</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_cancelDeposit</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">QueryBusinessLogs</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入QueryBusinessLogs</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">Card</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Card</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">list[@type='CARDDATALIST']</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出写入卡中的数据CARDDATALIST</column>
+                    </row>
+                    <row num="3">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">info</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出info</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_virement" type="bizlet" paramFixed="false" canExport="true" displayName="BL_virement">
+            <description>卡转帐（余额转出）</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">ICCard.CardManage.BL_virement</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">Card</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入Card</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">list[@type='CARDDATALIST']</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出写入卡中的数据CARDDATALIST</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入转帐金额</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+    </elements>
+</package>

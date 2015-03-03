@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<package>
+    <elements displayName="ChangeId2Name" canExport="true">
+        <element name="BL_changeId2Name" type="bizlet" paramFixed="false" canExport="true" displayName="BL_changeId2Name">
+            <description/>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">表名</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">要查询的字段名</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">该表的PK</column>
+                    </row>
+                    <row num="3">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">id连接成的字符串</column>
+                    </row>
+                    <row num="4">
+                        <column name="passing">in_out</column>
+                        <column name="type">field</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">返回的name</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_changeIdsToSqlstr" type="bizlet" paramFixed="false" canExport="true" displayName="BL_changeIdsToSqlstr">
+            <description>把字符串分解并重新组合为sql查询条件语句</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.ChangeId2Name.BL_changeIdsToSqlstr</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出节点</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入要转化的字符串</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入字段名称</column>
+                    </row>
+                    <row num="3">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">输入连接字符串 (or/and/...)</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_subStringCount" type="bizlet" paramFixed="false" canExport="true" displayName="BL_subStringCount">
+            <description>取得用","分割的子字符串个数</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.ChangeId2Name.BL_subStringCount</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">field</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">子串个数</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">要分割的字符串</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_DefaultNameString" type="bizlet" paramFixed="false" canExport="true" displayName="BL_DefaultNameString">
+            <description>将姓名字符串取得默认的几个名字,多余的名称用...表示</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.ChangeId2Name.BL_DefaultNameString</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">field</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出后的名字的字符串</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">需要改变的名字字符串</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">取得几个名字的数目</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_DefaultSubString" type="bizlet" paramFixed="false" canExport="true" displayName="BL_DefaultSubString">
+            <description>设置字符串显示默认子字符串,不显示的用"..."表示</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">talent.core.ChangeId2Name.BL_DefaultSubString</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">field</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输出的子字符串</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">需要输入的字符串</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">constant</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">显示子字符串的长度</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+    </elements>
+</package>

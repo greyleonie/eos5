@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="WorkLoadConvert" displayName="WorkLoadConvert" type="entity" tableName="WorkLoadConvert" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>教师工作量核算标准表，将每一种工作类别、项目折算成一定比例的课次。</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="ConvertID" displayName="ConvertID" defineType="int" columnName="ConvertID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="WorkType" displayName="WorkType" defineType="String" columnName="WorkType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="WorkItem" displayName="WorkItem" defineType="String" columnName="WorkItem" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassNum" displayName="ClassNum" defineType="BigDecimal" columnName="ClassNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <length>18</length>
+                <precision>5</precision>
+            </field>
+            <field name="Unit" displayName="Unit" defineType="String" columnName="Unit" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsAdopted" displayName="IsAdopted" defineType="int" columnName="IsAdopted" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:dbo-->
+</EOS-Data-Mapping>

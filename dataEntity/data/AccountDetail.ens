@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="AccountDetail" displayName="AccountDetail" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+CreatedTime,&#13;
+Range,&#13;
+PreGuestNum,&#13;
+PreGuestMoney,&#13;
+PreStuNum,&#13;
+PreStuMoney,&#13;
+HousingCheck,&#13;
+HousingCash,&#13;
+SubmitCheck,&#13;
+SubmitCash,&#13;
+MeetingCost,&#13;
+TelecomCost,&#13;
+OtherCost,&#13;
+(HousingCash+HousingCheck+MeetingCost+TelecomCost+OtherCost) as TotalCost&#13;
+ FROM tblReceptionChangeRec</createSQL>
+            <field name="CreatedTime" displayName="CreatedTime" defineType="Date" columnName="CreatedTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Range" displayName="Range" defineType="int" columnName="Range" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PreGuestNum" displayName="PreGuestNum" defineType="int" columnName="PreGuestNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PreGuestMoney" displayName="PreGuestMoney" defineType="double" columnName="PreGuestMoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="PreStuNum" displayName="PreStuNum" defineType="int" columnName="PreStuNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PreStuMoney" displayName="PreStuMoney" defineType="double" columnName="PreStuMoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="HousingCheck" displayName="HousingCheck" defineType="double" columnName="HousingCheck" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="HousingCash" displayName="HousingCash" defineType="double" columnName="HousingCash" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="SubmitCheck" displayName="SubmitCheck" defineType="double" columnName="SubmitCheck" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="SubmitCash" displayName="SubmitCash" defineType="double" columnName="SubmitCash" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="MeetingCost" displayName="MeetingCost" defineType="double" columnName="MeetingCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="TelecomCost" displayName="TelecomCost" defineType="double" columnName="TelecomCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="OtherCost" displayName="OtherCost" defineType="double" columnName="OtherCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+            <field name="TotalCost" displayName="TotalCost" defineType="double" columnName="TotalCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>13</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

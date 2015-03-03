@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryFlowData" displayName="QueryFlowData" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select f.*,e.operatorName as userName,d.workItemName from flowdata f left join eosoperator e on f.userid=e.userid &#13;
+left join WFWorkItem d on d.processInstID=f.processInstID and d.activityDefID=f.activityDefID &#13;
+group by f.dataID,f.elementKey,f.elementValue,f.processInstID,f.archiveID,f.activityDefID,f.userID,f.userDate,e.operatorName,d.workItemName</createSQL>
+            <field name="dataID" displayName="dataID" defineType="long" columnName="dataID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="elementKey" displayName="elementKey" defineType="String" columnName="elementKey" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="elementValue" displayName="elementValue" defineType="String" columnName="elementValue" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>2000</length>
+                <precision>0</precision>
+            </field>
+            <field name="processInstID" displayName="processInstID" defineType="int" columnName="processInstID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="archiveID" displayName="archiveID" defineType="int" columnName="archiveID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="activityDefID" displayName="activityDefID" defineType="String" columnName="activityDefID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="userID" displayName="userID" defineType="String" columnName="userID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="userDate" displayName="userDate" defineType="String" columnName="userDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="userName" displayName="userName" defineType="String" columnName="userName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="workItemName" displayName="workItemName" defineType="String" columnName="workItemName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

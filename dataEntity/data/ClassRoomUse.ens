@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="ClassRoomUse" displayName="ClassRoomUse" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select UsingTypeID,LogsID,RoomID,UsingOrgan,LinkMan,LinkTel,PurPose,UsingDate,UsingNoon from (&#13;
+select '3'as UsingTypeID  ,UsingClassroomLogsID  as LogsID,logs.RoomID as RoomID,logs.UsingOrgan,logs.LinkMan,logs.LinkTel,logs.PurPose,logs.UsingDate,logs.UsingNoon&#13;
+	from usingclassroomlogs logs&#13;
+where logs.RoomID is not null  and enable=1&#13;
+union all&#13;
+select '2'as UsingTypeID, c.CourseID as LogsID ,c.ClassRoomID as RoomID, cla.ClassName as UsingOrgan,e.operatorName as LinkMan,t.MobileTel as LinkTel,c.CourseTitle as PurPose,c.ClassDate as UsingDate,c.ClassNoon as UsingNoon&#13;
+	from course c&#13;
+       left join EOSOperator e on e.operatorID = c.Teachers&#13;
+       left join teacher t on t.teacherid =c.teachers &#13;
+       left join class cla on cla.classid =c.classid&#13;
+where c.ClassRoomID is not null and c.TeahchingModelID not in (1,17)&#13;
+       ) as UsingLogs</createSQL>
+            <field name="UsingTypeID" displayName="UsingTypeID" defineType="String" columnName="UsingTypeID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="LogsID" displayName="LogsID" defineType="int" columnName="LogsID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="UsingOrgan" displayName="UsingOrgan" defineType="String" columnName="UsingOrgan" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="LinkMan" displayName="LinkMan" defineType="String" columnName="LinkMan" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="LinkTel" displayName="LinkTel" defineType="String" columnName="LinkTel" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="PurPose" displayName="PurPose" defineType="String" columnName="PurPose" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="UsingDate" displayName="UsingDate" defineType="Date" columnName="UsingDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd</displayFormat>-->
+            </field>
+            <field name="UsingNoon" displayName="UsingNoon" defineType="int" columnName="UsingNoon" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

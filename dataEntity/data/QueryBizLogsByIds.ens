@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryBizLogsByIds" displayName="QueryBizLogsByIds" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+b.businessLogsid,&#13;
+b.businessTypeid,&#13;
+d.businesstype,&#13;
+Convert(varchar(20),&#13;
+b.HappeningTime,&#13;
+120) happeningtime,&#13;
+b.cardusingtimes,&#13;
+b.businessmoney,&#13;
+b.balance,&#13;
+IsNull(b.OperatorIP,&#13;
+'') operatorip,&#13;
+IsNull(b.OperatorName,&#13;
+'') operatorname,&#13;
+b.invoiced,&#13;
+b.backupdata,&#13;
+IsNull(b.CardCost,&#13;
+0) cardcost,&#13;
+b.enable,&#13;
+b.posid,&#13;
+e.postypeid,&#13;
+e.shortname,&#13;
+e.chargeDepartmentid poschargedepartmentid,&#13;
+b.userid,&#13;
+a.operatorName username,&#13;
+a.usertypeid,&#13;
+a.cardid,&#13;
+IsNull(f.ClassID,&#13;
+'') classid,&#13;
+IsNull(t.DepartmentID,&#13;
+'') departmentid,&#13;
+c.cardtypeid,&#13;
+c.innercardid,&#13;
+c.cardcoverno,&#13;
+c.stateid,&#13;
+c.cardlastsum&#13;
+ from BusinessLogs b &#13;
+left join BusinessType d on d.BusinessTypeID=b.BusinessTypeID left join EOSOperator a on a.operatorID=b.UserID &#13;
+left join Card c on c.CardID=a.CardID left join Pos e on e.POSID = b.POSID left join Student f on f.StudentID=b.UserID left join Teacher t on t.TeacherID=b.UserID&#13;
+where b.enable=1</createSQL>
+            <field name="businessLogsid" displayName="businessLogsid" defineType="long" columnName="businessLogsid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="businessTypeid" displayName="businessTypeid" defineType="int" columnName="businessTypeid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="businesstype" displayName="businesstype" defineType="String" columnName="businesstype" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="happeningtime" displayName="happeningtime" defineType="String" columnName="happeningtime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardusingtimes" displayName="cardusingtimes" defineType="int" columnName="cardusingtimes" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="businessmoney" displayName="businessmoney" defineType="double" columnName="businessmoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="balance" displayName="balance" defineType="double" columnName="balance" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorip" displayName="operatorip" defineType="String" columnName="operatorip" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="invoiced" displayName="invoiced" defineType="smallint" columnName="invoiced" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="backupdata" displayName="backupdata" defineType="String" columnName="backupdata" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardcost" displayName="cardcost" defineType="int" columnName="cardcost" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="enable" displayName="enable" defineType="smallint" columnName="enable" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="posid" displayName="posid" defineType="int" columnName="posid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="postypeid" displayName="postypeid" defineType="int" columnName="postypeid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="shortname" displayName="shortname" defineType="String" columnName="shortname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="poschargedepartmentid" displayName="poschargedepartmentid" defineType="int" columnName="poschargedepartmentid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="userid" displayName="userid" defineType="int" columnName="userid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="username" displayName="username" defineType="String" columnName="username" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="usertypeid" displayName="usertypeid" defineType="int" columnName="usertypeid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardid" displayName="cardid" defineType="int" columnName="cardid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="classid" displayName="classid" defineType="int" columnName="classid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="departmentid" displayName="departmentid" defineType="int" columnName="departmentid" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardtypeid" displayName="cardtypeid" defineType="int" columnName="cardtypeid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="innercardid" displayName="innercardid" defineType="int" columnName="innercardid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardcoverno" displayName="cardcoverno" defineType="String" columnName="cardcoverno" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="stateid" displayName="stateid" defineType="int" columnName="stateid" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="cardlastsum" displayName="cardlastsum" defineType="BigDecimal" columnName="cardlastsum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

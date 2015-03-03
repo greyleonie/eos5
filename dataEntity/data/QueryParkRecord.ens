@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryParkRecord" displayName="QueryParkRecord" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+p.*,&#13;
+e.operatorName&#13;
+ from ParkReadCardRecord p ,&#13;
+EOSOperator e where p.UserID = e.operatorID</createSQL>
+            <field name="RecordID" displayName="RecordID" defineType="int" columnName="RecordID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="UserID" displayName="UserID" defineType="int" columnName="UserID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CardType" displayName="CardType" defineType="int" columnName="CardType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CarNO" displayName="CarNO" defineType="String" columnName="CarNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="ComeTime" displayName="ComeTime" defineType="TimeStamp" columnName="ComeTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="LeaveTime" displayName="LeaveTime" defineType="TimeStamp" columnName="LeaveTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
+            </field>
+            <field name="Status" displayName="Status" defineType="int" columnName="Status" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CountTime" displayName="CountTime" defineType="int" columnName="CountTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ParkRate" displayName="ParkRate" defineType="double" columnName="ParkRate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="Money" displayName="Money" defineType="double" columnName="Money" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="PayStyle" displayName="PayStyle" defineType="int" columnName="PayStyle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ShouldMoney" displayName="ShouldMoney" defineType="double" columnName="ShouldMoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="ArtualMoney" displayName="ArtualMoney" defineType="double" columnName="ArtualMoney" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="Remark" displayName="Remark" defineType="String" columnName="Remark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsChkRead" displayName="IsChkRead" defineType="int" columnName="IsChkRead" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ChkReadCardID" displayName="ChkReadCardID" defineType="int" columnName="ChkReadCardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ChkReadType" displayName="ChkReadType" defineType="int" columnName="ChkReadType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="operatorName" displayName="operatorName" defineType="String" columnName="operatorName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

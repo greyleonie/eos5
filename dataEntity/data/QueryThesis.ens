@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryThesis" displayName="QueryThesis" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select e.operatorname , e2.operatorname as commentTeacher,p.UnitTitle ,  s.StudentNO,s.ClassID, t.* &#13;
+from EOSOperator e,Student s, Thesis t left join EOSOperator e2 on t.TeacherID=e2.operatorID  left join TeachingPlanUnit p on  t.TeachingGroupID=p.UnitID&#13;
+where t.StudentID=e.operatorID  and e.status=1 and s.StudentID=t.StudentID</createSQL>
+            <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="commentTeacher" displayName="commentTeacher" defineType="String" columnName="commentTeacher" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="UnitTitle" displayName="UnitTitle" defineType="String" columnName="UnitTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentNO" displayName="StudentNO" defineType="String" columnName="StudentNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ThesisID" displayName="ThesisID" defineType="int" columnName="ThesisID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ThesisTitle" displayName="ThesisTitle" defineType="String" columnName="ThesisTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CommitTime" displayName="CommitTime" defineType="Date" columnName="CommitTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Score" displayName="Score" defineType="String" columnName="Score" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeacherID" displayName="TeacherID" defineType="int" columnName="TeacherID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeacherName" displayName="TeacherName" defineType="String" columnName="TeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="GradeDate" displayName="GradeDate" defineType="Date" columnName="GradeDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Remark" displayName="Remark" defineType="String" columnName="Remark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="ContentType" displayName="ContentType" defineType="String" columnName="ContentType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeachingGroupID" displayName="TeachingGroupID" defineType="int" columnName="TeachingGroupID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Opinion" displayName="Opinion" defineType="String" columnName="Opinion" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>2000</length>
+                <precision>0</precision>
+            </field>
+            <field name="isGood" displayName="isGood" defineType="int" columnName="isGood" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Summary" displayName="Summary" defineType="String" columnName="Summary" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>200</length>
+                <precision>0</precision>
+            </field>
+            <field name="Iscooperate" displayName="Iscooperate" defineType="int" columnName="Iscooperate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="cooperators" displayName="cooperators" defineType="String" columnName="cooperators" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="state" displayName="state" defineType="int" columnName="state" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

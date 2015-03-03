@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="OMM" displayName="OMM">
+        <EOSEntity name="QITDevice" displayName="QITDevice" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select a.DeviceID as DeviceID,b.TypeName as TypeName,a.DevCode as DevCode,c.CAPTNAME as CAPTNAME from (OMM_ITDevice as a left join CAPT_CAPITALINFO as c on a.CAPTID=c.CAPTID) left join OMM_DevType as b on a.TypeID=b.TypeID</createSQL>
+            <field name="DeviceID" displayName="DeviceID" defineType="int" columnName="DeviceID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TypeName" displayName="TypeName" defineType="String" columnName="TypeName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="DevCode" displayName="DevCode" defineType="String" columnName="DevCode" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="CAPTNAME" displayName="CAPTNAME" defineType="String" columnName="CAPTNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:PlatformUser-->
+</EOS-Data-Mapping>

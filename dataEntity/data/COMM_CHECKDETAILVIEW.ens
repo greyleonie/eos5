@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="COMM_CHECKDETAILVIEW" displayName="COMM_CHECKDETAILVIEW" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+d.*,&#13;
+comm.TYPEID,&#13;
+comm.COMMNAME,&#13;
+comm.SPECIA,&#13;
+isnull(comm.STORAGE,&#13;
+0)as STORAGE,&#13;
+(isnull(d.BEGINNUM,0)+ isnull(d.ENTRY,0)-isnull(d.DELIVERY,0)) as NOMINALNUM,&#13;
+dic.businName as UNITNAME,&#13;
+type.TYPENAME&#13;
+ from COMM_CHECKDETAIL d&#13;
+	left join COMM_COMMODITYINFO comm on comm.COMMID = d.COMMID&#13;
+	left join BNDICT_T_Dictionary dic on dic.businTypeID ='dx_unit' and dic.businID = comm.UNITID&#13;
+	left join COMM_TYPE type on type.TYPEID = comm.TYPEID</createSQL>
+            <field name="DETAILID" displayName="DETAILID" defineType="int" columnName="DETAILID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CHECKID" displayName="CHECKID" defineType="int" columnName="CHECKID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="COMMID" displayName="COMMID" defineType="int" columnName="COMMID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="PRICE" displayName="PRICE" defineType="BigDecimal" columnName="PRICE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="AMOUNT" displayName="AMOUNT" defineType="BigDecimal" columnName="AMOUNT" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>21</length>
+                <precision>4</precision>
+            </field>
+            <field name="REMARK" displayName="REMARK" defineType="String" columnName="REMARK" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="BEGINTIME" displayName="BEGINTIME" defineType="Date" columnName="BEGINTIME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="BEGINNUM" displayName="BEGINNUM" defineType="int" columnName="BEGINNUM" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="STOCKTIME" displayName="STOCKTIME" defineType="Date" columnName="STOCKTIME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="STOCKNUM" displayName="STOCKNUM" defineType="int" columnName="STOCKNUM" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ENTRY" displayName="ENTRY" defineType="int" columnName="ENTRY" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DELIVERY" displayName="DELIVERY" defineType="int" columnName="DELIVERY" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="BALANCE" displayName="BALANCE" defineType="int" columnName="BALANCE" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPEID" displayName="TYPEID" defineType="int" columnName="TYPEID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="COMMNAME" displayName="COMMNAME" defineType="String" columnName="COMMNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="SPECIA" displayName="SPECIA" defineType="String" columnName="SPECIA" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="STORAGE" displayName="STORAGE" defineType="int" columnName="STORAGE" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="NOMINALNUM" displayName="NOMINALNUM" defineType="int" columnName="NOMINALNUM" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="UNITNAME" displayName="UNITNAME" defineType="String" columnName="UNITNAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="TYPENAME" displayName="TYPENAME" defineType="String" columnName="TYPENAME" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

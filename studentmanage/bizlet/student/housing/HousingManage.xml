@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<package>
+    <elements displayName="HousingManage" canExport="true">
+        <element name="BL_getVacancyNum" type="bizlet" paramFixed="false" canExport="true" displayName="getVacancyNum">
+            <description>得出房间的空闲床位树数</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.housing.HousingManage.BL_getVacancyNum</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出房间集合</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入住房记录集合</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_dealRoomByFlag" type="bizlet" paramFixed="false" canExport="true" displayName="BL_dealRoomByFlag">
+            <description>根据房间状态处理房间</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.housing.HousingManage.BL_dealRoomByFlag</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出房间列表</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">variable</column>
+                        <column name="value">/</column>
+                        <column name="paraType">String</column>
+                        <column name="name"/>
+                        <column name="desc">房间状态标识</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+        <element name="BL_assignStudentRoom" type="bizlet" paramFixed="false" canExport="true" displayName="assignStudentRoom">
+            <description>分配学员房间</description>
+            <propertyList>
+                <property name="name" type="0">
+                    <value>businessLogic</value>
+                </property>
+                <property name="action" type="2">
+                    <row num="0">
+                        <column num="0">student.housing.HousingManage.BL_assignStudentRoom</column>
+                        <column num="1">constant</column>
+                    </row>
+                </property>
+                <property name="parameter" type="5">
+                    <row num="0">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入输出学员列表</column>
+                    </row>
+                    <row num="1">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntityList</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">输入房间列表</column>
+                    </row>
+                    <row num="2">
+                        <column name="passing">in_out</column>
+                        <column name="type">EOSEntity</column>
+                        <column name="value">/</column>
+                        <column name="paraType">{Node}</column>
+                        <column name="name"/>
+                        <column name="desc">分配异常时输出异常信息</column>
+                    </row>
+                </property>
+            </propertyList>
+        </element>
+    </elements>
+</package>

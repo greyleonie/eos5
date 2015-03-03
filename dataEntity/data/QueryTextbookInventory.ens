@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="QueryTextbookInventory" displayName="QueryTextbookInventory" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+t.TextbookID,&#13;
+t.Title,&#13;
+t.Publisher,&#13;
+t.Author,&#13;
+t.PublishTime,&#13;
+t.Price,&#13;
+t.State,&#13;
+t.TextbookType,&#13;
+isnull(t.StockNum,&#13;
+0)as StockNum,&#13;
+(select isnull(sum(b.BuyNum),&#13;
+0)&#13;
+ from  textbookbuy b where b.textbookid = t.textbookid)  as Entry,&#13;
+&#13;
+(select isnull(sum(i.IssueNum),&#13;
+0) from textbookIssue i where i.textbookid = t.textbookid ) as Delivery,&#13;
+&#13;
+(select isnull(sum(i.DestroyIDNum),&#13;
+0) from textbookDestroy i where i.textbookid = t.textbookid ) as DeliveryDestroy&#13;
+from textbook t</createSQL>
+            <field name="TextbookID" displayName="TextbookID" defineType="int" columnName="TextbookID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Title" displayName="Title" defineType="String" columnName="Title" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Publisher" displayName="Publisher" defineType="String" columnName="Publisher" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Author" displayName="Author" defineType="String" columnName="Author" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="PublishTime" displayName="PublishTime" defineType="Date" columnName="PublishTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="Price" displayName="Price" defineType="BigDecimal" columnName="Price" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>number</dataType>-->
+                <description/>
+                <length>20</length>
+                <precision>2</precision>
+            </field>
+            <field name="State" displayName="State" defineType="int" columnName="State" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="TextbookType" displayName="TextbookType" defineType="String" columnName="TextbookType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="StockNum" displayName="StockNum" defineType="int" columnName="StockNum" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Entry" displayName="Entry" defineType="int" columnName="Entry" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Delivery" displayName="Delivery" defineType="int" columnName="Delivery" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="DeliveryDestroy" displayName="DeliveryDestroy" defineType="int" columnName="DeliveryDestroy" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX2-->
+</EOS-Data-Mapping>

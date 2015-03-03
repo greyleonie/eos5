@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CenterTaskStatis" displayName="CenterTaskStatis" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select PlanType,&#13;
+CourseID,&#13;
+CourseTitle,&#13;
+CourseRemarks,&#13;
+ClassDate,&#13;
+ClassTime,&#13;
+ClassNoon,&#13;
+ ClassRoom,&#13;
+IsUseKQJ,&#13;
+IsUseCourseWare,&#13;
+IsUseNotebookPC,&#13;
+IsTakeFeature,&#13;
+IsUseCamera,&#13;
+IsUseVideo,&#13;
+IsUseMediaPlayer,&#13;
+RadioPhones,&#13;
+WiredPhones,&#13;
+IsPlay,&#13;
+IsLive,&#13;
+IsRecord,&#13;
+Task from (&#13;
+select &#13;
+'1'as PlanType,&#13;
+CourseID,&#13;
+CourseTitle,&#13;
+Remarks as CourseRemarks,&#13;
+ClassDate,&#13;
+ClassTime,&#13;
+ClassNoon,&#13;
+RoomName as ClassRoom,&#13;
+IsUseKQJ,&#13;
+IsUseCourseWare,&#13;
+IsUseNotebookPC,&#13;
+IsTakeFeature,&#13;
+IsUseCamera,&#13;
+IsUseVideo,&#13;
+IsUseMediaPlayer,&#13;
+RadioPhones,&#13;
+WiredPhones,&#13;
+'0' as IsPlay,&#13;
+'0' as IsLive,&#13;
+'0' as IsRecord,&#13;
+'' as Task&#13;
+ from course  left join room on classroomid=roomid&#13;
+	where isadopted=1&#13;
+union all&#13;
+select '2'as PlanType,&#13;
+RecordID as CourseID ,&#13;
+CourseTitle,&#13;
+Remarks as CourseRemarks,&#13;
+RecordDate as ClassDate,&#13;
+RecordTime as ClassTime,&#13;
+RecordNoon as ClassNoon,&#13;
+Place as ClassRoom,&#13;
+'0' as IsUseKQJ,&#13;
+'0' as  IsUseCourseWare,&#13;
+'0' as  IsUseNotebookPC,&#13;
+'0' as  IsTakeFeature,&#13;
+'0' as  IsUseCamera,&#13;
+'0' as  IsUseVideo,&#13;
+'0' as  IsUseMediaPlayer,&#13;
+'0' as  RadioPhones,&#13;
+'0' as  WiredPhones,&#13;
+IsPlay ,&#13;
+IsLive,&#13;
+IsRecord,&#13;
+'' as Task&#13;
+	from  distanceteaching&#13;
+union all&#13;
+select '3'as PlanType,&#13;
+PlanID as CourseID ,&#13;
+'' as CourseTitle,&#13;
+Remarks as CourseRemarks,&#13;
+PlanDate as ClassDate,&#13;
+PlanTime as ClassTime,&#13;
+PlanNoon as ClassNoon,&#13;
+Place as ClassRoom,&#13;
+'0' as IsUseKQJ,&#13;
+'0' as  IsUseCourseWare,&#13;
+'0' as  IsUseNotebookPC,&#13;
+'0' as  IsTakeFeature,&#13;
+'0' as  IsUseCamera,&#13;
+'0' as  IsUseVideo,&#13;
+'0' as  IsUseMediaPlayer,&#13;
+'0' as  RadioPhones,&#13;
+'0' as  WiredPhones,&#13;
+'0' as IsPlay,&#13;
+'0' as IsLive,&#13;
+'0' as IsRecord,&#13;
+Task&#13;
+	from  centerplan) as task</createSQL>
+            <field name="PlanType" displayName="PlanType" defineType="String" columnName="PlanType" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="CourseID" displayName="CourseID" defineType="int" columnName="CourseID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="CourseTitle" displayName="CourseTitle" defineType="String" columnName="CourseTitle" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CourseRemarks" displayName="CourseRemarks" defineType="String" columnName="CourseRemarks" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassDate" displayName="ClassDate" defineType="Date" columnName="ClassDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ClassTime" displayName="ClassTime" defineType="Date" columnName="ClassTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="ClassNoon" displayName="ClassNoon" defineType="String" columnName="ClassNoon" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassRoom" displayName="ClassRoom" defineType="String" columnName="ClassRoom" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseKQJ" displayName="IsUseKQJ" defineType="int" columnName="IsUseKQJ" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseCourseWare" displayName="IsUseCourseWare" defineType="int" columnName="IsUseCourseWare" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseNotebookPC" displayName="IsUseNotebookPC" defineType="int" columnName="IsUseNotebookPC" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsTakeFeature" displayName="IsTakeFeature" defineType="int" columnName="IsTakeFeature" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseCamera" displayName="IsUseCamera" defineType="int" columnName="IsUseCamera" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseVideo" displayName="IsUseVideo" defineType="int" columnName="IsUseVideo" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsUseMediaPlayer" displayName="IsUseMediaPlayer" defineType="int" columnName="IsUseMediaPlayer" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RadioPhones" displayName="RadioPhones" defineType="int" columnName="RadioPhones" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="WiredPhones" displayName="WiredPhones" defineType="int" columnName="WiredPhones" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsPlay" displayName="IsPlay" defineType="int" columnName="IsPlay" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsLive" displayName="IsLive" defineType="int" columnName="IsLive" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsRecord" displayName="IsRecord" defineType="int" columnName="IsRecord" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Task" displayName="Task" defineType="String" columnName="Task" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

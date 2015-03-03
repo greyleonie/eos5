@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="StatisLesson" displayName="StatisLesson" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <description/>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+cou.CourseID,&#13;
+cou.ClassDate,&#13;
+cou.IsOutClass,&#13;
+cou.IsMeldClass,&#13;
+cou.Teachers,&#13;
+cou.Tutors,&#13;
+cou.Attenders,&#13;
+cou.TeahchingModelID,&#13;
+cla.LevelID&#13;
+ from course cou,&#13;
+class cla where cou.isadopted=1 and cou.classid = cla.classid</createSQL>
+            <field name="CourseID" displayName="CourseID" defineType="int" columnName="CourseID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassDate" displayName="ClassDate" defineType="Date" columnName="ClassDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="IsOutClass" displayName="IsOutClass" defineType="int" columnName="IsOutClass" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="IsMeldClass" displayName="IsMeldClass" defineType="int" columnName="IsMeldClass" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="Teachers" displayName="Teachers" defineType="String" columnName="Teachers" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>20</length>
+                <precision>0</precision>
+            </field>
+            <field name="Tutors" displayName="Tutors" defineType="String" columnName="Tutors" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="Attenders" displayName="Attenders" defineType="String" columnName="Attenders" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="TeahchingModelID" displayName="TeahchingModelID" defineType="int" columnName="TeahchingModelID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="LevelID" displayName="LevelID" defineType="int" columnName="LevelID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

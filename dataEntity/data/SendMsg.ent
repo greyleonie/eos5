@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="SendMsg" displayName="SendMsg" type="entity" tableName="SendMsg" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="false">
+            <description>手机短信,保存手机发送短信</description>
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL/>
+            <field name="SendMsgID" displayName="SendMsgID" defineType="int" columnName="SendMsgID" isKey="true" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="DoneTime" displayName="DoneTime" defineType="TimeStamp" columnName="DoneTime" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+            </field>
+            <field name="DestAddrIsdnNum" displayName="DestAddrIsdnNum" defineType="String" columnName="DestAddrIsdnNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>4000</length>
+                <precision>0</precision>
+            </field>
+            <field name="MsgFormat" displayName="MsgFormat" defineType="smallint" columnName="MsgFormat" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="MsgContent" displayName="MsgContent" defineType="String" columnName="MsgContent" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>500</length>
+                <precision>0</precision>
+            </field>
+            <field name="ModuleIsdnNum" displayName="ModuleIsdnNum" defineType="String" columnName="ModuleIsdnNum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="State" displayName="State" defineType="smallint" columnName="State" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="Result" displayName="Result" defineType="String" columnName="Result" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="AuthorID" displayName="AuthorID" defineType="int" columnName="AuthorID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:dbo-->
+</EOS-Data-Mapping>

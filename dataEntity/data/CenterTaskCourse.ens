@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="CenterTaskCourse" displayName="CenterTaskCourse" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+TaskDate,&#13;
+TaskNoon,&#13;
+PlanType,&#13;
+PlanID,&#13;
+ClassRoom,&#13;
+Course,&#13;
+Explain,&#13;
+count(*) as CourseRow&#13;
+ from (&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'考勤' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '考勤'&#13;
+	where c.isadopted=1 and c.isusekqj=1&#13;
+&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'开关投影' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '开关投影'&#13;
+	where c.isadopted=1 and c.IsUseCourseWare=1&#13;
+&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'使用手提' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '使用手提'&#13;
+	where c.isadopted=1 and c.IsUseNotebookPC=1&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'拍花絮' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '拍花絮'&#13;
+	where c.isadopted=1 and c.IsTakeFeature=1&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'使用数码' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '使用数码'&#13;
+	where c.isadopted=1 and c.IsUseCamera=1&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'全程摄像' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '全程摄像'&#13;
+	where c.isadopted=1 and c.IsUseVideo=1&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'使用煤体' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '使用煤体'&#13;
+	where c.isadopted=1 and c.IsUseMediaPlayer=1&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'1'as PlanType,&#13;
+&#13;
+c.CourseID as PlanID,&#13;
+&#13;
+c.ClassDate as TaskDate,&#13;
+&#13;
+c.ClassTime as TaskTime,&#13;
+&#13;
+c.ClassNoon as TaskNoon,&#13;
+&#13;
+r.RoomName as ClassRoom,&#13;
+&#13;
+c.CourseTitle as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+'提供'+CONVERT(nvarchar,&#13;
+ c.RadioPhones )+'有线麦克风,&#13;
+'+CONVERT(nvarchar,&#13;
+ c.WiredPhones )+'无线麦克风' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from course c  left join room r on c.classroomid=r.roomid left join centertask t on t.plantype=1 and t.planid=c.courseid and t.task like '%麦克风'&#13;
+	where c.isadopted=1 and (c.RadioPhones is not null or c.RadioPhones!=0 or c.WiredPhones is not null or c.WiredPhones!=0)&#13;
+&#13;
+&#13;
+&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'2'as PlanType,&#13;
+&#13;
+d.RecordID as PlanID,&#13;
+&#13;
+d.RecordDate as TaskDate,&#13;
+&#13;
+d.RecordTime as TaskTime,&#13;
+&#13;
+d.RecordNoon as TaskNoon,&#13;
+&#13;
+d.ClassRooms as ClassRoom,&#13;
+&#13;
+d.CourseTitle as Course,&#13;
+&#13;
+d.Remarks as Explain,&#13;
+&#13;
+'录象' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from distanceteaching d  left join centertask t on t.plantype=1 and t.planid=d.RecordID and t.task like '录象'&#13;
+	where d.isrecord=1 &#13;
+&#13;
+union all&#13;
+&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'2'as PlanType,&#13;
+&#13;
+d.RecordID as PlanID,&#13;
+&#13;
+d.RecordDate as TaskDate,&#13;
+&#13;
+d.RecordTime as TaskTime,&#13;
+&#13;
+d.RecordNoon as TaskNoon,&#13;
+&#13;
+d.ClassRooms as ClassRoom,&#13;
+&#13;
+d.CourseTitle as Course,&#13;
+&#13;
+d.Remarks as Explain,&#13;
+&#13;
+'播放' as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from distanceteaching d  left join centertask t on t.plantype=1 and t.planid=d.RecordID and t.task like '播放'&#13;
+	where d.isplay=1 or d.islive=1&#13;
+&#13;
+union all&#13;
+select &#13;
+t.TaskID as TaskID,&#13;
+&#13;
+'3'as PlanType,&#13;
+&#13;
+c.PlanID as PlanID,&#13;
+&#13;
+c.PlanDate as TaskDate,&#13;
+&#13;
+c.PlanTime as TaskTime,&#13;
+&#13;
+c.PlanNoon as TaskNoon,&#13;
+&#13;
+c.ClassRoom as ClassRoom,&#13;
+&#13;
+c.Task as Course,&#13;
+&#13;
+c.Remarks as Explain,&#13;
+&#13;
+c.WorkType as Task,&#13;
+&#13;
+t.Director as Direcotr,&#13;
+&#13;
+t.Assistant as Assistant,&#13;
+&#13;
+t.Remarks as Remarks&#13;
+ from centerplan c  left join centertask t on t.plantype=1 and t.planid=c.PlanID and t.task like c.worktype&#13;
+) as task  group by TaskDate ,&#13;
+TaskNoon,&#13;
+PlanType,&#13;
+PlanID,ClassRoom,Course,Explain</createSQL>
+            <field name="TaskDate" displayName="TaskDate" defineType="Date" columnName="TaskDate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>date</dataType>-->
+                <description/>
+                <length>0</length>
+                <precision>0</precision>
+                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+            </field>
+            <field name="TaskNoon" displayName="TaskNoon" defineType="String" columnName="TaskNoon" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>10</length>
+                <precision>0</precision>
+            </field>
+            <field name="PlanType" displayName="PlanType" defineType="String" columnName="PlanType" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>1</length>
+                <precision>0</precision>
+            </field>
+            <field name="PlanID" displayName="PlanID" defineType="int" columnName="PlanID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="ClassRoom" displayName="ClassRoom" defineType="String" columnName="ClassRoom" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Course" displayName="Course" defineType="String" columnName="Course" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="Explain" displayName="Explain" defineType="String" columnName="Explain" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="CourseRow" displayName="CourseRow" defineType="int" columnName="CourseRow" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>

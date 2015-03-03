@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB2312" standalone="no"?>
+<EOS-Data-Mapping>
+    <Package name="dataEntity" displayName="dataEntity">
+        <EOSEntity name="AccountTotal" displayName="AccountTotal" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
+            <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
+            <createSQL>select &#13;
+SUM(HousingCheck+HousingCash) as HousingCost,&#13;
+SUM(MeetingCost) as MeetingCost,&#13;
+SUM(TelecomCost) as TelecomCost,&#13;
+SUM(OtherCost) as OtherCost,&#13;
+SUM(HousingCheck+HousingCash+MeetingCost+TelecomCost+OtherCost) as TotalCost&#13;
+ FROM tblReceptionChangeRec</createSQL>
+            <field name="HousingCost" displayName="HousingCost" defineType="double" columnName="HousingCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="MeetingCost" displayName="MeetingCost" defineType="double" columnName="MeetingCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="TelecomCost" displayName="TelecomCost" defineType="double" columnName="TelecomCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="OtherCost" displayName="OtherCost" defineType="double" columnName="OtherCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+            <field name="TotalCost" displayName="TotalCost" defineType="double" columnName="TotalCost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>double(len,prc)</dataType>-->
+                <description/>
+                <length>22</length>
+                <precision>0</precision>
+            </field>
+        </EOSEntity>
+    </Package>
+    <!--StudioDBConName:sqlserver2000-->
+    <!--schema:DX-->
+</EOS-Data-Mapping>
