@@ -11,10 +11,8 @@
           <tr> 
             <td width="15"> </td>
             <td class="text_wirte">首页—&gt;一卡通—&gt;场地管理—&gt;
-           
             <logic:notEqual  property="op" value="view" >客房出租</logic:notEqual>
             <logic:equal  property="op" value="view" >客房信息查询</logic:equal>
-     
             </td>
           </tr>
         </table></td>
@@ -35,7 +33,7 @@
 					<qx:talentButton property="book" type="button" styleClass="button_02" value="预订确认" onclick="roomBookOK()" operation="DX_CARD_MANAGE_FIELD_GUESTROOM.DX_CARD_MANAGE_FIELD_GUESTROOM_ROOMBOOKOK"/>	
 	          		<qx:talentButton property="book" type="button" styleClass="button_02" value="预订取消" onclick="roomBookCancel()" operation="DX_CARD_MANAGE_FIELD_GUESTROOM.DX_CARD_MANAGE_FIELD_GUESTROOM_ROOMBOOKCANCEL"/>	
 	          		
-				</logic:notEqual>
+				</logic:notEqual>	 
 					 
 					 所属建筑物：
 	         <select  name="input/BuildingID"  id="select1" bizAction="ICCard.bizField.selectBuilding2"   paramXML="" listXpath="list[@type='Building']" entityName="Building" valueField="BuildingID"    textField="BuildingName"        childID="select2"  nullLable="true" nullLableText="<bean:write property="input/BuildingName"/>" nullLableValue="<bean:write property="input/BuildingID"/>" onchange="refreshChild_DS(this),changeBuilding()" class="input"></select> 

@@ -94,7 +94,7 @@
 	            <td nowrap align="center"><bean:write id="resultset" property="POS/Remark"/></td>
 	            <td nowrap align="center" >
 				<SCRIPT>
-					var temp='<bean:write id="resultset" property="POS/IP_COM"/>';
+					var temp='<bean:write id="resultset" property="POS/IP_Com"/>';
 					if(temp.length==1){
 						temp="COM"+temp;
 					}
