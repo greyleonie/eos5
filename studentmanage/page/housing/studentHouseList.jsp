@@ -66,7 +66,7 @@
                   <td width="13%" align="center" nowrap id="QueryStudentRoom.operatorname" onClick="talentsort()">姓名</td>
                   <td width="12%" align="center" nowrap id="QueryStudentRoom.BuildingName" onClick="talentsort()">楼宇</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.RoomName" onClick="talentsort()">房间</td>
-                  <td width="16%" align="center" nowrap id="QueryStudentRoom.userID" onClick="talentsort()">账号</td>
+                  <td width="16%" align="center" nowrap id="QueryStudentRoom.userID" onClick="talentsort()">用户名</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.TeamName" onClick="talentsort()">组别</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.Sex" onClick="talentsort()">性别</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.RoomTel" onClick="talentsort()">电话</td>
