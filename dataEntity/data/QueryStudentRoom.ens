@@ -5,6 +5,7 @@
             <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
             <createSQL>select &#13;
 e.operatorname,&#13;
+e.userID,&#13;
 t.TeamName,&#13;
 s.StudentID,&#13;
 s.StudentNO,&#13;
@@ -21,6 +22,11 @@ student s left join Team t on s.TeamID=t.TeamID left join&#13;
  (Room r left join Building b on r.BuildingID=b.BuildingID)  on r.RoomID = s.RoomID &#13;
 where e.operatorid=s.studentid and e.status=1</createSQL>
             <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>64</length>
+                <precision>0</precision>
+            </field>
+            <field name="userID" displayName="userID" defineType="String" columnName="userID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
                 <description/>
                 <length>64</length>
                 <precision>0</precision>
@@ -87,6 +93,6 @@ where e.operatorid=s.studentid and e.status=1</createSQL>
             </field>
         </EOSEntity>
     </Package>
-    <!--StudioDBConName:sqlserver2000-->
-    <!--schema:DX-->
+    <!--StudioDBConName:sqlserver2005(192.168.18.209)-->
+    <!--schema:dxeos-->
 </EOS-Data-Mapping>

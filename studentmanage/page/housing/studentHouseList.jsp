@@ -64,11 +64,12 @@
                 <tr class="td_title"> 
                   <td width="14%" align="center" nowrap id="QueryStudentRoom.StudentNO" onClick="talentsort()">学号</td>
                   <td width="13%" align="center" nowrap id="QueryStudentRoom.operatorname" onClick="talentsort()">姓名</td>
-                  <td width="16%" align="center" nowrap id="QueryStudentRoom.TeamName" onClick="talentsort()">组别</td>
-                  <td width="9%" align="center" nowrap id="QueryStudentRoom.Sex" onClick="talentsort()">性别</td>
                   <td width="12%" align="center" nowrap id="QueryStudentRoom.BuildingName" onClick="talentsort()">楼宇</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.RoomName" onClick="talentsort()">房间</td>
-                  <td width="18%" align="center" nowrap id="QueryStudentRoom.RoomTel" onClick="talentsort()">电话</td>
+                  <td width="16%" align="center" nowrap id="QueryStudentRoom.userID" onClick="talentsort()">账号</td>
+                  <td width="9%" align="center" nowrap id="QueryStudentRoom.TeamName" onClick="talentsort()">组别</td>
+                  <td width="9%" align="center" nowrap id="QueryStudentRoom.Sex" onClick="talentsort()">性别</td>
+                  <td width="9%" align="center" nowrap id="QueryStudentRoom.RoomTel" onClick="talentsort()">电话</td>
                   <td width="9%" align="center" nowrap id="QueryStudentRoom.SeatNum" onClick="talentsort()">床位数</td>
                 </tr>
 				<%
@@ -88,10 +89,11 @@
                  <tr class="<%=trClass%>">
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/StudentNO"/></td>
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/operatorname" /></td>
-                  <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/TeamName" /></td>
-                  <td nowrap align="center">&nbsp;<dict:write businTypeId="BNDICT_gender" property="QueryStudentRoom/Sex" id="resultset"/></td>
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/BuildingName" /></td>
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/RoomName"/> </td>
+                  <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/userID" /></td>
+                  <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/TeamName" /></td>
+                  <td nowrap align="center">&nbsp;<dict:write businTypeId="BNDICT_gender" property="QueryStudentRoom/Sex" id="resultset"/></td>
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/RoomTel"/></td>
                   <td nowrap align="center">&nbsp;<bean:write id="resultset" property="QueryStudentRoom/SeatNum" />                   </td>
                   </tr>
