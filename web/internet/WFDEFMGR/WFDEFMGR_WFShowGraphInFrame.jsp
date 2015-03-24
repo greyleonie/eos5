@@ -1,0 +1,35 @@
+<%@ include file="/internet/WFCOMMON/wfappbase.jsp" %>
+<STYLE>
+BODY {
+
+
+
+	SCROLLBAR-FACE-COLOR: #DEE3E7; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #DEE3E7;
+	SCROLLBAR-3DLIGHT-COLOR: #D1D7DC;
+	SCROLLBAR-ARROW-COLOR: #006699;
+	SCROLLBAR-TRACK-COLOR: #EFEFEF;
+	SCROLLBAR-DARKSHADOW-COLOR: #98AAB1;
+}
+</STYLE> 
+
+
+<!--
+<STYLE>
+BODY {
+	SCROLLBAR-FACE-COLOR: #DEE3E7; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #DEE3E7;
+	SCROLLBAR-3DLIGHT-COLOR: #D1D7DC;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-TRACK-COLOR: #EFEFEF;
+	SCROLLBAR-DARKSHADOW-COLOR: #98AAB1;
+}
+</STYLE>
+-->
+ <body bgcolor="#FFFFFF">
+<%@ include file="/internet/WFDEFMGR/WFDEFMGR_GraphZoomDef.jsp" %>
+<workflow:showProcessGraph  processDefID="processDefID"  url="WFDEFMGR.pr_automata.WFDEFMGR_P_ShowActyDef.do" target="mainFrame" zoomQuotiety="<%=String.valueOf(fZoom)%>" showUrl="true" xpath="" />
+</body>
+

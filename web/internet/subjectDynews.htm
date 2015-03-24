@@ -1,0 +1,33 @@
+<TABLE cellSpacing=0 cellPadding=0 width=440 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <DIV align=center>
+                              <DIV id=rolllink 
+                              style="OVERFLOW: hidden; WIDTH: 500px; HEIGHT: 50px">
+                              <DIV id=rolllink1>
+                              <TABLE width=440 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=500>
+                                <P>
+                                <SCRIPT language=javascript 
+                                src="http://localhost:7000/internet/subjectDyNews.jsp"></SCRIPT>
+                                <BR></P></TD></TR></TBODY></TABLE>
+                              <DIV align=right></DIV></DIV>
+                              <DIV id=rolllink2>
+                              <SCRIPT>
+   var rollspeed=50
+   rolllink2.innerHTML=rolllink1.innerHTML //克隆rolllink1为rolllink2
+   function Marquee(){
+   if(rolllink2.offsetTop-rolllink.scrollTop<=0) //当滚动至rolllink1与rolllink2交界时
+   rolllink.scrollTop-=rolllink1.offsetHeight  //rolllink跳到最顶端
+   else{
+   rolllink.scrollTop++
+   }
+   }
+   var MyMar=setInterval(Marquee,rollspeed) //设置定时器
+   rolllink.onmouseover=function() {clearInterval(MyMar)}//鼠标移上时清除定时器达到滚动停止的目的
+   rolllink.onmouseout=function() {MyMar=setInterval(Marquee,rollspeed)}//鼠标移开时重设定时器
+</SCRIPT>
+                              </DIV></DIV></DIV></TD></TR></TBODY></TABLE>
