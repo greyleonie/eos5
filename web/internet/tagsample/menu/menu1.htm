@@ -1,0 +1,159 @@
+
+
+
+
+
+
+
+
+
+
+
+<script language="javaScript" src="/internet/scripts/autoInputCheck.js"></script>
+<link rel="stylesheet" href="/internet/theme/style0/style.css" type="text/css"/>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>Primeton EOS v3.3</title>
+<!-- Add a progrss bar script -->
+<script language='javascript' src='/internet/scripts/progress.js' type='text/javascript'> </script>
+<script language='javascript' src='/internet/scripts/sortTable.js' type='text/javascript'> </script>
+<link rel="stylesheet" href="/internet/css/HCIStyle.css" type="text/css">
+<link rel="stylesheet" href="/internet/theme/style0/style.css" type="text/css"/>
+</head>
+
+<body>
+
+<!-- PRIMETON LOGO -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="268" rowspan="2"><img src="/internet/images/logo.gif" width="268" height="68"></td>
+          <td width="232" height="29">&nbsp;</td>
+          <td width="260" height="68" rowspan="2">&nbsp;</td>
+          <td width="70" height="29">&nbsp;</td>
+          <td width="37" rowspan="2">&nbsp;</td>
+          <td width="70">&nbsp;</td>
+          <td width="61" height="68" rowspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="232" valign="bottom"><img src="/internet/images/version_logo.gif" width="232" height="39"></td>
+          <td width="4%" valign="bottom"><a href="http://www.primeton.com"><img src="/internet/images/home.gif" width="70" height="39" border="0"></a></td>
+          <td width="4%"><a href="/internet/logout.jsp"><img src="/internet/images/logout.gif" width="72" height="39" border='0'></a></td>
+        </tr>
+</table>
+      
+<!--<table width="1001" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4" height="2"><img src="/internet/images/top_line.gif" width="1001" height="3"></td>
+  </tr>
+  <tr valign="middle">
+    <td width="300" height="42">
+      <div align="center"><img src="/internet/images/logo.gif" ></div>
+    </td>
+    <td width="339" height="42">
+      <table width="445" border="0" cellpadding="1" align="center">
+        <tr>
+          <td width="18"><div valign="bottom"><img src="/internet/images/eos_logo.gif" ></div></td>
+          <td class="blue_text"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="68" height="42"><img src="/internet/images/home.gif" border="0"></td>
+    <td width="70" height="42">
+		<a href="/internet/logout.jsp"><img src="/internet/images/logout.gif" border="0" ></a>
+	</td>
+  </tr>
+</table>
+-->
+<!-- END LOGO -->
+
+
+<!-- MENU BEGIN -->
+<!--
+使用说明：
+	startTop	 [菜单top坐标]
+	startLeft	 [菜单left坐标]
+	lineMenuCount[每行可以显示的菜单个数]
+	menuTextLen	 [每个菜单条可以显示的字节数]
+	menuWidth	 [主菜单宽度]
+	subMenuWidth [子菜单宽度]
+
+菜单总宽度 (1000-startLeft) = lineMenuCount * menuWidth
+设置主菜单是要注意，如果lineMenuCount、menuWidth其中一个设定(假设为menuWidth)，另一个应该按公式(750/menuWidth)
+计算得出
+-->
+<script language="javascript">
+Menu1=new Array("系统管理","#","",5,20,124);
+
+Menu1_1=new Array("用户管理","ROLE.pr_automata.ROLE_P_OperatorMain.do","",0,20,124);
+
+Menu1_2=new Array("角色管理","ROLE.pr_automata.ROLE_P_ManageRole.do","",0,20,124);
+
+Menu1_3=new Array("功能管理","ROLE.pr_automata.ROLE_P_FunctionMain.do","",0,20,124);
+
+Menu1_4=new Array("菜单管理","ROLE.pr_automata.ROLE_P_ManageMenu.do","",0,20,124);
+
+Menu1_5=new Array("数据权限管理","ROLE.pr_automata.ROLE_P_MenuDataAuthority.do","",0,20,124);
+
+Menu2=new Array("系统设置","#","",3,20,124);
+
+Menu2_1=new Array("刷新","ROLE.pr_automata.ROLE_P_SyncFunctions.do","",0,20,124);
+
+Menu2_2=new Array("修改密码","ROLE.pr_automata.ROLE_P_OperatorModPwd.do","",0,20,124);
+
+Menu2_3=new Array("展现逻辑设置","ROLE.pr_automata.ROLE_P_FunctionCheckMain.do","",0,20,124);
+
+Menu3=new Array("","","",0,20,124);
+
+Menu4=new Array("","","",0,20,124);
+
+Menu5=new Array("","","",0,20,124);
+
+Menu6=new Array("","","",0,20,124);
+
+Menu7=new Array("","","",0,20,124);
+
+Menu8=new Array("","","",0,20,124);
+
+var NoOffFirstLineMenus=8;
+var MenuLineCount=8;
+var StartTop=69;
+var StartLeft=0;
+</script>
+
+
+<script type='text/javascript' src='/internet/config_var.js'></script>
+<script type='text/javascript' src='/internet/menu_com.js'></script>
+
+<!-- MENU END -->
+
+<!-- MENU PLACEHOLDER BEGIN -->
+<table id="PlaceHolder" width="1000"><tr><td><td><tr><table>
+<script language="javascript">
+	var LineCount=Math.round(NoOffFirstLineMenus/MenuLineCount);
+	if(LineCount>0){
+		var srcEle=eval("PlaceHolder");
+		srcEle.style.height=LineCount*22+2+'px';
+	}
+</script>
+<!-- MENU PLACEHOLDER END -->
+<table height="75%" width="1000" bgcolor="#FAFAFA">
+	<tr>
+		<td valign="top" >
+ 
+
+
+
+		</td>
+	</tr>
+</table>
+<!-- COPYRIGHT BEGIN -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#FAFAFA"><div align="center"><img src="/internet/images/copyright.gif" width="337" height="37"></div></td>
+        </tr>
+</table>
+<!-- COPYRIGHT END -->
+</body>
+</html>
