@@ -567,5 +567,5 @@
         </table>
 		</form>
 	</body>
-<OBJECT ID="Card Control" WIDTH="" HEIGHT="" CLASSID="CLSID:00BCB426-4501-496F-B780-267302BE3BA3" codebase="http://192.168.0.196:8080/DXCard/ActiveX/card.cab" name="cardcontrol">
+<OBJECT ID="Card Control" WIDTH="" HEIGHT="" CLASSID="CLSID:AEA5E7AD-4A2F-44BE-88FE-0CF9A8E648D4" codebase="http://192.168.0.196:8080/DXCard/ActiveX/card.cab" name="cardcontrol">
 </OBJECT>

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://127.0.0.1:7001/internet/tagsample/popmenu/ -->
+<HTML><HEAD><TITLE>无标题文档</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE>.skin0 {
+	BORDER-RIGHT: black 2px solid; BORDER-TOP: black 2px solid; VISIBILITY: hidden; BORDER-LEFT: black 2px solid; WIDTH: 200px; CURSOR: default; LINE-HEIGHT: 20px; BORDER-BOTTOM: black 2px solid; FONT-FAMILY: Verdana; POSITION: absolute; BACKGROUND-COLOR: menu; TEXT-ALIGN: left
+}
+.skin1 {
+	BORDER-RIGHT: buttonhighlight 2px outset; BORDER-TOP: buttonhighlight 2px outset; FONT-SIZE: 10pt; VISIBILITY: hidden; BORDER-LEFT: buttonhighlight 2px outset; WIDTH: 120px; CURSOR: default; BORDER-BOTTOM: buttonhighlight 2px outset; FONT-FAMILY: Arial, Helvetica, sans-serif; POSITION: absolute; BACKGROUND-COLOR: menu; TEXT-ALIGN: left
+}
+.menuitems {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 15px
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+href="http://127.0.0.1:7001/internet/tagsample/popmenu/popmenuresource.htm">查看源代码</A></P>
+<SCRIPT language=JavaScript>
+var menuskin = "skin1";
+var display_url = 0;
+function showpopup() {
+var rightedge = document.body.clientWidth-event.clientX;
+var bottomedge = document.body.clientHeight-event.clientY;
+if (rightedge < ie5menu.offsetWidth)
+ie5menu.style.left = document.body.scrollLeft + event.clientX - ie5menu.offsetWidth;
+else
+ie5menu.style.left = document.body.scrollLeft + event.clientX;
+if (bottomedge < ie5menu.offsetHeight)
+ie5menu.style.top = document.body.scrollTop + event.clientY - ie5menu.offsetHeight;
+else
+ie5menu.style.top = document.body.scrollTop + event.clientY;
+ie5menu.style.visibility = "visible";
+return false;
+}
+function hidemenuie5() {
+ie5menu.style.visibility = "hidden";
+}
+function highlightie5() {
+if (event.srcElement.className == "menuitems") {
+event.srcElement.style.backgroundColor = "highlight";
+event.srcElement.style.color = "white";
+if (display_url)
+window.status = event.srcElement.url;
+   }
+}
+function lowlightie5() {
+if (event.srcElement.className == "menuitems") {
+event.srcElement.style.backgroundColor = "";
+event.srcElement.style.color = "black";
+window.status = "";
+   }
+}
+function jumptoie5() {
+if (event.srcElement.className == "menuitems") {
+if (event.srcElement.getAttribute("target") != null)
+window.open(event.srcElement.url, event.srcElement.getAttribute("target"));
+else
+window.location = event.srcElement.url;
+   }
+}
+</SCRIPT>
+
+<DIV class=skin0 id=ie5menu onmouseover=highlightie5() onclick=jumptoie5(); 
+onmouseout=lowlightie5()>
+<DIV class=menuitems target="_self" url="../testhtml/test1.htm">测试1</DIV>
+<DIV class=menuitems target="newwin" url="../testhtml/test2.htm">测试2</DIV>
+<DIV class=menuitems target="_self" url="../testhtml/test3.htm">测试3</DIV></DIV>
+<p>
+  <SCRIPT language=JavaScript>
+//if (document.all && window.print) {
+ie5menu.className = menuskin;
+//document.getElementsBynames("tab")[0].oncontextmenu = showpopup;
+document.body.onclick = hidemenuie5;
+//}
+</SCRIPT>
+</p>
+<p>&nbsp;</p>
+<table id="tablee"  name="tab" oncontextmenu = "showpopup();return false" width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</BODY></HTML>

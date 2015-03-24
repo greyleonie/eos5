@@ -14,7 +14,7 @@
 <html:html locale="true">
 	<head>
 		<title>系统消息</title>
-		<OBJECT ID="Card Control" WIDTH="" HEIGHT="" CLASSID="CLSID:00BCB426-4501-496F-B780-267302BE3BA3" codebase="/ActiveX/card.cab" name="cardcontrol">
+		<OBJECT ID="Card Control" WIDTH="" HEIGHT="" CLASSID="CLSID:AEA5E7AD-4A2F-44BE-88FE-0CF9A8E648D4" codebase="/ActiveX/card.cab" name="cardcontrol">
 		</OBJECT>
 		<OBJECT ID="StandardCom Control" WIDTH="" HEIGHT="" CLASSID="CLSID:1538AED7-C401-4A0B-B0A8-D3A8AA53DF0B" codebase="/ActiveX/com.cab" name="comcontrol">
 		</OBJECT>
@@ -30,6 +30,7 @@
 					
 					try{
 						if(document.all.Data0.value.length>0){
+							//alert(document.all.Data0.value);
 							if(cardcontrol.WriteData(7,0,document.all.Data0.value)==0){
 								WriteIntoCardError();
 								return;
