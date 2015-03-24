@@ -140,7 +140,7 @@
 								<html:text property="RoomManager/EndTime[@pattern='yyyy-MM-dd']" styleClass="input" size="30" readonly="true"
 									attributesText=' ValidateType="notempty" Msg="失效时间不能为空"' />
 								<img src="/internet/image/date.gif" width="13" height="20" align="absmiddle"
-									onClick=calendar(document.forms[0].elements[ "RoomManager/EndTime[@pattern='yyyy-MM-dd']"],"yyyy-MM-dd")></td>
+									onClick=calendar(document.forms[0].elements["RoomManager/EndTime[@pattern='yyyy-MM-dd']"],"yyyy-MM-dd")></td>
 						</tr>
 						<tr>
 							<td align="right" class="td2">持 卡 人：</td>
@@ -176,11 +176,11 @@
 	<!-- 读取物理卡号 -->
 
 	function GetCardID() {
+		cardcontrol.Init(0);
 		document.all["Card/CardID"].value=cardcontrol.GetCardID();
 	}
 
 	function Initial() {
-		cardcontrol.Init(0);
 		//是否隐藏受权层数
 		if (document.all["RoomManager/LayerNO"].disabled=="") 
 			document.all["layernorow"].style.display="block";
