@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>报表打印</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<script>
+	//检验浏览器版本
+	var recPerPage = 20;
+	
+	//printCheck();
+	var printTable = window.opener.document.all.printTable;
+	var ReportTable = window.opener.document.all.sortTable;	
+	var TitleRow = printTable.rows(0).innerText;
+	var HeadRow = ReportTable.rows(0).innerHTML;
+	HeadRow = HeadRow.replace(/选择/,"序号");
+	
+	var htmltext = "<table  width=98% border=1 style='border-collapse:collapse' cellpadding=2 >";
+	htmltext += "<tr><td align='center'><b>";
+	htmltext += TitleRow;
+	htmltext += "</b></td/></tr></table>";
+	htmltext += "<table  width=98% border=1 style='border-collapse:collapse' cellpadding=2 >";
+	htmltext += "<tr>"+HeadRow.toString()+"</tr>";
+	var tmpText = "";
+
+	for(var i=1;i<ReportTable.rows.length;i++)
+	{
+		if (i%recPerPage==0){
+			htmltext += "</table><table  width=98% border=1 style='border-collapse:collapse;page-break-before:always' cellpadding=2 >";
+			htmltext += "<tr>"+HeadRow.toString()+"</tr>";
+		}
+		
+		htmltext += "<tr>";
+		tmpText = ReportTable.rows(i).innerHTML;
+		//tmpText = tmpText.replace(/(< *INPUT TYPE=CHECK [^>]*>)/gi,i);
+		tmpText = tmpText.replace(/(< *INPUT [^>]*>)/,i);
+		htmltext += tmpText;
+		htmltext += "</tr>";		
+				
+	}
+	htmltext += "</table>";
+	
+	re=/(< *a [^>]*>)|(< *\/ *a *>)/gi;   //去除文字上面的链接
+	re1 = /<SPAN class=arrow>5<\/span>/gi; //去除页面排序时产生的箭头
+	re2 = /<SPAN class=arrow>6<\/span>/gi; //去除页面排序时产生的箭头
+	re3=/onClick=sort\(\)/gi;
+	re4=/title=点击排序/gi;
+	re5=/class=reshead/gi;
+	re6=/(< *IMG [^>]*>)/gi
+	htmltext=htmltext.replace(re,"");
+	htmltext=htmltext.replace(re1,"");
+	htmltext=htmltext.replace(re2,"");
+	htmltext=htmltext.replace(re3,"");
+	htmltext=htmltext.replace(re4,"");
+	htmltext=htmltext.replace(re5,"");
+	htmltext=htmltext.replace(re6,"");
+	
+	function printReport(){
+		var mm=eval("ss");
+		//alert(htmltext);
+		mm.innerHTML=htmltext;	
+	}
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onload="printReport()">
+<div id="ss">
+</div>
+</body>
+</html>

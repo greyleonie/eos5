@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>报表打印</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="/internet/css/INDEX.css" rel="stylesheet" type="text/css">
+<style media=print>
+.Noprint{display:none;}
+.PageNext{page-break-after: always;}
+</style>
+<style type="text/css">
+<!--
+.STYLE11 {font-size: 12pt}
+-->
+</style>
+<script  language="JavaScript">
+	/*
+	用途：取得当前浏览器的版本，只取第一个数字
+	输入：空
+	返回：版本号的第一个数字
+	*/
+	function GetIEversion() {
+		var version = navigator.appVersion;
+		var pos = version.indexOf("MSIE");
+		var intVersion = version.substr(pos+5,1);
+		return intVersion;
+	}
+
+	/*
+	用途：检验当前浏览器版本?芊裰С址忠炒蛴」δ?
+	输入：空
+	返回：空
+	*/
+	function printCheck() {
+		if(GetIEversion()<6)
+		{
+			alert("您使用的浏览器版本过低，不能支持分页打印功能，请升级浏览器版本至6.0！");
+			window.close();
+		}
+	}
+	
+	function initData(pernum) {
+		pernum = pernum + 1 ;
+		var printTable = window.opener.document.all.printTable;
+		var ReportTable = window.opener.document.all.listdetail;
+		
+		var TitleRow = "";
+		if(printTable.tagName == "TABLE" || printTable.tagName == "table") {
+			TitleRow = printTable.rows(0).innerText;
+		}else if(printTable.tagName == "SELECT" || printTable.tagName == "select") {
+			var tempValue = printTable.value;
+			for(var i = 0; i < printTable.options.length; i++) {
+				if(printTable.options[i].value == tempValue) {
+					TitleRow =printTable.options[i].text;
+					break;
+				}
+			}
+		}else{
+			TitleRow = printTable.innerText;
+		}
+	
+		var rows = parseInt(document.all.pagenumtext.value) + 1;
+		var theHeight = 900/(rows) ;
+	
+		var HeadRow = ReportTable.rows(0).innerHTML;
+		HeadRow = HeadRow.replace(/选择/,"序号");
+		HeadRow = HeadRow.replace(/(onDblClick=)(.*)?\)[\" | \']?/gi,"");
+		HeadRow = HeadRow.replace(/(onClick=)(.*)?\)[\" | \']?/gi,"");
+		//HeadRow = HeadRow.replace(/<INPUT .*?>/gi,"序号");
+		HeadRow = HeadRow.replace(/(< *INPUT\s+TYPE=CHECKBOX [^>]*>)/gi,"序号");
+		HeadRow = HeadRow.replace(/<INPUT .*?>/gi,"");
+		//alert(HeadRow)
+		
+		var htmltext = "<table  width=94% border=0 align=center>";
+		htmltext += "<tr><td  style='line-height:40px' class='STYLE11' align=center><b>";
+		htmltext += TitleRow;
+		htmltext += "</b></td/><br></tr></table>";
+		htmltext += "<table  width=94% border=1 align=center cellpadding=2  style='border-collapse:collapse'>";
+		htmltext += "<tr class='STYLE11' height='"+theHeight+"'>"+HeadRow.toString()+"</tr>";
+		var tmpText = "";
+		var styleclass = "td1";
+		for(var i=1;i<ReportTable.rows.length;i++)
+		{
+			if (i%pernum==0){
+				htmltext += "</table><br><br><table  width=94% border=1 align=center  style='border-collapse:collapse;page-break-before:always' cellpadding=2 >";
+				htmltext += "<tr class='STYLE11' height='"+theHeight+"'>"+HeadRow.toString()+"</tr>";
+			}
+			
+			if(i%2==0){
+				styleclass = "STYLE11";
+			}else{
+				styleclass = "STYLE11";
+			}
+			htmltext += "<tr class='" + styleclass + "' height='"+theHeight+"'>";
+			tmpText = ReportTable.rows(i).innerHTML;
+			tmpText = tmpText.replace(/(< *INPUT\s+TYPE=CHECKBOX [^>]*>)/gi,i);
+			tmpText = tmpText.replace(/(< *INPUT [^>]*>)/gi,"");
+			htmltext += tmpText;
+			htmltext += "</tr>";		
+					
+		}
+		htmltext += "</table>";
+		
+		re=/(< *a [^>]*>)|(< *\/ *a *>)/gi;   //去除文字上面的链接
+		re1 = /<SPAN class=arrow>5<\/span>/gi; //去除页面排序时产生的箭头
+		re2 = /<SPAN class=arrow>6<\/span>/gi; //去除页面排序时产生的箭头
+		re3=/onClick=talentsort\(\)/gi;
+		re4=/title=点击排序/gi;
+		//re5=/class=reshead/gi;
+		re6=/(< *IMG [^>]*>)/gi;
+		re7=/(【.*】)/gi;
+		htmltext=htmltext.replace(re7,"");	
+		htmltext=htmltext.replace(re,"");
+		htmltext=htmltext.replace(re1,"");
+		htmltext=htmltext.replace(re2,"");
+		htmltext=htmltext.replace(re3,"");
+		htmltext=htmltext.replace(re4,"");
+		//htmltext=htmltext.replace(/(< *INPUT [^>]*>)/gi,"");
+	
+		//htmltext=htmltext.replace(re5,"");
+		//htmltext=htmltext.replace(re6,"");
+		var fpattern1 = /(onDblClick=)(.*)?\)[\" | \']?/gi;
+		var fpattern2 = /(onClick=)(.*)?\)[\" | \']?/gi;
+		htmltext=htmltext.replace(fpattern1,"");
+		htmltext=htmltext.replace(fpattern2,"");
+		return htmltext;
+	
+	}
+
+	//显示打印表格
+	function printReport(){
+		var mm=eval("ss");
+		htmltext = initData(25)
+		//alert(htmltext);
+		mm.innerHTML=htmltext;	
+	}
+</script>
+
+<script>
+
+	//检验浏览器版本
+	printCheck();
+	
+	
+</script>
+<script language="JavaScript">
+	var hkey_root,hkey_path,hkey_key
+	hkey_root="HKEY_CURRENT_USER"
+	hkey_path="\\Software\\Microsoft\\Internet Explorer\\PageSetup\\"
+	//设置网页打印的页眉页脚为空
+	function pagesetup_null(){
+		try{
+			var RegWsh = new ActiveXObject("WScript.Shell")
+			hkey_key="header" 
+			RegWsh.RegWrite(hkey_root+hkey_path+hkey_key,"")
+			hkey_key="footer"
+			RegWsh.RegWrite(hkey_root+hkey_path+hkey_key,"")
+		}catch(e){
+			
+		}
+	}
+	pagesetup_null();
+	
+	
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" onload="printReport()">
+<div id="ss">
+</div>
+
+<center>
+  <OBJECT  id=WebBrowser  classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2  height=0  width=0>
+  </OBJECT>
+  <div id="printsub" style='background-color:#4A59BD' class="Noprint">
+  <a href="#" class="write" onclick="document.all.WebBrowser.ExecWB(6,1)">打印</a>
+  <a href="#" class="write" onclick="document.all.WebBrowser.ExecWB(8,1)">页面设置</a>
+  <a href="#" class="write" onclick="document.all.WebBrowser.ExecWB(7,1)">预览</a>
+  <span style="color:#ffffff;font-size:12px">每页显示</span><input name="pagenumtext" type="text" value="25" style="border:1 #000000 solid;width:20px" onBlur="toReprint()"><span style="color:#ffffff;font-size:12px">条数据</span>
+  </div>
+</center>
+
+</body>
+</html>
+<script>
+function toReprint() {
+	var obj = event.srcElement;
+	if(obj.value == "") obj.value = 25;
+	if(isNaN(obj.value)) obj.value = 25;
+	var per = parseInt(obj.value,10);
+	var mm=eval("ss");
+	htmltext = initData(per)
+		//alert(htmltext);
+	mm.innerHTML=htmltext;
+}
+</script>
