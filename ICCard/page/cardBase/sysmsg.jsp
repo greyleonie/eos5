@@ -25,8 +25,9 @@
 	<script language="javascript">
 	var controlflag=0;
 	//控件标志位，0表示退出网页时，不执行cardcontrol.Quit();
-	var fail = new Array(500);//保存下传权限失败的控制器编号;
-	var success = new Array(500);//保存下传权限成功的控制器编号;
+	var fail="";//保存下传权限失败的控制器编号;
+	var success="";//保存下传权限成功的控制器编号;
+	var fs = 1;
 	
 		function WriteIntoCard() {
 			try {
@@ -83,12 +84,13 @@
 				if (confirm(controlid+"号控制器权限下传失败！确定要重新下传该控制器权限吗？")) {
 					SendToElock(controlid,len,elockData);
 				} else {
-					fail[len] = controlid;
-					alert(fail[len] + "号控制器权限下传失败");
+					fail =  fail + " " + controlid;
+					//alert(fail + "号控制器权限下传失败");
+					fs = 0;
 				}
 			} else {
-				success[len] = controlid;
-				alert(success[len] + "号控制器下传成功");
+				success = success + " " + controlid;;
+				//alert(success + "号控制器下传成功");
 			}
 		}
 		
@@ -204,17 +206,24 @@
 	</logic:present>
 	<logic:present property="ELOCKDATA_KEY">
 		<script>
-
+			//alert("1");
 			SendToElock(<bean:write id="<%=talent.core.Constants.ELOCKDATA_KEY%>" property="controlerID" />,<bean:write id="<%=talent.core.Constants.ELOCKDATA_KEY%>" property="elockDataLen" />,"<bean:write id="<%=talent.core.Constants.ELOCKDATA_KEY%>" property="elockData" />");
 		</script>
 	</logic:present>
 	<logic:present property="list[@type='ELOCKDATALIST']/Elock/ElockDataLen">
 		<logic:iterate id="ElockData" property="list[@type='ELOCKDATALIST']">
 			<script>
-
+				
 				SendToElock(<bean:write id="ElockData" property="Elock/ControlerID"/>,<bean:write id="ElockData" property="Elock/ElockDataLen"/>,"<bean:write id="ElockData" property="Elock/ElockData"/>");
 			</script>
 		</logic:iterate>
+		<script>
+		if(fs) {
+			alert("恭喜您！控制器下传成功！");
+		} else {
+			alert("对不起！" + fail + "号控制器下传失败！");
+		}
+		</script>
 	</logic:present>
 	<logic:present property="POSDATA_LIST_KEY">
 		<input type="hidden" name="POSData" value="<bean:write property="<%=talent.core.Constants.POSDATA_LIST_KEY %>"/>" />
