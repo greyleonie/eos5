@@ -27,7 +27,7 @@
 	//控件标志位，0表示退出网页时，不执行cardcontrol.Quit();
 	var fail="";//保存下传权限失败的控制器编号;
 	var success="";//保存下传权限成功的控制器编号;
-	var fs = 1;
+	var fs = 1,i=1;
 	
 		function WriteIntoCard() {
 			try {
@@ -77,14 +77,16 @@
 			controlflag=1;
 			//alert(controlid);
 			//alert(elockData);
-			var com=3,i;
+			var com=3;
 			controlid = controlid*1;
 			len = len*1;
 			if (comcontrol.SetPopedomToElock(com,controlid,len,elockData)==0 && comcontrol.SetPopedomToElock(com,controlid,len,elockData)==0 && comcontrol.SetPopedomToElock(com,controlid,len,elockData)==0) {
-				if (confirm(controlid+"号控制器权限下传失败！确定要重新下传该控制器权限吗？")) {
+				if (confirm(controlid+"号控制器权限下传失败！确定要重新下传该控制器权限吗？") && i<3) {
+					i++;
 					SendToElock(controlid,len,elockData);
 				} else {
 					fail =  fail + " " + controlid;
+					i = 1;
 					//alert(fail + "号控制器权限下传失败");
 					fs = 0;
 				}
