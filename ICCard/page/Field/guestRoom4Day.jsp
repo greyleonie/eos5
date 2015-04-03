@@ -184,7 +184,7 @@
 		var LayerNO = frm["input/LayerNO"].value;
 		var CurrDate = frm.CurrDate.value;
 		var op = "<bean:write property="op"/>";
-		frame.location.href = "ICCard.prField.guestRoom4Day.do?input/BuildingID="+BuildingID+"&input/LayerNO="+LayerNO+"&op="+op;
+		self.location.href = "ICCard.prField.guestRoom4Day.do?input/BuildingID="+BuildingID+"&input/LayerNO="+LayerNO+"&op="+op;
 	}
 		
 	function changeBuilding(){
@@ -198,7 +198,7 @@
 		var LayerNO = frm["input/LayerNO"].value;
 		var CurrDate = frm.CurrDate.value;
 		var op = "<bean:write property="op"/>";
-		frame.location.href = "ICCard.prField.guestRoom4Day.do?input/BuildingID="+BuildingID+"&input/LayerNO="+LayerNO+"&op="+op;
+		self.location.href = "ICCard.prField.guestRoom4Day.do?input/BuildingID="+BuildingID+"&input/LayerNO="+LayerNO+"&op="+op;
 	}
 	
 	function roomCheckIn(){
