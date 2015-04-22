@@ -103,7 +103,7 @@
             <td align="center"><bean:write id="courseResult" property="Course/ClassModelID"/>            
             <!--<dict:write businTypeId="BNDICT_classRoomModal" property="Course/ClassModelID" id="courseResult"/>-->
             </td>
-            <td align="center"> <bean:write id="courseResult" property="Course/teachIngMan"/></td>
+            <td align="center"> <bean:write id="courseResult" property="Course/shouKe"/></td>
             <td align="center"> <bean:write id="courseResult" property="Course/dj"/></td>
             <td align="center"><bean:write id="courseResult" property="Course/daoHui"/></td><!--到会教师-->
             <td align="center">

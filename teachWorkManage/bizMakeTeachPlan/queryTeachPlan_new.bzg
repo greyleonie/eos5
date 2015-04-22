@@ -2,7 +2,88 @@
 <autoGraphics>
     <graphic name="queryTeachPlan_new" type="bzg" router="0">
         <states>
-            <state color="16777215" id="10" typeName="End" height="48" width="48" x="1536" y="96" lookAndFeel="classic">
+            <state color="16777215" id="20" typeName="businessLogic" height="48" width="48" x="1656" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>授课教师</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">EOSOperator</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/Teachers</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/shouKe</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="26" typeName="iterationBegin" height="48" width="48" x="1536" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationBegin</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>迭代开始</value>
+                    </property>
+                    <property name="name" type="0">
+                        <value>iteration</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">list[@type='Course']</column>
+                            <column num="1" name="action">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="10" typeName="End" height="48" width="48" x="2496" y="96" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -83,7 +164,7 @@
                         <row num="1">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">select CourseID, UnitID, convert(VARCHAR(10), ClassDate, 121) as ClassDate,	convert(VARCHAR(8), ClassTime, 8) as ClassTime,	datename(weekday, ClassDate) as weekDate,	ClassNoon, CourseTitle,(select RoomName from Room where RoomID=ClassRoomID) as classRoom, IsUseKQJ, (select EducatingMode from EducatingMode where EducatingModeID=TeahchingModelID) as TeahchingModelID, (select RangeMode from RangeMode where RangeModeID=ClassModelID) as ClassModelID, (select operatorName from EOSOperator where operatorID=Teachers) as teachIngMan, Compere as dj,	Conventioneers as daoHui from Course where ClassID=</column>
+                            <column num="2" name="value" type="0">select CourseID, UnitID, convert(VARCHAR(10), ClassDate, 121) as ClassDate, convert(VARCHAR(8), ClassTime, 8) as ClassTime, datename(weekday, ClassDate) as weekDate, ClassNoon, CourseTitle,(select RoomName from Room where RoomID=ClassRoomID) as classRoom, IsUseKQJ, (select EducatingMode from EducatingMode where EducatingModeID=TeahchingModelID) as TeahchingModelID, (select RangeMode from RangeMode where RangeModeID=ClassModelID) as ClassModelID, (select operatorName from EOSOperator where operatorID=Teachers) as teachIngMan, Teachers,Tutors,Attenders,Compere, Conventioneers from Course where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0">连接所用到的字符串</column>
@@ -578,6 +659,66 @@
                 </propertyList>
                 <description/>
             </state>
+            <state color="16777215" id="22" typeName="businessLogic" height="48" width="48" x="1776" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>辅导教师</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">EOSOperator</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/Tutors</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/fuDao</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
             <state color="16777215" id="13" typeName="Start" height="48" width="48" x="56" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">queryTeachPlan</name>
                 <propertyList>
@@ -662,11 +803,336 @@
                 </propertyList>
                 <description/>
             </state>
+            <state color="16777215" id="27" typeName="iterationEnd" height="48" width="48" x="2376" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationEnd</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>迭代结束</value>
+                    </property>
+                    <property name="name" type="0">
+                        <value>iteration</value>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">iteratorPath</column>
+                            <column num="1" name="action">constant</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="25" typeName="businessLogic" height="48" width="48" x="1896" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>到课教师</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">EOSOperator</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/Attenders</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/daoKe</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="21" typeName="businessLogic" height="48" width="48" x="2256" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>教室名称</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">Room</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">RoomName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">RoomID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/ClassRoomID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/classRoom</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="23" typeName="businessLogic" height="48" width="48" x="2136" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>主持人</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">EOSOperator</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/Compere</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/dj</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="24" typeName="businessLogic" height="48" width="48" x="2016" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>到会教师</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ChangeId2Name.BL_changeId2Name</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">EOSOperator</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">表名</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorName</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">要查询的字段名</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">operatorID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">该表的PK</column>
+                        </row>
+                        <row num="3">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">ITERATION/Conventioneers</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">id连接成的字符串</column>
+                        </row>
+                        <row num="4">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">ITERATION/daoHui</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的name</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
         </states>
         <connectors>
             <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.20</from>
+                <to>Shape.businessLogic.22</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.iterationBegin.26</from>
+                <to>Shape.businessLogic.20</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
                 <from>Shape.businessLogic.19</from>
-                <to>Shape.End.10</to>
+                <to>Shape.iterationBegin.26</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
@@ -1081,8 +1547,200 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.22</from>
+                <to>Shape.businessLogic.25</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
                 <from>Shape.Start.13</from>
                 <to>Shape.businessLogic.12</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.iterationEnd.27</from>
+                <to>Shape.End.10</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.25</from>
+                <to>Shape.businessLogic.24</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.21</from>
+                <to>Shape.iterationEnd.27</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.23</from>
+                <to>Shape.businessLogic.21</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.24</from>
+                <to>Shape.businessLogic.23</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
