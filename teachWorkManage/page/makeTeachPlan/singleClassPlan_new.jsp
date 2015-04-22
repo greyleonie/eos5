@@ -150,8 +150,8 @@
                   </SCRIPT>
                   </td>
                   
-                  <td align="middle">&nbsp; <bean:write id="courseResult" property="Course/dj"/></td>
-                  <td align="middle">&nbsp;<bean:write id="courseResult" property="Course/daoHui"/></td>
+                  <td align="middle">&nbsp; <bean:write id="result" property="entity/dj"/></td>
+                  <td align="middle">&nbsp;<bean:write id="result" property="entity/daoHui"/></td>
                   <td align="center"><p>
                   <a href="javascript:updateSubject('<bean:write id="result" property="entity/courseID"/>','<bean:write id="result" property="entity/classID"/>')">ÐÞ¸Ä</a>
                   </p></td>
