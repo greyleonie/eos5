@@ -2,77 +2,7 @@
 <autoGraphics>
     <graphic name="bizQueryCourseByClass" type="bzg" router="0">
         <states>
-            <state color="16777215" id="1" typeName="Start" height="48" width="48" x="56" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">bizQueryCourseByClass</name>
-                <propertyList>
-                    <property name="id" type="0">
-                        <value>bizQueryCourseByClass</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value>开始</value>
-                    </property>
-                    <property name="return_value" type="0">
-                        <value/>
-                    </property>
-                    <property name="author" type="0">
-                        <value>Administrator</value>
-                    </property>
-                    <property name="department" type="0">
-                        <value/>
-                    </property>
-                    <property name="date" type="0">
-                        <value>Mon Feb 21 16:12:54 CST 2011</value>
-                    </property>
-                    <property name="productVersion" type="0">
-                        <value>5.0</value>
-                    </property>
-                    <property name="automationVersion" type="0">
-                        <value/>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="graphicRef" type="0">
-                        <value/>
-                    </property>
-                    <property name="ModelName" type="0">
-                        <value>Product</value>
-                    </property>
-                    <property name="type" type="1">
-                        <value>pi</value>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">list[@type='CourseNew']</column>
-                            <column num="3" name="name" type="0"/>
-                            <column num="4" name="inPath" type="0">/</column>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="2" typeName="End" height="48" width="48" x="1376" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>结束</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">end</column>
-                            <column num="1" name="type"/>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="3" typeName="businessLogic" height="48" width="48" x="176" y="56" lookAndFeel="classic">
+            <state color="16777215" id="3" typeName="businessLogic" height="48" width="48" x="416" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -124,7 +54,165 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="14" typeName="iterationEnd" height="48" width="48" x="1256" y="56" lookAndFeel="classic">
+            <state color="16777215" id="40" typeName="businessLogic" height="48" width="48" x="296" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_expandData</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">talent.core.ExpandDataUtil.BL_expandData</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">EOSEntity</column>
+                            <column num="2" name="value" type="0">TeachingPlan</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">返回的数据实体</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">queryPlanSql</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">查询的SQL</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="33" typeName="businessLogic" height="48" width="48" x="176" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_joinStrings</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">queryPlanSql</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select planid from teachingplan where classid=</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">连接所用到的字符串</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">TeachingPlan/ClassID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="1" typeName="Start" height="48" width="48" x="56" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">bizQueryCourseByClass</name>
+                <propertyList>
+                    <property name="id" type="0">
+                        <value>bizQueryCourseByClass</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value>开始</value>
+                    </property>
+                    <property name="return_value" type="0">
+                        <value/>
+                    </property>
+                    <property name="author" type="0">
+                        <value>Administrator</value>
+                    </property>
+                    <property name="department" type="0">
+                        <value/>
+                    </property>
+                    <property name="date" type="0">
+                        <value>Mon Feb 21 16:12:54 CST 2011</value>
+                    </property>
+                    <property name="productVersion" type="0">
+                        <value>5.0</value>
+                    </property>
+                    <property name="automationVersion" type="0">
+                        <value/>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="graphicRef" type="0">
+                        <value/>
+                    </property>
+                    <property name="ModelName" type="0">
+                        <value>Product</value>
+                    </property>
+                    <property name="type" type="1">
+                        <value>pi</value>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">list[@type='CourseNew']</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">TeachingPlan</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="2" typeName="End" height="48" width="48" x="1616" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>结束</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">end</column>
+                            <column num="1" name="type"/>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="14" typeName="iterationEnd" height="48" width="48" x="1496" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationEnd</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -145,7 +233,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="17" typeName="businessLogic" height="48" width="48" x="656" y="56" lookAndFeel="classic">
+            <state color="16777215" id="17" typeName="businessLogic" height="48" width="48" x="896" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -205,7 +293,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="13" typeName="iterationBegin" height="48" width="48" x="416" y="56" lookAndFeel="classic">
+            <state color="16777215" id="13" typeName="iterationBegin" height="48" width="48" x="656" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationBegin</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -226,7 +314,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="15" typeName="businessLogic" height="48" width="48" x="536" y="56" lookAndFeel="classic">
+            <state color="16777215" id="15" typeName="businessLogic" height="48" width="48" x="776" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -286,7 +374,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="4" typeName="businessLogic" height="48" width="48" x="296" y="56" lookAndFeel="classic">
+            <state color="16777215" id="4" typeName="businessLogic" height="48" width="48" x="536" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -322,7 +410,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="20" typeName="businessLogic" height="48" width="48" x="776" y="56" lookAndFeel="classic">
+            <state color="16777215" id="20" typeName="businessLogic" height="48" width="48" x="1016" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -382,7 +470,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="16" typeName="businessLogic" height="48" width="48" x="1136" y="56" lookAndFeel="classic">
+            <state color="16777215" id="16" typeName="businessLogic" height="48" width="48" x="1376" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -442,7 +530,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="18" typeName="businessLogic" height="48" width="48" x="1016" y="56" lookAndFeel="classic">
+            <state color="16777215" id="18" typeName="businessLogic" height="48" width="48" x="1256" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -502,7 +590,7 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="19" typeName="businessLogic" height="48" width="48" x="896" y="56" lookAndFeel="classic">
+            <state color="16777215" id="19" typeName="businessLogic" height="48" width="48" x="1136" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -565,7 +653,39 @@
         </states>
         <connectors>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.Start.1</from>
+                <from>Shape.businessLogic.3</from>
+                <to>Shape.businessLogic.4</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.40</from>
                 <to>Shape.businessLogic.3</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
@@ -597,8 +717,40 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.3</from>
-                <to>Shape.businessLogic.4</to>
+                <from>Shape.businessLogic.33</from>
+                <to>Shape.businessLogic.40</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.Start.1</from>
+                <to>Shape.businessLogic.33</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
