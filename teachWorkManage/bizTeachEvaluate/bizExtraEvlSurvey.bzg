@@ -157,7 +157,7 @@ from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (sel
                             <column num="1" name="type" type="1">constant</column>
                             <column num="2" name="value" type="0">))))) ballot,&#13;
 --意见份数&#13;
-(select count(distinct StudentID) from Advice where ClassID=</column>
+(select count(Advice) from Advice where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -173,7 +173,7 @@ from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (sel
                         <row num="9">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and CourseID in (select CourseID from Course where ClassID=</column>
+                            <column num="2" name="value" type="0">and advice != '' and CourseID in (select CourseID from Course where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -189,7 +189,7 @@ from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (sel
                         <row num="11">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and Outsider IS NOT NULL and Outsider &lt;&gt; '')) suggest) t</column>
+                            <column num="2" name="value" type="0"> and Outsider IS NOT NULL and Outsider != '')) suggest) t</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
