@@ -138,8 +138,7 @@ from (select (select count(1) from student where ClassID=</column>
                         <row num="5">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and LevelID in (select LevelID from EvaluateItemScore where ItemID in (select ItemID from EvaluateItems where EvaluationID=(select EvaluationID &#13;
-from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (select EvaluationID from AssignMark where ClassID=</column>
+                            <column num="2" name="value" type="0"> and CourseID in (select CourseID from Course where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -155,7 +154,7 @@ from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (sel
                         <row num="7">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">))))) ballot,&#13;
+                            <column num="2" name="value" type="0"> and Outsider IS NOT NULL and Outsider != '')) ballot,&#13;
 --意见份数&#13;
 (select count(Advice) from Advice where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
@@ -173,7 +172,7 @@ from Evaluation where ClassType='1' and Period='外请课' and EvaluationID in (sel
                         <row num="9">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">and advice != '' and CourseID in (select CourseID from Course where ClassID=</column>
+                            <column num="2" name="value" type="0"> and advice != '' and CourseID in (select CourseID from Course where ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
