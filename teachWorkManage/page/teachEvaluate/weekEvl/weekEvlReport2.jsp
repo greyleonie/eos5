@@ -254,8 +254,10 @@ document.forms[0].submit();
           </SELECT></b>
           <b>
             <input name="B1" type="button" class="button_02" onclick="weekSubmit();" value="汇 总">
-            <input name="B3" type="button" class="button_02" value="导出当前" onClick="exportToWord()">
-            <input name="B3" type="button" class="button_02" value="导出所有" onClick="exportToAll()">
+            <input name="B3" type="button" class="button_02" value="导出" onClick="exportToWord()">
+            <!-- 
+            <input name="B3" type="button" class="button_02" value="导出所有" onClick="exportToAll()"> 
+            -->
             <input name="B4" type="button" class="button_02" value="打 印" onClick="iePrint()">
             <input type="hidden" name="queryaction">
             <input type="hidden" name="viewaction">
