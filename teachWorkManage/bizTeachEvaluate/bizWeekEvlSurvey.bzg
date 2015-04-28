@@ -104,7 +104,7 @@ case &#13;
 when t.amount != 0 then round((convert(numeric,t.ballot)*100/t.amount),1) &#13;
 when t.amount = 0 then 0&#13;
 end precent&#13;
-from (select (select count(1) from student where ClassID=</column>
+from (select (select count(1) from student where isquit!=1 and ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -193,7 +193,7 @@ from Evaluation where ClassType='1' and Period='每周' and EvaluationID in &#13;
                             <column num="1" name="type" type="1">constant</column>
                             <column num="2" name="value" type="0">))))) ballot,&#13;
 --意见份数&#13;
-(select count(distinct StudentID) from Advice where Advice!='' and ClassID=</column>
+(select count(AdviceID) from Advice where Advice!='' and ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -210,7 +210,7 @@ from Evaluation where ClassType='1' and Period='每周' and EvaluationID in &#13;
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
                             <column num="2" name="value" type="0"> and CourseID in &#13;
-(select CourseID from Course where ClassID=</column>
+(select CourseID from Course where Outsider IS NULL and ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -515,7 +515,7 @@ from Evaluation where ClassType='1' and Period='每周' and EvaluationID in &#13;
                             <column num="1" name="type" type="1">constant</column>
                             <column num="2" name="value" type="0">))))) ballot,&#13;
 --意见份数&#13;
-(select count(StudentID) from Advice where Advice!='' and ClassID=</column>
+(select count(AdviceID) from Advice where Advice!='' and ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
