@@ -22,7 +22,8 @@ c.BeginTime as BeginTime ,&#13;
 c.EndTime as EndTime,&#13;
 DATEDIFF(dd,c.BeginTime,c.EndTime ) as StudyDay,&#13;
 DATEDIFF(yyyy,s.Birthdate,getdate() ) as Age,&#13;
-s.Remark&#13;
+s.Remark,&#13;
+s.IsQuit&#13;
  from student s &#13;
 left join class c on s.classid = c.classid&#13;
 left join eosoperator e on s.studentid = e.operatorid&#13;
@@ -68,7 +69,7 @@ left join eosoperator f on c.HeadTeacherID = f.operatorid&#13;
             </field>
             <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <description/>
-                <length>50</length>
+                <length>100</length>
                 <precision>0</precision>
             </field>
             <field name="HeadTeacherName" displayName="HeadTeacherName" defineType="String" columnName="HeadTeacherName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
@@ -76,7 +77,7 @@ left join eosoperator f on c.HeadTeacherID = f.operatorid&#13;
                 <length>64</length>
                 <precision>0</precision>
             </field>
-            <field name="Birthdate" displayName="Birthdate" defineType="Date" columnName="Birthdate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+            <field name="Birthdate" displayName="Birthdate" defineType="TimeStamp" columnName="Birthdate" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>date</dataType>-->
                 <description/>
                 <length>0</length>
@@ -88,14 +89,14 @@ left join eosoperator f on c.HeadTeacherID = f.operatorid&#13;
                 <length>1</length>
                 <precision>0</precision>
             </field>
-            <field name="BeginTime" displayName="BeginTime" defineType="Date" columnName="BeginTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+            <field name="BeginTime" displayName="BeginTime" defineType="TimeStamp" columnName="BeginTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>date</dataType>-->
                 <description/>
                 <length>0</length>
                 <precision>0</precision>
                 <!--<displayFormat>yyyyMMdd</displayFormat>-->
             </field>
-            <field name="EndTime" displayName="EndTime" defineType="Date" columnName="EndTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+            <field name="EndTime" displayName="EndTime" defineType="TimeStamp" columnName="EndTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>date</dataType>-->
                 <description/>
                 <length>0</length>
@@ -119,8 +120,13 @@ left join eosoperator f on c.HeadTeacherID = f.operatorid&#13;
                 <length>50</length>
                 <precision>0</precision>
             </field>
+            <field name="IsQuit" displayName="IsQuit" defineType="int" columnName="IsQuit" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
         </EOSEntity>
     </Package>
-    <!--StudioDBConName:sqlserver2000-->
-    <!--schema:DX-->
+    <!--StudioDBConName:sqlserver2005-->
+    <!--schema:-->
 </EOS-Data-Mapping>

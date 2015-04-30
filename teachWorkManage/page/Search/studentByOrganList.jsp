@@ -52,8 +52,9 @@
              	</td>
 			 <td  class="td2" align="right">职&nbsp;&nbsp;&nbsp;&nbsp;级： </td>
 			<td class="td1" colspan="3"><dict:select businTypeId="dx_dutylevel" property="StudentByOrgan/DutyLevel" nullOption="true" nullLabel="--请选择--" /> 
-
+			<html:hidden property="StudentByOrgan/IsQuit" value="0"/>
 			   </td>
+			   
            </tr>
            <tr>
             <td  class="td2" align="right"> 参训单位： </td>
