@@ -16,6 +16,7 @@
       	<input type="hidden" name="queryaction" value="teachWorkManage.prSearch.studentByOrganList.do">
 		<html:hidden property="StudentByOrgan/_order/col1/field"/>
 		<html:hidden property="StudentByOrgan/_order/col1/asc" />
+		<html:hidden property="StudentByOrgan/IsQuit" value="0"/>
 		<html:hidden property="PageCond/begin"/>
 		<html:hidden property="PageCond/count"/>
 		<html:hidden property="PageCond/length" />
@@ -52,7 +53,6 @@
              	</td>
 			 <td  class="td2" align="right">Ö°&nbsp;&nbsp;&nbsp;&nbsp;¼¶£º </td>
 			<td class="td1" colspan="3"><dict:select businTypeId="dx_dutylevel" property="StudentByOrgan/DutyLevel" nullOption="true" nullLabel="--ÇëÑ¡Ôñ--" /> 
-			<html:hidden property="StudentByOrgan/IsQuit" value="0"/>
 			   </td>
 			   
            </tr>
