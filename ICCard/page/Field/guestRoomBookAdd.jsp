@@ -1,4 +1,5 @@
 <%@include file="/internet/common.jsp"%>
+<%@page import="java.util.Date"%>  
 <SCRIPT language="JavaScript" src="/internet/scripts/common.js" ></SCRIPT>
 <script language="javascript">
 <logic:present property="message">
@@ -12,11 +13,15 @@ alert('<bean:write  property="message"/>');
 			}
 			}
 		</script>
-<body onload="cardcontrol.Init(0)" onunload="cardcontrol.Quit()">
+<body onload="onLoad()" onunload="cardcontrol.Quit()">
 <form method="post"  action="ICCard.prField.guestRoomBookAddDo.do" name="opeForm" >
 <html:hidden  name="Room/RoomID" property="input/RoomID"/>
 <html:hidden  name="Room/BuildingID" property="input/BuildingID"/>
-
+<%
+java.util.Date date = new java.util.Date();
+java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+String curdate = sdf.format(date);
+%>
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
     <tr> 
       <td height="24" background="image/lz_bg.gif"> 
@@ -117,7 +122,11 @@ alert('<bean:write  property="message"/>');
         <td   align="right" class="td2">退宿日期：</td>
         <td   class="td1"><html:text property="endtime" attributesText='class="input" size="30" ValidateType="notempty"  Msg="退宿日期不能为空"' readonly="true"/>  <span class="text_red">*</span>
            <img src="/internet/image/date.gif" width="13" height="20" align="absmiddle" onClick=calendar(document.forms[0].elements["endtime"],"yyyy-MM-dd")></td>
-      </tr>
+           <!--
+         <td class="td1"><html:text  property="createdtime" attributesText='class="input" size="30"  ' value="<%=curdate%>"/></td>
+         <td class="td1"><html:text  property="executetime" attributesText='class="input" size="30"  ' value="<%=curdate%>"/></td>
+      	 -->
+      	 </tr>
          <tr>
        <td align="right" class="td2">预存金额： </td>
           <td class="td1" colspan="3" ><html:text property="HousingLogs/PreCost"   attributesText='class="input" size="10" ValidateType="money" Msg="预存金额必须为数字"'/>元</td>
@@ -199,7 +208,10 @@ alert('<bean:write  property="message"/>');
         return   intDay   
   }   
   
-  
+  function onLoad(){
+  	cardcontrol.Init(0);
+ // 	alert("<%=curdate%>");
+  }
    function verifyDate(){
  	frm = document.forms[0]
  	var beginTime = frm["begintime"].value;
