@@ -91,7 +91,9 @@
                   class="
                   <logic:equal id="resultset" property="Room/State" value="4">state_book</logic:equal>
                   <logic:notEqual id="resultset" property="Room/State" value="4">
-                  <logic:equal id="resultset" property="Room/UsingType" value="1">state_empty</logic:equal><logic:equal id="resultset" property="Room/UsingType" value="2">state_school</logic:equal><logic:equal id="resultset" property="Room/UsingType" value="3">state_other</logic:equal>
+                  <logic:equal id="resultset" property="Room/State" value="1">state_empty</logic:equal>
+                  <logic:equal id="resultset" property="Room/State" value="2">state_school</logic:equal>
+                  <logic:equal id="resultset" property="Room/State" value="3">state_other</logic:equal>
                   </logic:notEqual>">
                   <input type='hidden' value=' 楼层：<bean:write id="resultset" property="Room/LayerNO" /> <br/> 床位数：<bean:write id="resultset" property="Room/SeatNum"/> <br/> 电话：<bean:write id="resultset" property="Room/Tel"/> <br/> <bean:write id="resultset" property="Room/UsingLogs"/>' />
                   <input type='hidden' value='<bean:write id="resultset" property="Room/UsingLogs" />'/>
