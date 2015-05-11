@@ -15,6 +15,8 @@
       <td height="5">
       	<input type="hidden" name="queryaction" value="teachWorkManage.prNetCenter.selectIpAddressList.do">
       	<input type="hidden" name="addaction" value="teachWorkManage.prNetCenter.IpAddressAdd.do">
+      	<input type="hidden" name="modifyaction" value="teachWorkManage.prNetCenter.IpAddressModify.do">
+      	<input type="hidden" name="deleteaction" value="teachWorkManage.prNetCenter.IpAddressDelete.do">
 		<html:hidden property="IPADDRESS/_order/col1/field"/>
 		<html:hidden property="IPADDRESS/_order/col1/asc" />
 		<html:hidden property="PageCond/begin"/>
@@ -52,6 +54,8 @@
 			 
                 <input name="query" type="button" class="button_02" value="查 询" onClick="talentquery()">
                 <qx:talentButton property="add" type="button" styleClass="button_02" value="新 增" onclick="talentaddNew()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_ADD"/>
+                <qx:talentButton property="modify" type="button" styleClass="button_02" value="修 改" onclick="talentmodify()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_MODIFY"/>
+                <qx:talentButton property="delete" type="button" styleClass="button_02" value="删 除" onclick="talentdelete()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_DELETE"/>
 			</td>
       </tr>
       <tr>
