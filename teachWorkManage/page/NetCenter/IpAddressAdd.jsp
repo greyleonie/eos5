@@ -25,31 +25,31 @@
 	  <td class="text"><table width="98%"  border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#A2C4DC">
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">姓名：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/USERNAME"></td>
+            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/USERNAME"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">部门：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/DEPARTMENT"></td>
+            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/DEPARTMENT"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">计算机名：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/COMPUTERNAME"></td>
+            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/COMPUTERNAME"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">MAC地址：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/MACADDRESS"></td>
+            <td class="td1"><input class="input" size="60" maxlength="17" name="IPADDRESS/MACADDRESS"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">IP地址：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/IPADDRESS"></td>
+            <td class="td1"><input class="input" size="60" maxlength="15" name="IPADDRESS/IPADDRESS"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">设备位置：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/EQUIPMENTADDRESS"></td>
+            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/EQUIPMENTADDRESS"></td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">设备类型：</td>
-            <td class="td1"><input class="input" size="60" maxlength="10" name="IPADDRESS/EQUIPMENTTYPE"></td>
+            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/EQUIPMENTTYPE"></td>
           </tr>
         </table>
       

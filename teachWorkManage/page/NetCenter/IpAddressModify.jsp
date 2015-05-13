@@ -43,13 +43,13 @@
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">MACµÿ÷∑£∫</td>
             <td class="td1">
-            	<html:text property="IPADDRESS/MACADDRESS"  maxlength="50"  attributesText='class="input" size="60"'  />
+            	<html:text property="IPADDRESS/MACADDRESS"  maxlength="17"  attributesText='class="input" size="60"'  />
             </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">IPµÿ÷∑£∫</td>
             <td class="td1">
-            	<html:text property="IPADDRESS/IPADDRESS"  maxlength="50"  attributesText='class="input" size="60"'  />
+            	<html:text property="IPADDRESS/IPADDRESS"  maxlength="15"  attributesText='class="input" size="60"'  />
             </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
