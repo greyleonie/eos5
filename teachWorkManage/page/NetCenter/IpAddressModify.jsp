@@ -1,60 +1,72 @@
-<%@include file="/internet/common.jsp"%>
-<body onload="getCurDatetime()">
-<form method="post"  action="teachWorkManage.prNetCenter.IPAddressAddDo.do" name="opeForm">
+<%@ include file="/internet/common.jsp"%>
+<body>
+<form method="post"  action="teachWorkManage.prNetCenter.IpAddressModifyDo.do" name="opeForm">
 <INPUT type="hidden" name="IPADDRESS/RESERVE1">
 <INPUT type="hidden" name="IPADDRESS/RESERVE2">
+<html:hidden property="IPADDRESS/ID"/>
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
     <tr> 
       <td height="24" background="image/lz_bg.gif"> 
 	  	  <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="printTable">
           <tr> 
             <td width="15"> </td>
-            <td class="text_wirte">首页—&gt;教务管理—&gt;网络中心教学管理—&gt;新增IP地址</td>
+            <td class="text_wirte">首页—&gt;教务管理—&gt;网络中心教学管理—&gt;修改IP地址</td>
           </tr>
-        </table></td>
-    </tr>
-  </table>
-  <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
-    <tr>
-      <td height="8"> </td>
-    </tr>
-    <tr>
-      <td class="text">
-      
-      
-	  <td class="text"><table width="98%"  border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#A2C4DC">
+        </table>
+        </td>
+       <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+	   	<tr>
+      		<td height="8"> </td>
+    	</tr>
+    	<tr>
+      		<td class="text">
+      		
+      	<table width="98%"  border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#A2C4DC">
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">姓名：</td>
-            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/USERNAME"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/USERNAME"  maxlength="50"  attributesText='class="input" size="60"'  />
+			</td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">部门：</td>
-            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/DEPARTMENT"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/DEPARTMENT"  maxlength="50"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">计算机名：</td>
-            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/COMPUTERNAME"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/COMPUTERNAME"  maxlength="50"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">MAC地址：</td>
-            <td class="td1"><input class="input" size="60" maxlength="17" name="IPADDRESS/MACADDRESS"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/MACADDRESS"  maxlength="17"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">IP地址：</td>
-            <td class="td1"><input class="input" size="60" maxlength="15" name="IPADDRESS/IPADDRESS"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/IPADDRESS"  maxlength="15"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">设备位置：</td>
-            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/EQUIPMENTADDRESS"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/EQUIPMENTADDRESS"  maxlength="50"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
           <tr  onClick="changeTRBgColor(this)">
             <td align="right" class="td2">设备类型：</td>
-            <td class="td1"><input class="input" size="60" maxlength="50" name="IPADDRESS/EQUIPMENTTYPE"></td>
+            <td class="td1">
+            	<html:text property="IPADDRESS/EQUIPMENTTYPE"  maxlength="50"  attributesText='class="input" size="60"'  />
+            </td>
           </tr>
         </table>
-      
-      
-          <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
+        
+        <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
               <td align="center"><td align="center"><input name="Button" type="button" class="button_02" value="保 存" onClick="save()">
                  <input name="Submit2" type="button" class="button_02" value="返 回" onClick="javascript:history.go(-1)"></td>
