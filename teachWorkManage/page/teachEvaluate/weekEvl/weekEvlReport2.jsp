@@ -280,9 +280,9 @@ document.forms[0].submit();
           <tr>
             <td height="30" align="left" class="textc">&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="MsoNormalIndent">
-            <bean:write property="Class/ClassName"/>共
-            <bean:write property="Survey/amount"/>人，<%if(showWeek==null||showWeek.equals("")||showWeek.equals("请选择周")){%>本期课题数：<%=add %>
-            <%}else{%>本周课题数：<%=add %><%}%>个
+            <!--<bean:write property="Class/ClassName"/>-->本班共
+            <bean:write property="Survey/amount"/>人，<%if(showWeek==null||showWeek.equals("")||showWeek.equals("请选择周")){%>评估课题数：<%=add %>
+            <%}else{%>评估课题数：<%=add %><%}%>个
                        发放课题评估表<%=amountNum %>份，回收
             <%=allAdd %>份，回收率
             <%=percent%>，意见栏填写
@@ -499,10 +499,10 @@ document.forms[0].submit();
          tmp = title;
         if (listlen != 1) out.print("<br>");
          out.println("&nbsp;&nbsp;对“" + title + "”的评价和建议：<br>");
-         out.println("&nbsp;&nbsp;（1）" + TalentFunctions.transformHtmlTags(suggest) + "<br>");
+         out.println("&nbsp;&nbsp;学员1：" + TalentFunctions.transformHtmlTags(suggest) + "<br>");
          advicelen = 2;
       } else {
-         out.println("&nbsp;&nbsp;（"+advicelen+"）" + TalentFunctions.transformHtmlTags(suggest) + "<br>");
+         out.println("&nbsp;&nbsp;学员"+advicelen+"：" + TalentFunctions.transformHtmlTags(suggest) + "<br>");
          advicelen++;
       }
       listlen++;
