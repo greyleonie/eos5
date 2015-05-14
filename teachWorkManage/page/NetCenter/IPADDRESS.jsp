@@ -37,12 +37,14 @@
 	  <tr>
             <td height="30" class="text">
             
-            姓名：
+            姓名：            	
                 <html:text property="IPADDRESS/USERNAME/criteria/value" attributesText='class="input" size="20"'/>
                 <html:hidden property="IPADDRESS/USERNAME/criteria/operator" value="like"/>
                 <html:hidden property="IPADDRESS/USERNAME/criteria/likeRule" value="center"/>
+    
       IP地址： 
-                <html:text property="IPADDRESS/IPADDRESS/criteria/value" attributesText='class="input" size="20"'/>
+      			<input name="ipaddress" id="ipaddress" type="text" class="input" size="20" />
+                <html:hidden property="IPADDRESS/IPADDRESS/criteria/value" />
                 <html:hidden property="IPADDRESS/IPADDRESS/criteria/operator" value="like"/>
                 <html:hidden property="IPADDRESS/IPADDRESS/criteria/likeRule" value="center"/>
             
@@ -52,7 +54,7 @@
                 <html:hidden property="IPADDRESS/MACADDRESS/criteria/likeRule" value="center"/>
 				
 			 
-                <input name="query" type="button" class="button_02" value="查 询" onClick="talentquery()">
+                <input name="query" type="button" class="button_02" value="查 询" onClick="talentquerys()">
                 <qx:talentButton property="add" type="button" styleClass="button_02" value="新 增" onclick="talentaddNew()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_ADD"/>
                 <qx:talentButton property="modify" type="button" styleClass="button_02" value="修 改" onclick="talentmodify()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_MODIFY"/>
                 <qx:talentButton property="delete" type="button" styleClass="button_02" value="删 除" onclick="talentdelete()" operation="DX_TEACH_MANAGE_NETCENTER_DT.DX_TEACH_MANAGE_NETCENTER_DT_DELETE"/>
@@ -152,4 +154,27 @@ function talentaddNew() {
    	frm.submit();
 
 }
+
+//查询
+function talentquerys() {
+	var ip = document.getElementById("ipaddress").value;
+	document.getElementsByName("IPADDRESS/IPADDRESS/criteria/Value")[0].value = ip;
+	var frm =document.forms[0];
+	processError(frm);
+	if(frm.elements["PageCond/begin"] && frm.elements["PageCond/count"] && frm.elements["PageCond/length"]) {
+		frm.elements["PageCond/begin"].value=0;
+		frm.elements["PageCond/count"].value=-1;
+		if(frm.elements["PageCond/talentlength"]) {
+			frm.elements["PageCond/length"].value = frm.elements["PageCond/talentlength"].value;
+		}else{
+			frm.elements["PageCond/length"].value=10;
+		}
+		if(frm.elements["queryaction"]) {
+			frm.action = frm.elements["queryaction"].value;
+		}
+		frm.submit();
+	}
+
+}
+
 </script>
