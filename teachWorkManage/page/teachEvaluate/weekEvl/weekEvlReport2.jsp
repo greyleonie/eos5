@@ -493,12 +493,13 @@ document.forms[0].submit();
     <logic:iterate id="advice" property="list[@type='advices']">
     <%
       String title = base.util.TalentContext.getValue(pageContext,"advice","advices/CourseTitle");
+      String teacher = base.util.TalentContext.getValue(pageContext,"advice","advices/teachername");
       String suggest = base.util.TalentContext.getValue(pageContext,"advice","advices/Advice");
      //if (suggest.length()>40) suggest = suggest.substring(0,34) + "......";
      if (!tmp.equals(title)) {
          tmp = title;
         if (listlen != 1) out.print("<br>");
-         out.println("&nbsp;&nbsp;对“" + title + "”的评价和建议：<br>");
+         out.println("&nbsp;&nbsp;对" + teacher + "老师“" + title + "”课程的评价和建议：<br>");
          out.println("&nbsp;&nbsp;学员1：" + TalentFunctions.transformHtmlTags(suggest) + "<br>");
          advicelen = 2;
       } else {
