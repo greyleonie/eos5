@@ -85,7 +85,7 @@ document.forms[0].submit();
           <tr>
             <td height="30" align="left" class="text">
             <span class="MsoNormalIndent">
-            <bean:write property="Class/ClassName"/>共
+            <!--<bean:write property="Class/ClassName"/>-->本班共
             <bean:write property="Survey/amount"/>人，发放学员意见反馈表
             <bean:write property="Survey/amount"/>份，回收
             <bean:write property="Survey/ballot"/>份，回收率
@@ -171,7 +171,7 @@ document.forms[0].submit();
            <td colspan="<%=levlen*2+3%>" class='td1'>
            <logic:iterate id="course" property="list[@type='extraReports']">
            <logic:greaterThan id="course" property="extraReports/advicelen" value="0">
-           ●<bean:write id="course" property="extraReports/CourseTitle"/><br>
+           ●<bean:write id="course" property="extraReports/TeacherName"/>“<bean:write id="course" property="extraReports/CourseTitle"/>”<br>
            <%int k=1; %>
            <logic:iterate id="advice" property="list[@type='extraAdvices']">
            <%
@@ -179,7 +179,7 @@ document.forms[0].submit();
            int courseNO = Integer.parseInt(base.util.TalentContext.getValue(pageContext,"advice","extraAdvices/CourseID"));
            if (courseNO == courseID) {
                 String advice = base.util.TalentContext.getValue(pageContext,"advice","extraAdvices/Advice");
-                out.println(k + "." + TalentFunctions.transformHtmlTags(advice)+"<br>");
+                out.println("学员" + k + "：" + TalentFunctions.transformHtmlTags(advice)+"<br>");
                 k++; 
              }
            %>
