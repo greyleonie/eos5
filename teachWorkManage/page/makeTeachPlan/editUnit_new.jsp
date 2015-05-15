@@ -77,10 +77,12 @@
             <td width="5%" align="center">考勤机考勤</td>
             <td width="8%" align="center">教学形式</td>
             <td width="11%" align="center">课堂模式</td>
-            <td width="7%" align="center">授课人</td>
-            <td width="6%" align="center">主持人</td>
-            <td width="8%" align="center">到会教师</td>
-            <td align="center" width="8%">操 作</td>
+            <td width="5%" align="center">授课人</td>
+            <td width="5%" align="center">主持人</td>
+            <td width="5%" align="center">到会人</td>
+            <td width="5%" align="center">到课人</td>
+            <td width="5%" align="center">辅导人</td>
+            <td align="center" width="4%">操 作</td>
           </tr>
         <logic:iterate id="courseResult" property="list[@type='Course']">
         <%try{ %>
@@ -106,6 +108,8 @@
             <td align="center"> <bean:write id="courseResult" property="Course/shouKe"/></td>
             <td align="center"> <bean:write id="courseResult" property="Course/dj"/></td>
             <td align="center"><bean:write id="courseResult" property="Course/daoHui"/></td><!--到会教师-->
+            <td align="center"><bean:write id="courseResult" property="Course/daoKe"/></td>
+            <td align="center"><bean:write id="courseResult" property="Course/fuDao"/></td>
             <td align="center">
             <%try{ %>
            <a href="javascript:delSubject('<bean:write id="courseResult" property="Course/CourseID"/>')">删除</a> <a href="javascript:updateSubject('<bean:write id="courseResult" property="Course/CourseID"/>','<bean:write id="courseResult" property="Course/ClassID"/>')">修改</a>
