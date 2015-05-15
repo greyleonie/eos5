@@ -68,7 +68,7 @@
 				<tr> 
             <td colspan="13"> <table cellspacing="0" cellpadding="0" width="100%" border="0">
                 <tr title="双击可查看单元详细信息" onDBlclick="updateUnit('<bean:write id="result" property="entity/unitID"/>','3')"> 
-                  <td width="71%" align="left" class="td_title">
+                  <td width="100%" align="left" class="td_title">
                   <bean:write id="result" property="entity/unitName"/>&nbsp;&nbsp; 
                     <bean:write id="result" property="entity/unitTitle"/>&nbsp;&nbsp; 开始日期:<bean:write id="result" property="entity/beginTime"/>
                      结束日期:<bean:write id="result" property="entity/endTime"/></td>
@@ -83,7 +83,7 @@
                 </tr>
                 
                   <tr title="双击可查看单元详细信息" onDBlclick="updateUnit('<bean:write id="result" property="entity/unitID"/>','3')"> 
-                  <td width="71%" align="left" colspan="2" class="td_title">教学要求：<bean:write id="result" property="entity/demand"/>
+                  <td width="100%" align="left" colspan="2" class="td_title">教学要求：<bean:write id="result" property="entity/demand"/>
                  </td>
                  
                 </tr>
@@ -91,7 +91,6 @@
           </tr>
           <tr class="td2"> 
             <td width="10%" align="center">日期</td>
-
             <td width="5%" align="center">时间</td>
             <td width="5%" align="center">午别</td>
             <td width="5%" align="center">星期</td>
@@ -100,12 +99,12 @@
             <td width="5%" align="center">考勤</td>
             <td width="8%" align="center">教学形式</td>
             <td width="11%" align="center">课堂模式</td>
-            <td width="7%" align="center">授课人</td>
-            
-            <td width="6%" align="center">主持人</td>
-            <td width="8%" align="center">到会教师</td>
-            
-            <td align="center" width="8%">操 作</td>
+            <td width="5%" align="center">授课人</td>
+            <td width="5%" align="center">主持人</td>
+            <td width="5%" align="center">到会人</td>
+            <td width="5%" align="center">到课人</td>
+            <td width="5%" align="center">辅导人</td>
+            <td width="4%" align="center">操 作</td>
           </tr>
 			<%	
 				}
@@ -152,6 +151,8 @@
                   
                   <td align="middle">&nbsp; <bean:write id="result" property="entity/dj"/></td>
                   <td align="middle">&nbsp;<bean:write id="result" property="entity/daoHui"/></td>
+                  <td align="middle">&nbsp;<bean:write id="result" property="entity/daoKe"/></td>
+                  <td align="middle">&nbsp;<bean:write id="result" property="entity/fuDao"/></td>
                   <td align="center"><p>
                   <a href="javascript:updateSubject('<bean:write id="result" property="entity/courseID"/>','<bean:write id="result" property="entity/classID"/>')">修改</a>
                   </p></td>

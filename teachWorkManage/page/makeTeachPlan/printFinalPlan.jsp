@@ -90,10 +90,13 @@
 			<td width="10%" align="center">日期</td>
 			<td width="5%" align="center">午别</td>
 			<td width="5%" align="center">星期</td>
-			<td width="15%" colspan="8" align="center">学习内容</td>
+			<td width="30%" colspan="8" align="center">学习内容</td>
 
-			<td width="7%" align="center">授课人</td>
-			<td width="6%" align="center">主持人</td>
+			<td width="10%" align="center">授课人</td>
+			<td width="10%" align="center">主持人</td>
+			<td width="10%" align="center">到会人</td>
+            <td width="10%" align="center">到课人</td>
+            <td width="10%" align="center">辅导人</td>
 		</tr>
 		<logic:iterate id="courseResult" property="list[@type='Course']">
 			<logic:greaterEqual valueType="variable" valueId="resultSet" value="entity/BeginTime"
@@ -124,6 +127,15 @@
 						</td>
 						<td align="center">&nbsp;
 							<bean:write id="courseResult" property="Course/dj" />
+						</td>
+						<td align="center">&nbsp;
+							<bean:write id="courseResult" property="Course/daoHui" />
+						</td>
+						<td align="center">&nbsp;
+							<bean:write id="courseResult" property="Course/presentTeacher" />
+						</td>
+						<td align="center">&nbsp;
+							<bean:write id="courseResult" property="Course/fuDao" />
 						</td>
 
 					</tr>
