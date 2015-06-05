@@ -16,6 +16,7 @@
 		<input type="hidden" name="assignaction" value="studentmanage.prHousing.assignHouse.do">
 		<input type="hidden" name="exchangeaction" value="studentmanage.prHousing.exchangeHouse.do">
 		<input type="hidden" name="listaction" value="studentmanage.prHousing.studentHouseList.do">
+		<input type="hidden" name="dloadaction" value="studentmanage.prHousing.dloadHouse.do">
 		
 		<html:hidden property="QueryStudentRoom/_order/col1/field"/>
 		<html:hidden property="QueryStudentRoom/_order/col1/asc" />
@@ -55,7 +56,8 @@
        
         <qx:talentButton property="assign" type="button" styleClass="button_02" value="分 房" onclick="assignHouse()" operation="DX_STUDENT_MANAGE_ZS.DX_STUDENT_MANAGE_ZS_ASSIGN" />
         <qx:talentButton property="cancel" type="button" styleClass="button_02" value="退 房" onclick="cancelHousing()" operation="DX_STUDENT_MANAGE_ZS.DX_STUDENT_MANAGE_ZS_CANCEL" />
-        <qx:talentButton property="exchange" type="button" styleClass="button_02" value="对 调" onclick="exchangeHouse()"operation="DX_STUDENT_MANAGE_ZS.DX_STUDENT_MANAGE_ZS_CHANGE" />
+        <qx:talentButton property="exchange" type="button" styleClass="button_02" value="对 调" onclick="exchangeHouse()" operation="DX_STUDENT_MANAGE_ZS.DX_STUDENT_MANAGE_ZS_CHANGE" />
+        <input name="dload" type="button" class="button_02" value="下 传" onclick="dloadHouse()">
         <input name="lookList" type="button" class="button_02" value="列表查看" onclick="lookForList()">        </td>
         <td align="right" class="text"> 全选:
         <input type="checkbox" name="checkbox" value="checkbox" onclick="eosCheckAll(document.forms[0],this)" marked="">&nbsp;</td>
@@ -220,6 +222,18 @@
     	frm.action = frm.elements["exchangeaction"].value;
     	frm.submit();
     	
+	}
+	
+	function dloadHouse(){
+		var frm =document.forms[0];
+		var studentCount=chechedCount(frm);
+   		if(studentCount<1){
+    		alert("至少必须选择一个学生！");
+    		return ;
+    	} 
+		getStudentsSex(frm);
+		frm.action = frm.elements["dloadaction"].value;
+		frm.submit();
 	}
 	
     function lookForList(){

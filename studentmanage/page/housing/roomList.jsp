@@ -59,7 +59,8 @@
              <html:option value="0">Â¥Óî£¨ÓÒ£©</html:option> 
         </html:select>
         &nbsp;
-        <input name="query" type="button" class="button_02" value="²é Ñ¯" onClick="toquery(0)">	    	</td>
+        <input name="query" type="button" class="button_02" value="²é Ñ¯" onClick="toquery(0)">
+        </td>
 	    </tr>
 	     <tr>
         <td height="30" colspan="9" class="text"> 
