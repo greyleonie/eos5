@@ -240,7 +240,7 @@
 		var frm = document.opeForm;
 		var RoomID = frm.RoomID.value;
 		var CurrDate = frm.CurrDate.value;
-		var dateArray = CurrDate.split("-");;
+		var dateArray = CurrDate.split("-");
 		dateArray[1] = id;
 		dateStr = "";
 		for(i=0;i<dateArray.length;i++){
