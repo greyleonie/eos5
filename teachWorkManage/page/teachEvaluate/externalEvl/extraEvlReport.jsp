@@ -16,6 +16,10 @@ if (base.util.TalentContext.getValue(pageContext,null,"week/begin") != null && !
    }
 }
 
+int add = Integer.parseInt(base.util.TalentContext.getValue(pageContext,null,"add"));
+int courseNum = Integer.parseInt(base.util.TalentContext.getValue(pageContext,null,"courseNum"));
+int amountNum = Integer.parseInt(base.util.TalentContext.getValue(pageContext,null,"Survey/amount"));
+amountNum = amountNum * courseNum;
 %>
 <style type="text/css">
 <!--
@@ -85,12 +89,7 @@ document.forms[0].submit();
           <tr>
             <td height="30" align="left" class="text">
             <span class="MsoNormalIndent">
-            <!--<bean:write property="Class/ClassName"/>-->本班共
-            <bean:write property="Survey/amount"/>人，发放学员意见反馈表
-            <bean:write property="Survey/amount"/>份，回收
-            <bean:write property="Survey/ballot"/>份，回收率
-            <bean:write property="Survey/precent"/>%，意见栏填写
-            <bean:write property="Survey/suggest"/>份。</span>
+            <!--<bean:write property="Class/ClassName"/>-->本班共<bean:write property="Survey/amount"/>人，评估课题数<%=courseNum %>个，发放学员意见反馈表<%=amountNum %>份，回收<%=add %>份，回收率<%=(amountNum > 0) ? add*100/amountNum : 0 %>%，意见栏填写<bean:write property="Survey/suggest"/>份。</span>
             </td>
           </tr>
         </table>        
