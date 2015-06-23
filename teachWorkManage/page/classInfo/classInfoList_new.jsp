@@ -144,7 +144,7 @@
             <td align="center"><bean:write id="resultSet"  property="Class/BeginTime" formatClass="com.primeton.eos.webtag.bean.BeanWriteDateFormatImpl" formatType="yyyy-MM-dd"/></td>
             <td align="center"><bean:write id="resultSet"  property="Class/EndTime" formatClass="com.primeton.eos.webtag.bean.BeanWriteDateFormatImpl" formatType="yyyy-MM-dd"/></td>
             <td align="center"><bean:write id="resultSet"  property="Class/classRoomName"/></td>
-            <td align="center"><bean:write id="resultSet"  property="Class/buildingName"/></td><!--住宿地点-->
+            <td align="center"><bean:write id="resultSet"  property="Class/buildingNames"/></td><!--住宿地点-->
             <td align="center">
             <logic:equal id="resultSet" property="Class/RepastCard" value="0">不详</logic:equal>
             <logic:equal id="resultSet" property="Class/RepastCard" value="1">IC卡</logic:equal>
