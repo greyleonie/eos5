@@ -164,7 +164,7 @@
 												</logic:notEqual>
 											</td>
 											<td nowrap>&nbsp;
-												<bean:write id="resultset" property="QueryStudent/WorkingOrgan" maxLength="16" />
+												<bean:write id="resultset" property="QueryStudent/WorkingOrgan" maxLength="50" />
 											</td>
 											<td nowrap>&nbsp;
 												<bean:write id="resultset" property="QueryStudent/Duty" maxLength="16" />
