@@ -1,6 +1,6 @@
 <%@include file="/internet/common.jsp"%>
 <body>
-<form method="post" action="ICCard.prDevice.guestList.do">
+<form method="post" action="ICCard.prDevice.elockList.do">
   <table width="100%"  border="0" cellspacing="0" cellpadding="0">
     <tr> 
       <td height="24" background="image/lz_bg.gif"><table width="100%"  border="0" cellspacing="0" cellpadding="0" id="printTable">
@@ -12,7 +12,7 @@
     </tr>
     <tr>
       <td height="5">
-		<input type="hidden" name="queryaction" value="ICCard.prDevice.guestList.do">
+		<input type="hidden" name="queryaction" value="ICCard.prDevice.elockList.do">
 		<input type="hidden" name="zhushuaction" value="ICCard.prField.guestRoomBookAdd.do">
 		<input type="hidden" name="tuifangaction" value="ICCard.prField.guestRoomCheckOut.do">
 		<html:hidden property="QueryRoom/_order/col1/field"/>

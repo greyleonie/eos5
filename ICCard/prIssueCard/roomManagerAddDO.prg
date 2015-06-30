@@ -142,6 +142,13 @@
                             <column num="3" name="inPath" type="0">/</column>
                             <column num="4" name="name" type="0"/>
                         </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in</column>
+                            <column num="1" name="type" type="1">EOSEntity</column>
+                            <column num="2" name="value" type="0">MonitorTask</column>
+                            <column num="3" name="inPath" type="0">/</column>
+                            <column num="4" name="name" type="0"/>
+                        </row>
                     </property>
                 </propertyList>
                 <description/>

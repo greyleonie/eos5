@@ -44,6 +44,7 @@
 <body onLoad="Initial();" onUnload="cardcontrol.Quit()">
 	<form method="post" name="roomManager" action="ICCard.prIssueCard.roomManagerAddDO.do">
 		<html:hidden property="RoomManager/RoomManagerID" />
+		<html:hidden property="MonitorTask/MonitorTaskID" />
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td height="24" background="/internet/image/lz_bg.gif">
