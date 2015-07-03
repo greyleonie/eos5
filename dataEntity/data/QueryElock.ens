@@ -17,6 +17,7 @@ s.Enable,&#13;
 s.LastUpdatingTime SLUT,&#13;
 r.BuildingID,&#13;
 r.RoomName,&#13;
+r.LayerNO,&#13;
 b.BuildingName&#13;
  from Elock e left join Elockserver s on e.ElockServerID=s.ElockServerID &#13;
  left join Room r on r.Roomid=e.Roomid left join Building b on b.BuildingID=r.BuildingID</createSQL>
@@ -124,6 +125,12 @@ b.BuildingName&#13;
             <field name="RoomName" displayName="RoomName" defineType="String" columnName="RoomName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <description/>
                 <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="LayerNO" displayName="LayerNO" defineType="int" columnName="LayerNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="BuildingName" displayName="BuildingName" defineType="String" columnName="BuildingName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">

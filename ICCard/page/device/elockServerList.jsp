@@ -38,6 +38,18 @@
       
 	  <tr>
 	    <td height="30" class="text">
+	    	   服务器:
+	    	<html:select property="ElockServer/ElockServerID/criteria/value"  > 
+					<html:option  value="">---请选择---</html:option> 
+					<html:options property="list[@type='ElockServer']/ElockServer/ElockServerID" labelProperty="list[@type='ElockServer']/ElockServer/IP"/> 
+			</html:select>
+			<html:select property="ElockServer/DeviceTypeID/criteria/value">
+					<html:option  value="">---请选择---</html:option> 
+					<html:option value="1">M3000事件服务器</html:option>
+					<html:option value="2">无线中继服务器</html:option>
+					<html:option value="3">协议转换器</html:option>
+					<html:option value="4">虚拟串口设备</html:option>
+			</html:select>
 <input name="B32" type="button" class="button_02" value="查 询" onClick="talentquery()">
 <qx:talentButton property="add" type="button" styleClass="button_02" value="新 增" onclick="talentadd()" operation="DX_CARD_MANAGE_DEVICE_ELOCKSERVER.DX_CARD_MANAGE_DEVICE_ELOCKSERVER_ADD"/>
 <qx:talentButton property="modify" type="button" styleClass="button_02" value="修 改" onclick="talentmodify()" operation="DX_CARD_MANAGE_DEVICE_ELOCKSERVER.DX_CARD_MANAGE_DEVICE_ELOCKSERVER_MODIFY"/>

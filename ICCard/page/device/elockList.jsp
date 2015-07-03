@@ -38,17 +38,29 @@
       
 	  <tr>
 	    <td height="30" class="text">
-	   房间号:
-	    <html:text property="QueryElock/RoomID/criteria/value" attributesText='class="input"' size="8"/>
-<input name="B32" type="button" class="button_02" value="查 询" onClick="talentquery()">
-<qx:talentButton property="add" type="button" styleClass="button_02" value="新 增" onclick="talentadd()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_ADD"/>
-<qx:talentButton property="modify" type="button" styleClass="button_02" value="修 改" onclick="talentmodify()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_ADD"/>
-<qx:talentButton property="del" type="button" styleClass="button_02" value="删 除" onclick="talentdelete()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_DEL"/>
-<input name="ieprint" type="button" class="button_02" value="打 印" onClick="iePrint()">
-<input name="export" type="button" class="button_02" value="导 出" onClick="exporttoexcel()">
-&nbsp;服务端排序：<input type="checkbox" name="checkbox" onClick="servertoorder()" marked="">
-</td>
-	    </tr>
+	   服务器:
+	    	<html:select property="QueryElock/ElockServerID/criteria/value"  > 
+					<html:option  value="">---请选择---</html:option> 
+					<html:options property="list[@type='ElockServer']/ElockServer/ElockServerID" labelProperty="list[@type='ElockServer']/ElockServer/IP"/> 
+			</html:select>
+	   楼房:
+	    	<html:select property="QueryElock/BuildingName/criteria/value" onchange="toquery()" > 
+					<html:option  value="">---请选择---</html:option> 
+					<html:options property="list[@type='Building']/Building/BuildingName" labelProperty="list[@type='Building']/Building/BuildingName"/> 
+			</html:select>
+	   楼层:
+	    	<html:select property="QueryElock/LayerNO/criteria/value" onchange="toquery()" >
+					<option value="">---请选择---</option>
+					<html:options property="list[@type='Layer']/Layer/LayerNO" labelProperty="list[@type='Layer']/Layer/LayerNO" />
+			</html:select>
+			<input name="B32" type="button" class="button_02" value="查 询" onClick="talentquery()">
+			<qx:talentButton property="add" type="button" styleClass="button_02" value="新 增" onclick="talentadd()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_ADD"/>
+			<qx:talentButton property="modify" type="button" styleClass="button_02" value="修 改" onclick="talentmodify()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_ADD"/>
+			<qx:talentButton property="del" type="button" styleClass="button_02" value="删 除" onclick="talentdelete()" operation="DX_CARD_MANAGE_DEVICE_ELOCK.DX_CARD_MANAGE_DEVICE_ELOCK_DEL"/>
+			<input name="ieprint" type="button" class="button_02" value="打 印" onClick="iePrint()">
+			<input name="export" type="button" class="button_02" value="导 出" onClick="exporttoexcel()">
+		</td>
+	  </tr>
 	  
       <tr>
         <td height="8"> </td>
@@ -113,6 +125,13 @@
     </table>    </td>
   </tr>
 </table>
+<SCRIPT type="text/javascript" language="javascript">
+		function toquery(){
+			var frm =document.forms[0];
+			frm.action=frm.elements["queryaction"].value;
+			frm.submit();
+		}
+</SCRIPT>
 </form>
 <form name="exportform" method="post" target="_blank">
 <input type="hidden" name="title">
