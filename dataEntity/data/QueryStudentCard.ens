@@ -2,135 +2,185 @@
 <EOS-Data-Mapping>
     <Package name="dataEntity" displayName="dataEntity">
         <EOSEntity name="QueryStudentCard" displayName="QueryStudentCard" type="view" tableName="" schema="" inMemory="database" isSegment="false" deleteCascade="false" isVirtualView="true">
-            <description>学员卡查询实体</description>
+            <description/>
             <joinEntity entityJoinCriteria="" tableSaveOrder="0"/>
             <createSQL>select &#13;
 e.operatorname,&#13;
 e.userID,&#13;
 e.operatorType,&#13;
 e.status,&#13;
-s.StudentID,s.StudentNO,&#13;
-s.Sex,s.WorkingOrgan,&#13;
-s.Duty,s.ClassID,&#13;
-c.*,cl.ClassName,cl.Deposit&#13;
+s.StudentID,&#13;
+s.StudentNO,&#13;
+s.RoomID,&#13;
+r.RoomName,&#13;
+b.BuildingName,&#13;
+s.Sex,&#13;
+s.WorkingOrgan,&#13;
+s.Duty,&#13;
+s.ClassID,&#13;
+c.*,&#13;
+cl.ClassName,&#13;
+cl.Deposit&#13;
  from eosoperator e left  join Card c  on e.cardId=c.cardId,&#13;
-Student s left join Class cl on s.ClassID=cl.ClassID where e.operatorid=s.StudentID and e.status=1</createSQL>
+Room r left join Building b on b.BuildingID=r.BuildingID,&#13;
+&#13;
+Student s left join Class cl on s.ClassID=cl.ClassID where e.operatorid=s.StudentID and e.status=1 and r.RoomID=s.RoomID</createSQL>
             <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>64</length>
                 <precision>0</precision>
             </field>
             <field name="userID" displayName="userID" defineType="String" columnName="userID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>64</length>
                 <precision>0</precision>
             </field>
             <field name="operatorType" displayName="operatorType" defineType="int" columnName="operatorType" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="status" displayName="status" defineType="int" columnName="status" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="StudentID" displayName="StudentID" defineType="int" columnName="StudentID" isKey="false" isNullable="false" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="StudentNO" displayName="StudentNO" defineType="String" columnName="StudentNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>50</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomID" displayName="RoomID" defineType="int" columnName="RoomID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>integer</dataType>-->
+                <description/>
+                <length>11</length>
+                <precision>0</precision>
+            </field>
+            <field name="RoomName" displayName="RoomName" defineType="String" columnName="RoomName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
+                <length>100</length>
+                <precision>0</precision>
+            </field>
+            <field name="BuildingName" displayName="BuildingName" defineType="String" columnName="BuildingName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>50</length>
                 <precision>0</precision>
             </field>
             <field name="Sex" displayName="Sex" defineType="String" columnName="Sex" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>1</length>
                 <precision>0</precision>
             </field>
             <field name="WorkingOrgan" displayName="WorkingOrgan" defineType="String" columnName="WorkingOrgan" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>50</length>
                 <precision>0</precision>
             </field>
             <field name="Duty" displayName="Duty" defineType="String" columnName="Duty" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>50</length>
                 <precision>0</precision>
             </field>
             <field name="ClassID" displayName="ClassID" defineType="int" columnName="ClassID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="CardID" displayName="CardID" defineType="int" columnName="CardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="CardTypeID" displayName="CardTypeID" defineType="int" columnName="CardTypeID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="InnerCardID" displayName="InnerCardID" defineType="int" columnName="InnerCardID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="CardCoverNO" displayName="CardCoverNO" defineType="String" columnName="CardCoverNO" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>50</length>
                 <precision>0</precision>
             </field>
             <field name="StateID" displayName="StateID" defineType="int" columnName="StateID" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="RegisterTime" displayName="RegisterTime" defineType="TimeStamp" columnName="RegisterTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>time</dataType>-->
+                <description/>
                 <length>0</length>
                 <precision>0</precision>
-                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
             </field>
-            <field name="CancelTime" displayName="CancelTime" defineType="Date" columnName="CancelTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
-                <!--<dataType>date</dataType>-->
+            <field name="CancelTime" displayName="CancelTime" defineType="TimeStamp" columnName="CancelTime" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <!--<dataType>time</dataType>-->
+                <description/>
                 <length>0</length>
                 <precision>0</precision>
-                <!--<displayFormat>yyyyMMdd</displayFormat>-->
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
             </field>
             <field name="Cost" displayName="Cost" defineType="BigDecimal" columnName="Cost" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>number</dataType>-->
-                <length>21</length>
-                <precision>4</precision>
+                <description/>
+                <length>20</length>
+                <precision>2</precision>
             </field>
             <field name="TimeOfIssueCard" displayName="TimeOfIssueCard" defineType="TimeStamp" columnName="TimeOfIssueCard" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>time</dataType>-->
+                <description/>
                 <length>0</length>
                 <precision>0</precision>
-                <!--<displayFormat>yyyy-MM-dd HH:mm:ss</displayFormat>-->
+                <!--<displayFormat>yyyyMMddHHmmss</displayFormat>-->
             </field>
             <field name="CardUsingTimes" displayName="CardUsingTimes" defineType="int" columnName="CardUsingTimes" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
             <field name="CardLastSum" displayName="CardLastSum" defineType="BigDecimal" columnName="CardLastSum" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>number</dataType>-->
-                <length>21</length>
-                <precision>4</precision>
+                <description/>
+                <length>20</length>
+                <precision>2</precision>
             </field>
             <field name="Remark" displayName="Remark" defineType="String" columnName="Remark" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
+                <description/>
                 <length>100</length>
                 <precision>0</precision>
             </field>
             <field name="ClassName" displayName="ClassName" defineType="String" columnName="ClassName" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
-                <length>50</length>
+                <description/>
+                <length>100</length>
                 <precision>0</precision>
             </field>
             <field name="Deposit" displayName="Deposit" defineType="int" columnName="Deposit" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <!--<dataType>integer</dataType>-->
+                <description/>
                 <length>11</length>
                 <precision>0</precision>
             </field>
         </EOSEntity>
     </Package>
-    <!--StudioDBConName:sqlserver2000-->
-    <!--schema:DX-->
+    <!--StudioDBConName:sqlserver2005-->
+    <!--schema:dxeos-->
 </EOS-Data-Mapping>

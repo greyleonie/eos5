@@ -82,13 +82,18 @@
       <tr>
         <td valign="top" class="text"><table width="98%"  border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#A2C4DC" id="listdetail">
           <tr class="td_title">
-            <td width="12%" align="center" nowrap id="QueryStudentCard.StudentNO" onClick="talentsort()">学号</td>
-            <td width="10%" align="center" nowrap id="QueryStudentCard.operatorname" onClick="talentsort()">姓名</td>
-            <td width="8%" align="center" nowrap id="QueryStudentCard.Sex" onClick="talentsort()">性别</td>
+          <td width="10%" align="center" nowrap id="QueryStudentCard.StudentNO" onClick="talentsort()">学号</td>
+           <td width="10%" align="center" nowrap id="QueryStudentCard.operatorname" onClick="talentsort()">姓名</td>
+           	            <td width="10%" align="center" nowrap id="QueryStudentCard.StateID" onClick="talentsort()">发卡状态</td>
+           <td width="10%" align="center" nowrap onClick="talentsort()">操作</td>
+            
+           
+            <td width="8%" align="center" nowrap id="QueryStudentCard.BuildingName" onClick="talentsort()">楼房</td>
+            <td width="8%" align="center" nowrap id="QueryStudentCard.RoomName" onClick="talentsort()">房间</td>
+            <td width="6%" align="center" nowrap id="QueryStudentCard.Sex" onClick="talentsort()">性别</td>
             <td width="30%" align="center" nowrap id="QueryStudentCard.WorkingOrgan" onClick="talentsort()">单位</td>
-            <td width="16%" align="center" nowrap id="QueryStudentCard.Duty" onClick="talentsort()">职务</td>
-            <td width="10%" align="center" nowrap id="QueryStudentCard.StateID" onClick="talentsort()">发卡状态</td>
-            <td width="10%" align="center" nowrap onClick="talentsort()">操作</td>
+            <td width="10%" align="center" nowrap id="QueryStudentCard.Duty" onClick="talentsort()">职务</td>
+
           </tr>
           <%
 		             int count=0;
@@ -105,12 +110,9 @@
 						count++;
 			       %>
            <tr class="<%=trClass%>" onClick="changeTRBgColor(this)">
-	            <td nowrap align="center"><bean:write id="resultset" property="QueryStudentCard/StudentNO"/></td>
-	        	<td nowrap align="center"><bean:write id="resultset" property="QueryStudentCard/operatorname"/></td>
-	            <td nowrap align="center"><dict:write businTypeId="BNDICT_gender" property="QueryStudentCard/Sex" id="resultset"/></td>
-	            <td  >&nbsp;<bean:write id="resultset" property="QueryStudentCard/WorkingOrgan"/></td>
-	            <td nowrap align="center"><bean:write  id="resultset" property="QueryStudentCard/Duty" /></td>
-	            <td width="10%" align="center"  nowrap>
+            <td nowrap align="center"><bean:write id="resultset" property="QueryStudentCard/StudentNO"/></td>
+            	<td nowrap align="center"><bean:write id="resultset" property="QueryStudentCard/operatorname"/></td>
+           	    <td width="10%" align="center"  nowrap>
               <%
 	            String cardID= base.util.TalentContext.getValue(pageContext,"resultset","QueryStudentCard/CardID");
 	            String stateID= base.util.TalentContext.getValue(pageContext,"resultset","QueryStudentCard/StateID");
@@ -141,6 +143,15 @@
 	            <input name="congeal" type="button" class="button_02" value="冻 结" onClick="congealCard(<bean:write id="resultset" property="QueryStudentCard/CardID"/>)">
 	           <%
 	           } %>	            </td>
+	           
+	        
+	            <td nowrap align="center"><bean:write  id="resultset" property="QueryStudentCard/BuildingName" /></td>
+	            <td nowrap align="center"><bean:write  id="resultset" property="QueryStudentCard/RoomName" /></td>
+	            <td nowrap align="center"><dict:write businTypeId="BNDICT_gender" property="QueryStudentCard/Sex" id="resultset"/></td>
+	            <td  >&nbsp;<bean:write id="resultset" property="QueryStudentCard/WorkingOrgan"/></td>
+	            <td nowrap align="center"><bean:write  id="resultset" property="QueryStudentCard/Duty" /></td>
+
+	           
             </tr>
           </logic:iterate>
         </table>
