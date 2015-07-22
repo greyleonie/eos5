@@ -516,7 +516,7 @@ public class StudentData {
 						st.executeUpdate(insertOperator);
 						PreparedStatement st2 = cn
 								.prepareStatement(insertStudent);
-						for (int k = 0; k < obj.length; k++) {
+						for (int k = 0; k < obj.length-1; k++) {
 							if (obj[k] == null) {
 								st2.setString(k + 1, null);
 							} else

@@ -82,7 +82,7 @@
             <td width="10%" align="center" nowrap id="QueryRoomManager.TeacherType" onclick="talentsort()">受权楼房</td>
             <td width="10%" align="center" nowrap id="QueryRoomManager.DutyTechnicalPost" onclick="talentsort()">受权楼层</td>
             <td width="12%" align="center" nowrap id="QueryRoomManager.IsRetire" onclick="talentsort()">发卡时间</td>
-            <td width="12%" align="center" nowrap id="QueryRoomManager.IsRetire" onclick="talentsort()">失效时间</td>
+            <td width="12%" align="center" nowrap id="QueryRoomManager.EndTime" onclick="talentsort()">失效时间</td>
             <td width="10%" align="center" nowrap id="QueryRoomManager.StateID" onclick="talentsort()">持卡人</td>
             <td width="10%" align="center" nowrap id="QueryRoomManager.StateID" onclick="talentsort()">卡状态</td>
             <td width="10%" align="center" nowrap onclick="talentsort()">操作</td>
