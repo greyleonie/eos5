@@ -71,7 +71,9 @@ public class TalentToExcel {
 	public void export(PageContext pageContext) throws Exception {
 		HttpServletRequest req = (HttpServletRequest)pageContext.getRequest();
 		HttpServletResponse res = (HttpServletResponse) pageContext.getResponse();
-		String title = req.getParameter("title");//得到报表的标题
+		String title_temp = req.getParameter("title");//得到报表的标题
+		//报表名称字符串长度大于32，自动截尾
+		String title = (title_temp.length() > 32) ? title_temp.substring(0,31) : title_temp;
 		fccLog.info("*************title:" + title);
 
 		
