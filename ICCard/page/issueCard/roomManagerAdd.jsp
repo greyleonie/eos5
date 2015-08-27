@@ -110,11 +110,11 @@
                 base.util.TalentContext.getValue(pageContext, null,
                         "RoomManager/LayerNO"), -1);
         if (layerNO < 0) {
-        %> <input type="radio" name="RoomManager/type" value="1" onclick="ShowLayerNO()" />Â¥²ã¿¨ <input type="radio"
-									name="RoomManager/type" value="2" checked="true" onclick="HideLayerNO()" />Â¥·¿×Ü¹Ü¿¨ <%} else {
+        %> <input type="radio" name="Card/CardTypeID" value="1" onclick="ShowLayerNO()" />Â¥²ã¿¨ <input type="radio"
+									name="Card/CardTypeID" value="2" checked="true" onclick="HideLayerNO()" />Â¥·¿×Ü¹Ü¿¨ <%} else {
         %> <input
-									type="radio" name="RoomManager/type" value="1" checked="true" onclick="ShowLayerNO()" />Â¥²ã¿¨ <input type="radio"
-									name="RoomManager/type" value="2" onclick="HideLayerNO()" />Â¥·¿×Ü¹Ü¿¨ <%}
+									type="radio" name="Card/CardTypeID" value="1" checked="true" onclick="ShowLayerNO()" />Â¥²ã¿¨ <input type="radio"
+									name="Card/CardTypeID" value="2" onclick="HideLayerNO()" />Â¥·¿×Ü¹Ü¿¨ <%}
     %></td>
 						</tr>
 						<tr id="cardcovernorow">
