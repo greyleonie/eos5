@@ -3,6 +3,7 @@
 <form method="post"  action="ICCard.prField.guestRoomCheckOutDo.do">
 <html:hidden property="HousingLogs/HousingLogsID"/>
 <html:hidden property="Room/BuildingID"/>
+<html:hidden property="Room/RoomID"/>
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
     <tr> 
       <td height="24" background="image/lz_bg.gif"> 

@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="GB2312" standalone="no"?>
 <autoGraphics>
-    <graphic name="guestList" type="prg" router="0">
+    <graphic name="elockServerAdd" type="prg" router="0">
         <states>
-            <state color="16777215" id="4" typeName="useCase" height="48" width="48" x="176" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">useCase</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>查询建筑列表</value>
-                    </property>
-                    <property name="unitName" type="0">
-                        <value>Product</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">studentmanage.bizHousing.buildingList</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="unitId" type="2">
-                        <row num="0">
-                            <column num="0" name="unitId">0</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="txType" type="1">
-                        <value>supports</value>
-                    </property>
-                    <property name="synchronization" type="1">
-                        <value>true</value>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5"/>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="2" typeName="End" height="48" width="48" x="736" y="56" lookAndFeel="classic">
+            <state color="16777215" id="2" typeName="End" height="48" width="48" x="616" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -55,10 +21,10 @@
                 <description/>
             </state>
             <state color="16777215" id="1" typeName="Start" height="48" width="48" x="56" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">guestList</name>
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">cardAdd</name>
                 <propertyList>
                     <property name="id" type="0">
-                        <value>guestList</value>
+                        <value>cardAdd</value>
                     </property>
                     <property name="display_text" type="0">
                         <value>开始</value>
@@ -73,7 +39,7 @@
                         <value/>
                     </property>
                     <property name="date" type="0">
-                        <value>Tue Apr 03 11:37:56 CST 2007</value>
+                        <value>Fri Mar 09 10:38:51 CST 2007</value>
                     </property>
                     <property name="productVersion" type="0">
                         <value>5.0</value>
@@ -82,7 +48,7 @@
                         <value/>
                     </property>
                     <property name="description" type="0">
-                        <value>电子门锁列表</value>
+                        <value>电子门锁服务器</value>
                     </property>
                     <property name="type" type="1">
                         <value>hci</value>
@@ -97,18 +63,61 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="5" typeName="useCase" height="48" width="48" x="416" y="56" lookAndFeel="classic">
+            <state color="16777215" id="4" typeName="annotate" height="100" width="197" x="542" y="190" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">annotate</name>
+                <propertyList>
+                    <property name="title" type="0">
+                        <value>帅文明	07-3-9 上午10:44</value>
+                    </property>
+                    <property name="text" type="0">
+                        <value>进入电子门锁添加</value>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="8" typeName="setField" height="48" width="48" x="176" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">setField</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>数据设置</value>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="paraType" type="1">appArea</column>
+                            <column num="3" name="value" type="0">init</column>
+                            <column num="4" name="name" type="0"/>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="paraType" type="1">appArea</column>
+                            <column num="3" name="value" type="0">ElockServer/init</column>
+                            <column num="4" name="name" type="0"/>
+                        </row>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">setField</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="9" typeName="useCase" height="48" width="48" x="296" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">useCase</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>查询房间列表</value>
+                        <value>elockServerAdd</value>
                     </property>
                     <property name="unitName" type="0">
                         <value>Product</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">ICCard.bizDevice.roomList</column>
+                            <column num="0" name="action">ICCard.bizDevice.elockServerAdd</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -131,7 +140,7 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in</column>
                             <column num="1" name="type" type="1">EOSEntity</column>
-                            <column num="2" name="value" type="0">QueryRoom</column>
+                            <column num="2" name="value" type="0">ElockServer</column>
                             <column num="3" name="inPath" type="0">/</column>
                             <column num="4" name="name" type="0"/>
                         </row>
@@ -139,58 +148,15 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="3" typeName="setField" height="48" width="48" x="296" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">setField</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>数据设置</value>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="paraType" type="1">appArea</column>
-                            <column num="3" name="value" type="0">init</column>
-                            <column num="4" name="name" type="0"/>
-                        </row>
-                        <row num="1">
-                            <column num="0" name="passing" type="1">out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="paraType" type="1">appArea</column>
-                            <column num="3" name="value" type="0">QueryRoom/init</column>
-                            <column num="4" name="name" type="0"/>
-                        </row>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">setField</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="6" typeName="annotate" height="100" width="197" x="662" y="190" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">annotate</name>
-                <propertyList>
-                    <property name="title" type="0">
-                        <value>陈绍栋	07-4-3 上午11:40</value>
-                    </property>
-                    <property name="text" type="0">
-                        <value>查询楼层房间列表</value>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="7" typeName="view" height="48" width="48" x="536" y="56" lookAndFeel="classic">
+            <state color="16777215" id="10" typeName="view" height="48" width="48" x="416" y="56" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">view</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>guestList.jsp</value>
+                        <value>elockServerAdd.jsp</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">/ICCard/page/device/guestList.jsp</column>
+                            <column num="0" name="action">/ICCard/page/device/elockServerAdd.jsp</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -200,55 +166,11 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="8" typeName="annotate" height="100" width="203" x="210" y="223" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">annotate</name>
-                <propertyList>
-                    <property name="title" type="0">
-                        <value>陈绍栋	07-7-20 上午11:52</value>
-                    </property>
-                    <property name="text" type="0">
-                        <value>电子门锁列表</value>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
         </states>
         <connectors>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.useCase.4</from>
-                <to>Shape.setField.3</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
                 <from>Shape.Start.1</from>
-                <to>Shape.useCase.4</to>
+                <to>Shape.setField.8</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
@@ -279,8 +201,8 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.useCase.5</from>
-                <to>Shape.view.7</to>
+                <from>Shape.setField.8</from>
+                <to>Shape.useCase.9</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
@@ -311,8 +233,8 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.setField.3</from>
-                <to>Shape.useCase.5</to>
+                <from>Shape.useCase.9</from>
+                <to>Shape.view.10</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
@@ -343,7 +265,7 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.view.7</from>
+                <from>Shape.view.10</from>
                 <to>Shape.End.2</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">

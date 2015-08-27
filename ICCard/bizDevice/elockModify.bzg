@@ -1,330 +1,12 @@
 <?xml version="1.0" encoding="GB2312" standalone="no"?>
 <autoGraphics>
-    <graphic name="cancelHousing" type="bzg" router="0">
+    <graphic name="elockModify" type="bzg" router="0">
         <states>
-            <state color="16777215" id="6" typeName="transaction_rollback" height="48" width="48" x="1055" y="-78" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">transaction_rollback</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>事务回滚</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">TX.rollback</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="14" typeName="businessLogic" height="48" width="48" x="656" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>BL_joinStrings</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateLogs</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">存放连接得到的结果</column>
-                        </row>
-                        <row num="1">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">update HousingLogs set enable = 0 </column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">连接所用到的字符串</column>
-                        </row>
-                        <row num="2">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> where ischeckout=0 and enable=1 and UserID=</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="3">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/StudentID</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="4">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and RoomID=</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="5">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/RoomID</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="11" typeName="businessLogic" height="48" width="48" x="536" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>更新Student表</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runUpdateSql</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateStudent</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">SQL语句</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="2" typeName="End" height="48" width="48" x="1262" y="63" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>结束</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">end</column>
-                            <column num="1" name="type"/>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="8" typeName="iterationEnd" height="48" width="48" x="1056" y="176" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationEnd</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>迭代结束</value>
-                    </property>
-                    <property name="name" type="0">
-                        <value>iteration</value>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">iteratorPath</column>
-                            <column num="1" name="action">constant</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="9" typeName="businessLogic" height="48" width="48" x="1261" y="176" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>1</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setReturnCode</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">1</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">返回值</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="12" typeName="businessLogic" height="48" width="48" x="423" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>BL_joinStrings</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateStudent</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">存放连接得到的结果</column>
-                        </row>
-                        <row num="1">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">update Student set RoomID = null </column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">连接所用到的字符串</column>
-                        </row>
-                        <row num="2">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> where StudentID=</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="3">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/StudentID</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="17" typeName="businessLogic" height="48" width="48" x="424" y="176" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>有无房间ID</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_isNullNode</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">ITERATION/RoomID</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">被判断的节点</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="5" typeName="transaction_commit" height="48" width="48" x="1176" y="176" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">transaction_commit</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>事务提交</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">TX.commit</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="7" typeName="iterationBegin" height="48" width="48" x="296" y="175" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">iterationBegin</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>迭代开始</value>
-                    </property>
-                    <property name="name" type="0">
-                        <value>iteration</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">list[@type='Student']</column>
-                            <column num="1" name="action">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="4" typeName="transaction_begin" height="48" width="48" x="176" y="175" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">transaction_begin</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>事务开始</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">TX.begin</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="1" typeName="Start" height="48" width="48" x="56" y="175" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">cancelHousing</name>
+            <state color="16777215" id="19" typeName="Start" height="48" width="48" x="56" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">elockAdd</name>
                 <propertyList>
                     <property name="id" type="0">
-                        <value>cancelHousing</value>
+                        <value>elockAdd</value>
                     </property>
                     <property name="display_text" type="0">
                         <value>开始</value>
@@ -333,13 +15,13 @@
                         <value/>
                     </property>
                     <property name="author" type="0">
-                        <value>陈绍栋</value>
+                        <value>Administrator</value>
                     </property>
                     <property name="department" type="0">
                         <value/>
                     </property>
                     <property name="date" type="0">
-                        <value>Fri Feb 02 14:15:23 CST 2007</value>
+                        <value>Fri Jun 26 06:39:34 GMT 2015</value>
                     </property>
                     <property name="productVersion" type="0">
                         <value>5.0</value>
@@ -348,7 +30,7 @@
                         <value/>
                     </property>
                     <property name="description" type="0">
-                        <value>学员退房</value>
+                        <value/>
                     </property>
                     <property name="graphicRef" type="0">
                         <value/>
@@ -359,219 +41,68 @@
                     <property name="type" type="1">
                         <value>pi</value>
                     </property>
-                    <property name="parameter" type="5"/>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="10" typeName="businessLogic" height="48" width="48" x="1262" y="-79" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>-1</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setReturnCode</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
                     <property name="parameter" type="5">
                         <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">-1</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">返回值</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="3" typeName="annotate" height="108" width="191" x="1216" y="285" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">annotate</name>
-                <propertyList>
-                    <property name="title" type="0">
-                        <value>陈绍栋	07-2-2 下午2:15</value>
-                    </property>
-                    <property name="text" type="0">
-                        <value>学员退房:去除Student表RoomID,相关住房记录变为无效，并改变相关房间状态。</value>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="16" typeName="businessLogic" height="48" width="48" x="936" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>BL_joinStrings</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateRoom</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Building']</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
                         </row>
                         <row num="1">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">update Room set State = 1</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">连接所用到的字符串</column>
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Layer']</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
                         </row>
                         <row num="2">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> where (Select count(h.HousingLogsID) from  HousingLogs h where h.RoomID=Room.RoomID and h.ischeckout=0 and h.enable=1 )=0</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Room']</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
                             <column num="5" name="description" type="0"/>
                         </row>
                         <row num="3">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and RoomID=</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='ElockServer']</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
                             <column num="5" name="description" type="0"/>
                         </row>
                         <row num="4">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/RoomID</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntity</column>
+                            <column num="2" name="value" type="0">lid</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                        <row num="5">
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntity</column>
+                            <column num="2" name="value" type="0">bid</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                        <row num="6">
+                            <column num="0" name="passing" type="1">out</column>
+                            <column num="1" name="type" type="1">EOSEntity</column>
+                            <column num="2" name="value" type="0">Elock</column>
+                            <column num="3" name="name" type="0"/>
+                            <column num="4" name="inPath" type="0">/</column>
                             <column num="5" name="description" type="0"/>
                         </row>
                     </property>
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="13" typeName="businessLogic" height="48" width="48" x="816" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>更新HousingLogs表</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runUpdateSql</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateLogs</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">SQL语句</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="15" typeName="businessLogic" height="48" width="48" x="1056" y="56" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>更新Room表</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runUpdateSql</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/temp/updateRoom</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">SQL语句</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="32" typeName="businessLogic" height="48" width="48" x="690" y="304" lookAndFeel="classic">
-                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value>BL_addDateTime</value>
-                    </property>
-                    <property name="action" type="2">
-                        <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.datetime.BNTime.BL_addDateTime</column>
-                            <column num="1" name="type">constant</column>
-                        </row>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                    <property name="parameter" type="5">
-                        <row num="0">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/CreatedTime</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">存放加减日期时间的结果</column>
-                        </row>
-                        <row num="1">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">MonitorTask/CreatedTime</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">初始日期时间</column>
-                        </row>
-                        <row num="2">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">8</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">增减日期时间的长度</column>
-                        </row>
-                        <row num="3">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">H</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">增减日期时间的类型</column>
-                        </row>
-                    </property>
-                </propertyList>
-                <description/>
-            </state>
-            <state color="16777215" id="33" typeName="businessLogic" height="48" width="48" x="602" y="214" lookAndFeel="classic">
+            <state color="16777215" id="20" typeName="businessLogic" height="48" width="48" x="541" y="59" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
@@ -590,7 +121,43 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/OperatorIP</column>
+                            <column num="2" name="value" type="0">temp/sqlString</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">result</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select distinct b.* from Building b,Room r where  b.BuildingID=r.BuildingID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">value</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="21" typeName="businessLogic" height="48" width="48" x="1336" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询房间列表</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Room']</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -598,168 +165,390 @@
                         <row num="1">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">SessionEntity/remoteAddr</column>
+                            <column num="2" name="value" type="0">temp/sqlString1</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
                         </row>
-                        <row num="2">
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="22" typeName="businessLogic" height="48" width="48" x="936" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询楼层列表</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Layer']</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">temp/sqlString2</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="23" typeName="businessLogic" height="48" width="48" x="816" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_joinStrings</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/OperatorName</column>
+                            <column num="2" name="value" type="0">temp/sqlString2</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">SELECT DISTINCT LayerNO FROM Room WHERE BuildingID=</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">连接所用到的字符串</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">Elock/BuildingID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="26" typeName="businessLogic" height="48" width="48" x="674" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询建筑列表</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='Building']</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">存放查询结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">temp/sqlString</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">SQL查询语句</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="27" typeName="businessLogic" height="48" width="48" x="1216" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_joinStrings</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">temp/sqlString1</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select r.RoomID,r.RoomName from Room r WHERE r.BuildingID=</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">连接所用到的字符串</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">Elock/BuildingID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
                         </row>
                         <row num="3">
                             <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">SessionEntity/userName</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">and r.LayerNO=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
                         </row>
                         <row num="4">
                             <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">Elock/LayerID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="28" typeName="End" height="48" width="48" x="1696" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">End</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>结束</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">end</column>
+                            <column num="1" name="type"/>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="29" typeName="businessLogic" height="48" width="48" x="1096" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_isNullNode</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_isNullNode</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/TaskTypeID</column>
+                            <column num="2" name="value" type="0">Elock/LayerID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">被判断的节点</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="30" typeName="businessLogic" height="48" width="48" x="1096" y="176" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>没有楼层ID就用第一个</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setNodeValueBatch</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">Elock/LayerID/criteria/value</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0">result</column>
                         </row>
-                        <row num="5">
+                        <row num="1">
                             <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">7</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">list[@type='Layer']/Layer[@rowNum=0]/LayerNO</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0">value</column>
                         </row>
-                        <row num="6">
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="31" typeName="businessLogic" height="48" width="48" x="1576" y="96" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询IP列表</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/DeviceTypeID</column>
+                            <column num="1" name="type" type="1">EOSEntityList</column>
+                            <column num="2" name="value" type="0">list[@type='ElockServer']</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
+                            <column num="5" name="description" type="0">存放查询结果</column>
                         </row>
-                        <row num="7">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">2</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="8">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/Batch</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="9">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">0</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="10">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/DeviceID</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="11">
+                        <row num="1">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">ITERATION/RoomID</column>
+                            <column num="2" name="value" type="0">temp/sqlString3</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="12">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/Instant</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="13">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">1</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="14">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/RetryTimes</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="15">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">0</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="16">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/Finished</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="17">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">0</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="18">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">EOSEntity</column>
-                            <column num="2" name="value" type="0">MonitorTask/Result</column>
-                            <column num="3" name="paraType" type="0">{Node}</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
-                        </row>
-                        <row num="19">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">-1</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
+                            <column num="5" name="description" type="0">SQL查询语句</column>
                         </row>
                     </property>
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="34" typeName="businessLogic" height="48" width="48" x="1058" y="303" lookAndFeel="classic">
+            <state color="16777215" id="32" typeName="businessLogic" height="48" width="48" x="1456" y="96" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>增加MonitorTask</value>
+                        <value>BL_setNodeValueBatch</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_insertEntity</column>
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setNodeValueBatch</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">temp/sqlString3</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">result</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select ElockServerID,IP from elockserver</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">value</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="34" typeName="businessLogic" height="48" width="48" x="176" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>初始化卡实体</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setNodeValueBatch</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">Elock/ElockID</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">result</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">fid</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">value</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="35" typeName="businessLogic" height="48" width="48" x="296" y="56" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询选择的门锁信息</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_expandEntityAll</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -770,24 +559,24 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">EOSEntity</column>
-                            <column num="2" name="value" type="0">MonitorTask</column>
+                            <column num="2" name="value" type="0">Elock</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0"/>
+                            <column num="5" name="description" type="0">操作对象节点</column>
                         </row>
                     </property>
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="35" typeName="businessLogic" height="48" width="48" x="880" y="303" lookAndFeel="classic">
+            <state color="16777215" id="37" typeName="businessLogic" height="48" width="48" x="240" y="170" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>BL_addDateTime</value>
+                        <value>BL_joinStrings</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.datetime.BNTime.BL_addDateTime</column>
+                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -798,48 +587,76 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/ExecuteTime</column>
+                            <column num="2" name="value" type="0">temp/sqlString01</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">存放加减日期时间的结果</column>
+                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select r.BuildingID from room r where r.roomID=</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">连接所用到的字符串</column>
+                        </row>
+                        <row num="2">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">Elock/RoomID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="38" typeName="businessLogic" height="48" width="48" x="269" y="242" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>查询楼宇</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">bid</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0"/>
                         </row>
                         <row num="1">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">variable</column>
-                            <column num="2" name="value" type="0">MonitorTask/ExecuteTime</column>
+                            <column num="2" name="value" type="0">temp/sqlString01</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">初始日期时间</column>
-                        </row>
-                        <row num="2">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">8</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">增减日期时间的长度</column>
-                        </row>
-                        <row num="3">
-                            <column num="0" name="passing" type="1">in_out</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">H</column>
-                            <column num="3" name="paraType" type="0">String</column>
-                            <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">增减日期时间的类型</column>
+                            <column num="5" name="description" type="0"/>
                         </row>
                     </property>
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="36" typeName="businessLogic" height="48" width="48" x="966" y="302" lookAndFeel="classic">
+            <state color="16777215" id="39" typeName="businessLogic" height="48" width="48" x="457" y="398" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>获得主键</value>
+                        <value>查询楼层列表</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">talent.core.Webpriary.BL_getWebPriary</column>
+                            <column num="0" name="action">com.primeton.eos.bizlets.database.Database.BL_runFormatSql</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -850,23 +667,59 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/MonitorTaskID</column>
+                            <column num="2" name="value" type="0">lid</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">实体的标识节点Entity/id</column>
+                            <column num="5" name="description" type="0"/>
                         </row>
                         <row num="1">
-                            <column num="0" name="passing" type="1">in</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">MonitorTask</column>
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">temp/sqlString02</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="40" typeName="businessLogic" height="48" width="48" x="435" y="248" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_joinStrings</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.string.BNString.BL_joinStrings</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">temp/sqlString02</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">存放连接得到的结果</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">constant</column>
+                            <column num="2" name="value" type="0">select r.LayerNO from room r where r.roomID=</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">连接所用到的字符串</column>
                         </row>
                         <row num="2">
-                            <column num="0" name="passing" type="1">in</column>
-                            <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0">MonitorTaskID</column>
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">Elock/RoomID</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -875,15 +728,15 @@
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="37" typeName="businessLogic" height="48" width="48" x="784" y="304" lookAndFeel="classic">
+            <state color="16777215" id="41" typeName="businessLogic" height="48" width="48" x="353" y="382" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>BL_getDateTime</value>
+                        <value>赋值</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.datetime.BNTime.BL_getDateTime</column>
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setNodeValueBatch</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -894,24 +747,32 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/ExecuteTime</column>
+                            <column num="2" name="value" type="0">Elock/BuildingID/criteria/value</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">保存结果的节点</column>
+                            <column num="5" name="description" type="0">result</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">bid/entity/BuildingID</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">value</column>
                         </row>
                     </property>
                 </propertyList>
                 <description/>
             </state>
-            <state color="16777215" id="38" typeName="businessLogic" height="48" width="48" x="604" y="303" lookAndFeel="classic">
+            <state color="16777215" id="42" typeName="businessLogic" height="48" width="48" x="560" y="266" lookAndFeel="classic">
                 <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
                 <propertyList>
                     <property name="display_text" type="0">
-                        <value>BL_getDateTime</value>
+                        <value>赋值</value>
                     </property>
                     <property name="action" type="2">
                         <row num="0">
-                            <column num="0" name="action">com.primeton.eos.bizlets.datetime.BNTime.BL_getDateTime</column>
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_setNodeValueBatch</column>
                             <column num="1" name="type">constant</column>
                         </row>
                     </property>
@@ -922,10 +783,74 @@
                         <row num="0">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">field</column>
-                            <column num="2" name="value" type="0">MonitorTask/CreatedTime</column>
+                            <column num="2" name="value" type="0">Elock/LayerID/criteria/value</column>
                             <column num="3" name="paraType" type="0">{Node}</column>
                             <column num="4" name="name" type="0"/>
-                            <column num="5" name="description" type="0">保存结果的节点</column>
+                            <column num="5" name="description" type="0">result</column>
+                        </row>
+                        <row num="1">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">variable</column>
+                            <column num="2" name="value" type="0">lid/entity/LayerNO</column>
+                            <column num="3" name="paraType" type="0">String</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">value</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="43" typeName="businessLogic" height="48" width="48" x="376" y="54" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_isNullNode</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_isNullNode</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">Elock/BuildingID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">被判断的节点</column>
+                        </row>
+                    </property>
+                </propertyList>
+                <description/>
+            </state>
+            <state color="16777215" id="44" typeName="businessLogic" height="48" width="48" x="431" y="118" lookAndFeel="classic">
+                <name fontName="System" fontSize="12" fontWidth="550" foreColor="0" isItalic="0" isUnderline="0" textHeight="60">businessLogic</name>
+                <propertyList>
+                    <property name="display_text" type="0">
+                        <value>BL_isNullNode</value>
+                    </property>
+                    <property name="action" type="2">
+                        <row num="0">
+                            <column num="0" name="action">com.primeton.eos.bizlets.xmldom.BNNode.BL_isNullNode</column>
+                            <column num="1" name="type">constant</column>
+                        </row>
+                    </property>
+                    <property name="description" type="0">
+                        <value/>
+                    </property>
+                    <property name="parameter" type="5">
+                        <row num="0">
+                            <column num="0" name="passing" type="1">in_out</column>
+                            <column num="1" name="type" type="1">field</column>
+                            <column num="2" name="value" type="0">Elock/LayerID/criteria/value</column>
+                            <column num="3" name="paraType" type="0">{Node}</column>
+                            <column num="4" name="name" type="0"/>
+                            <column num="5" name="description" type="0">被判断的节点</column>
                         </row>
                     </property>
                 </propertyList>
@@ -934,695 +859,7 @@
         </states>
         <connectors>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.transaction_rollback.6</from>
-                <to>Shape.businessLogic.10</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.14</from>
-                <to>Shape.businessLogic.13</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.11</from>
-                <to>Shape.businessLogic.14</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="exception">
-                <from>Shape.businessLogic.11</from>
-                <to>Shape.transaction_rollback.6</to>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="value" type="0">
-                        <value>java.lang.Exception</value>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.iterationEnd.8</from>
-                <to>Shape.transaction_commit.5</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.9</from>
-                <to>Shape.End.2</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.12</from>
-                <to>Shape.businessLogic.11</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.17</from>
-                <to>Shape.businessLogic.33</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.17</from>
-                <to>Shape.iterationEnd.8</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value>无</value>
-                    </property>
-                    <property name="type" type="0">
-                        <value>retCode</value>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value>constant</value>
-                    </property>
-                    <property name="default" type="0">
-                        <value>false</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType">LE</column>
-                            <column num="2" name="rightValue">0</column>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.transaction_commit.5</from>
-                <to>Shape.businessLogic.9</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.iterationBegin.7</from>
-                <to>Shape.businessLogic.17</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.transaction_begin.4</from>
-                <to>Shape.iterationBegin.7</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.Start.1</from>
-                <to>Shape.transaction_begin.4</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.10</from>
-                <to>Shape.End.2</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.16</from>
-                <to>Shape.businessLogic.15</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="exception">
-                <from>Shape.businessLogic.13</from>
-                <to>Shape.transaction_rollback.6</to>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="value" type="0">
-                        <value>java.lang.Exception</value>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.13</from>
-                <to>Shape.businessLogic.16</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.15</from>
-                <to>Shape.iterationEnd.8</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="exception">
-                <from>Shape.businessLogic.15</from>
-                <to>Shape.transaction_rollback.6</to>
-                <propertyList>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="value" type="0">
-                        <value>java.lang.Exception</value>
-                    </property>
-                    <property name="description" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.32</from>
-                <to>Shape.businessLogic.37</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.33</from>
-                <to>Shape.businessLogic.38</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.34</from>
-                <to>Shape.businessLogic.12</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.35</from>
-                <to>Shape.businessLogic.36</to>
-                <propertyList>
-                    <property name="isSimpleExpression" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="display_text" type="0">
-                        <value/>
-                    </property>
-                    <property name="type" type="0">
-                        <value/>
-                    </property>
-                    <property name="valueType" type="0">
-                        <value/>
-                    </property>
-                    <property name="default" type="0">
-                        <value>true</value>
-                    </property>
-                    <property name="refPath" type="3">
-                        <row num="0">
-                            <column num="0" name="leftValue"/>
-                            <column num="1" name="compType"/>
-                            <column num="2" name="rightValue"/>
-                        </row>
-                    </property>
-                    <property name="expression" type="0">
-                        <value/>
-                    </property>
-                </propertyList>
-                <bendpoints/>
-            </connector>
-            <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.36</from>
+                <from>Shape.Start.19</from>
                 <to>Shape.businessLogic.34</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
@@ -1654,7 +891,359 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.37</from>
+                <from>Shape.businessLogic.20</from>
+                <to>Shape.businessLogic.26</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.21</from>
+                <to>Shape.businessLogic.32</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.22</from>
+                <to>Shape.businessLogic.29</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.23</from>
+                <to>Shape.businessLogic.22</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.26</from>
+                <to>Shape.businessLogic.23</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.27</from>
+                <to>Shape.businessLogic.21</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.29</from>
+                <to>Shape.businessLogic.27</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.29</from>
+                <to>Shape.businessLogic.30</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value>retCode</value>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value>constant</value>
+                    </property>
+                    <property name="default" type="0">
+                        <value>false</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType">LE</column>
+                            <column num="2" name="rightValue">0</column>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.30</from>
+                <to>Shape.businessLogic.27</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.31</from>
+                <to>Shape.End.28</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.32</from>
+                <to>Shape.businessLogic.31</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.34</from>
                 <to>Shape.businessLogic.35</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
@@ -1686,8 +1275,8 @@
                 <bendpoints/>
             </connector>
             <connector color="0" description="" id="-2" type="connection">
-                <from>Shape.businessLogic.38</from>
-                <to>Shape.businessLogic.32</to>
+                <from>Shape.businessLogic.35</from>
+                <to>Shape.businessLogic.43</to>
                 <propertyList>
                     <property name="isSimpleExpression" type="0">
                         <value>true</value>
@@ -1709,6 +1298,326 @@
                             <column num="0" name="leftValue"/>
                             <column num="1" name="compType"/>
                             <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.37</from>
+                <to>Shape.businessLogic.38</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.38</from>
+                <to>Shape.businessLogic.41</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.39</from>
+                <to>Shape.businessLogic.42</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.40</from>
+                <to>Shape.businessLogic.39</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.41</from>
+                <to>Shape.businessLogic.44</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.42</from>
+                <to>Shape.businessLogic.20</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.43</from>
+                <to>Shape.businessLogic.44</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.43</from>
+                <to>Shape.businessLogic.37</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value>retCode</value>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value>constant</value>
+                    </property>
+                    <property name="default" type="0">
+                        <value>false</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType">LE</column>
+                            <column num="2" name="rightValue">0</column>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.44</from>
+                <to>Shape.businessLogic.20</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value/>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value/>
+                    </property>
+                    <property name="default" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType"/>
+                            <column num="2" name="rightValue"/>
+                        </row>
+                    </property>
+                    <property name="expression" type="0">
+                        <value/>
+                    </property>
+                </propertyList>
+                <bendpoints/>
+            </connector>
+            <connector color="0" description="" id="-2" type="connection">
+                <from>Shape.businessLogic.44</from>
+                <to>Shape.businessLogic.40</to>
+                <propertyList>
+                    <property name="isSimpleExpression" type="0">
+                        <value>true</value>
+                    </property>
+                    <property name="display_text" type="0">
+                        <value/>
+                    </property>
+                    <property name="type" type="0">
+                        <value>retCode</value>
+                    </property>
+                    <property name="valueType" type="0">
+                        <value>constant</value>
+                    </property>
+                    <property name="default" type="0">
+                        <value>false</value>
+                    </property>
+                    <property name="refPath" type="3">
+                        <row num="0">
+                            <column num="0" name="leftValue"/>
+                            <column num="1" name="compType">LE</column>
+                            <column num="2" name="rightValue">0</column>
                         </row>
                     </property>
                     <property name="expression" type="0">
