@@ -22,9 +22,10 @@ c.*,&#13;
 cl.ClassName,&#13;
 cl.Deposit&#13;
  from eosoperator e left  join Card c  on e.cardId=c.cardId,&#13;
-Room r left join Building b on b.BuildingID=r.BuildingID,&#13;
 &#13;
-Student s left join Class cl on s.ClassID=cl.ClassID where e.operatorid=s.StudentID and e.status=1 and r.RoomID=s.RoomID</createSQL>
+Student s left join Class cl on s.ClassID=cl.ClassID left join Room r &#13;
+on s.RoomID=r.RoomID left join Building b on b.BuildingID=r.BuildingID&#13;
+where e.operatorid=s.StudentID and e.status=1</createSQL>
             <field name="operatorname" displayName="operatorname" defineType="String" columnName="operatorname" isKey="false" isNullable="true" isPersistence="true" isSerialNo="false">
                 <description/>
                 <length>64</length>
@@ -181,6 +182,6 @@ Student s left join Class cl on s.ClassID=cl.ClassID where e.operatorid=s.Studen
             </field>
         </EOSEntity>
     </Package>
-    <!--StudioDBConName:sqlserver2005-->
+    <!--StudioDBConName:sqlserver2005(192.168.18.209)-->
     <!--schema:dxeos-->
 </EOS-Data-Mapping>
