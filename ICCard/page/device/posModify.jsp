@@ -10,13 +10,13 @@
 			var flag=false;
 			function IsExist(obj){
 				var sn=document.getElementById('POS/POSSN').value.trim();
-				var ip=document.getElementById('POS/IP_Com').value.trim();
+				var ip=document.getElementById('POS/IP_COM').value.trim();
 				if(sn.length==0||ip.length==0){
 					
 				}else{
 					var sub = new HiddenSubmit('ICCard.bizDevice.posIsExist');
 					sub.add("POSSN", sn);
-					sub.add("IP_Com", ip);
+					sub.add("IP_COM", ip);
 					if (sub.submit()) {
 						if(sub.getProperty("exist")>0){
 							document.getElementById(obj).innerHTML="&nbsp;*数据已存在重复";
@@ -219,7 +219,7 @@
 					property="POS/Enable" value="0" />无效			
 				</td>
 				<td width="8%" class="td2" nowrap align="center">连接编码：</td>
-					<td class="td1"><html:text property="POS/IP_Com" styleClass="input" size="20" onblur="IsExist('ipTips');"/><span id="ipTips" style="color: red;"></span></td>
+					<td class="td1"><html:text property="POS/IP_COM" styleClass="input" size="20" onblur="IsExist('ipTips');"/><span id="ipTips" style="color: red;"></span></td>
 				</tr>
 				<tr>
 					<td colspan="4" class="td1"></td>
