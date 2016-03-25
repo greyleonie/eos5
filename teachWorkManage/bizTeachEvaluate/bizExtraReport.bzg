@@ -240,7 +240,7 @@
                         <row num="3">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> )))) ballot,	(select count(1)from AssignMark	where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='精彩') and CourseID=c.CourseID ) jcballot,(select count(1)from AssignMark where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='满意') and CourseID=c.CourseID) myballot,	(select count(1)from AssignMark where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='一般') and CourseID=c.CourseID) ybballot,(select count(*) from Advice where CourseID=c.CourseID and advice != '') advicelen	from Course c	where c.TeahchingModelID != 13 and c.ClassID=</column>
+                            <column num="2" name="value" type="0"> )))) ballot,	(select count(1)from AssignMark	where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='精彩') and CourseID=c.CourseID ) jcballot,(select count(1)from AssignMark where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='满意') and CourseID=c.CourseID) myballot,	(select count(1)from AssignMark where LevelID in (select LevelID from dbo.EvaluateItemScore where LevelName='一般') and CourseID=c.CourseID) ybballot,(select count(*) from Advice where CourseID=c.CourseID and advice != '') advicelen	from Course c, EducatingMode e where c.TeahchingModelID=e.EducatingModeID and e.modeType='外请' and c.ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -417,7 +417,7 @@
                         <row num="3">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and b.Advice != '' and exists(select CourseID,CourseTitle from Course where TeahchingModelID != 13 and ClassID=</column>
+                            <column num="2" name="value" type="0"> and b.Advice != '' and exists(select CourseID,CourseTitle from Course c, EducatingMode e where c.TeahchingModelID=e.EducatingModeID and e.modeType='外请' and c.ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -433,7 +433,7 @@
                         <row num="5">
                             <column num="0" name="passing" type="1">in_out</column>
                             <column num="1" name="type" type="1">constant</column>
-                            <column num="2" name="value" type="0"> and Outsider IS NOT NULL and Outsider != '' and CourseID=b.CourseID) order by b.CourseID,b.StudentID</column>
+                            <column num="2" name="value" type="0"> and c.Outsider IS NOT NULL and c.Outsider != '' and c.CourseID=b.CourseID) order by b.CourseID,b.StudentID</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0"/>
@@ -508,7 +508,7 @@
                             <column num="2" name="value" type="0">select t.*,&#13;
 case when t.ballot != 0 then round((convert(float,t.ballot)*100/t.total),1) &#13;
 when t.ballot = 0 then 0 end precent from (select a.CourseID,a.LevelID,b.LevelName,(select count(1)  from AssignMark where LevelID=a.LevelID and CourseID=a.CourseID) ballot,&#13;
-(select count(1) from AssignMark where CourseID=a.CourseID) total from AssignMark a left join EvaluateItemScore b on b.LevelID=a.LevelID where a.CourseID in (select b.CourseID from Course b where b.TeahchingModelID != 13 and b.ClassID=</column>
+(select count(1) from AssignMark where CourseID=a.CourseID) total from AssignMark a left join EvaluateItemScore b on b.LevelID=a.LevelID where a.CourseID in (select b.CourseID from Course b, EducatingMode e where b.TeahchingModelID=e.EducatingModeID and e.modeType='外请' and b.ClassID=</column>
                             <column num="3" name="paraType" type="0">String</column>
                             <column num="4" name="name" type="0"/>
                             <column num="5" name="description" type="0">连接所用到的字符串</column>
