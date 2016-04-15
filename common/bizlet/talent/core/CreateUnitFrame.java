@@ -104,10 +104,10 @@ public class CreateUnitFrame {
 	   
 	        String classTime[]=new String[2];
 	        String finalClassTime[]=new String[2];
-	        classTime[0]="8:45";
+	        classTime[0]="9:00";
 	        classTime[1]="14:30";
-	        finalClassTime[0]="11:45";
-	        finalClassTime[1]="17:30";
+	        finalClassTime[0]="11:15";
+	        finalClassTime[1]="16:45";
 	        String timeType[]=new String[2];
 	        timeType[0]="";
 	        timeType[1]="";
