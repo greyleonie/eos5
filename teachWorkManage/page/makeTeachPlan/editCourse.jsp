@@ -386,15 +386,15 @@ if(count>0){
   </table>
 </form>
 <p><font color="#C0C0C0"><b>说明：</b></font></p>
-<p><font color="#C0C0C0">1、日期选择时，如果是上午，则时间默认为8:45，下午默认为14:30，晚上默认为19:30，全天默认为8:45。</font></p>
+<p><font color="#C0C0C0">1、日期选择时，如果是上午，则时间默认为9:00，下午默认为14:30，晚上默认为19:30，全天默认为9:00。</font></p>
 </body>
 <script>
  var isAdd='<bean:write property="isAdd"/>';
  var time='<bean:write property="Course/ClassTime"/>';
  var ftime='<bean:write property="Course/finalClassTime"/>';
  if(isAdd=="1"){
-   document.courseForm.elements["ClassTime"].value="8:45";
-   document.courseForm.elements["finalClassTime"].value="11:45";
+   document.courseForm.elements["ClassTime"].value="9:00";
+   document.courseForm.elements["finalClassTime"].value="11:15";
  }else{
    document.courseForm.elements["ClassTime"].value=time;
    document.courseForm.elements["finalClassTime"].value=ftime;
@@ -491,12 +491,12 @@ function isUnsignedNumeric(obj)
 
 function setClassTime(classNoon){
    if(classNoon=="0"||classNoon=="3"){
-     frm.elements["ClassTime"].value="08:45";
-     frm.elements["finalClassTime"].value="11:45";
+     frm.elements["ClassTime"].value="09:00";
+     frm.elements["finalClassTime"].value="11:15";
    }
    if(classNoon=="1"){
      frm.elements["ClassTime"].value="14:30";
-     frm.elements["finalClassTime"].value="17:30";
+     frm.elements["finalClassTime"].value="16:45";
    }
   if(classNoon=="2"){
      frm.elements["ClassTime"].value="19:30";
